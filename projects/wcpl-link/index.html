@@ -1,0 +1,21 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/wcpl-link");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>wcpl-link</h1>
+<p>Add a link to pages with an ISBN to the Wake County Public Libraries
+search page.</p>
+
+
+<p>Right click over this link to install the script: <b><a href="wcpl-link.user.js">wcpl-link.user.js</a></b></p>
+
+<p><b>Updates:</b></p>
+
+<p>2007/03/15 - version 1.0; initial version.
+
+<?php $page->writeFooter(); ?>

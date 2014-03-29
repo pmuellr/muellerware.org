@@ -1,0 +1,250 @@
+:------------------------------------------------------------------
+:slide The Future of Application Development for the Web with Smalltalk
+
+:------------------------------------------------------------------
+:outputFile ss96
+:pages 0
+:links 1
+:fontSize 6
+:prevLink l_hand.gif
+:nextLink r_hand.gif
+
+:------------------------------------------------------------------
+:address
+
+<hr>
+<img src="vawww.gif" align=left>
+Patrick J. Mueller
+<a href="mailto:pmuellr@raleigh.ibm.com"> (pmuellr@raleigh.ibm.com)</a>
+<br>For the 1996 Smalltalk Solutions Panel on Smalltalk and the Web
+
+:------------------------------------------------------------------
+:slide Legal Glorp
+
+<p>This document is a delusion of the author and is not an official
+statement from IBM in any form or fashion.
+
+:------------------------------------------------------------------
+:slide Overview
+
+<ul>
+<p><li>Current state of the art, and problems with it
+<p><li>Another approach to application development for the Web
+<p><li>How does Smalltalk fit in
+</ul>
+
+:==================================================================
+:= Current state of the art
+:==================================================================
+
+:------------------------------------------------------------------
+:slide Current State of the Art
+
+<ul>
+<p><li>Clients run Web browsers (Netscape)
+<p><li>Server programs written in CGI-BIN programs, or maybe using
+newer CGI-BIN replacement protocols such as NSAPI, ISAPI, etc.
+<p><li>Application developers use HTML forms to do window layout,
+specify CGI-BIN program to handle the input request.
+</ul>
+
+:------------------------------------------------------------------
+:slide What's Wrong With the Current State of the Art
+
+<ul>
+<p><li>HTML provides very limited page layout support
+<p><li>Web browsers do not maintain any state information
+<p><li>Backward/forward/history buttons in browsers allow users to
+bypass application page flow
+<p><li>Web applications that need to maintain state information need
+to be written as server programs themselves, since Web servers cannot
+do this.
+</ul>
+
+:------------------------------------------------------------------
+:slide Bleeding Edge Facilities Available
+
+<ul>
+<p><li>New facilities added every month:
+<ul>
+<p><li>Java - allows external programs to be run in a browser
+<p><li>Plug-ins - allows external programs (in any language) to be run
+in the browser
+<p><li>Javascript - allow some amount of dynamic logic within HTML
+</ul>
+
+:------------------------------------------------------------------
+:slide What's Wrong With the Bleeding Edge Facilities
+
+<ul>
+<p><li>On the face of it, nothing - more extendable, powerful browsers.
+<p><li>On the other hand, HTML is so primitive today, adding a few bells
+and whistles isn't saying so much.
+<p><li>Even beyond extensions to the browser for displaying 'things',
+browsers are still stateless and allow arbitrary movement through an
+application.
+<p><li>Do all of your customers have browsers that support the features
+you code to?
+<p><li>What's coming <i>next</i> month? ... and what changes to
+existing bleeding edge facilities will break your code
+</ul>
+
+:------------------------------------------------------------------
+:slide But Web Browsers Give me a Skinny Client!
+<ul>
+<p><li>Is a Web browser still a skinny client?  Let's see:
+</ul>
+
+<font size=4>
+<pre>
+E:\netscape\navigator                      24 File(s)        430,785 bytes
+E:\netscape\navigator\Program              21 File(s)      2,785,767 bytes
+E:\netscape\navigator\Program\java          4 File(s)              0 bytes
+E:\netscape\navigator\Program\java\bin      6 File(s)        612,864 bytes
+E:\netscape\navigator\Program\java\classes  4 File(s)      1,441,351 bytes
+E:\netscape\navigator\Program\plugins       4 File(s)         47,104 bytes
+E:\netscape\navigator\Program\Navigator     4 File(s)            816 bytes
+E:\netscape\navigator\System                3 File(s)         20,992 bytes
+                                                           ---------------
+                                                           5,339,679 bytes
+</pre>
+</font>
+
+<ul>
+<p><li>Performance monitor of available memory when running Netscape shows
+Netscape consuming > 5M of memory on Windows NT.
+<p><li>As browsers add more features, and Java adds more classes, expect
+disk and memory usage to grow.
+</ul>
+
+:==================================================================
+:= Another approach
+:==================================================================
+
+:------------------------------------------------------------------
+:slide Web-izing Your Current Applications
+
+<ul>
+
+<p><li>Instead of trying to force-fit your application into HTML,
+instead make use of HTTP as a remote procedure call.
+
+<p><li>Your applications ship as operating system binaries, but
+can access data and submit data to servers via the Web
+
+<p><li>Example: Pizza ordering system.
+
+<ul>
+<p><li>Application is written using normal GUI builder
+
+<p><li>Logic to submit order now changed to send an HTTP request
+to a server instead of do a database insert
+
+<p><li>Logic to query orders now changed to send an HTTP request
+to a server instead of doing a database query
+</ul>
+
+</ul>
+
+:------------------------------------------------------------------
+:slide Benefits of Web-izing Your Applications
+
+<ul>
+
+<p><li>Your application can now provide whatever user-interface
+it wants to; no longer limited to HTML.
+
+<p><li>Your application can maintain state information.
+
+<p><li>Your application can now control the flow of any windows
+it puts up; the user can no longer page back to outdated windows.
+
+<p><li>Your application can obtain data 'generically' via HTTP,
+instead of relying on proprietary database interfaces.
+
+</ul>
+
+:------------------------------------------------------------------
+:slide The Downside of Web-izing Your Applications
+
+<ul>
+
+<p><li>Re-engineering your applications.
+
+<p><li>Applications can no longer run under a Web browser.
+
+<p><li>Integrating HTML-based Web data and application code is
+tougher.
+
+<p><li>Your application may now have to deal with security issues.
+
+</ul>
+
+:==================================================================
+:= How does Smalltalk fit in
+:==================================================================
+
+:------------------------------------------------------------------
+:slide How Can You Web-ize Your Applications in Smalltalk?
+
+<ul>
+<p><li>Client HTTP toolkits now becoming available from Microsoft,
+Spyglass, Terisa, etc. - expect Smalltalk wrappers for these soon.
+
+<p><li>Server HTTP toolkits now becoming available from the same
+companies - expect Smalltalk Web features to make use of these
+in the future - worse case is that CGI-BIN interfaces are at least
+functional if not overly efficient.
+
+<p><li>Redesign your application to obtain data or execute transactions
+using HTTP requests.
+</ul>
+
+:------------------------------------------------------------------
+:slide What Benefits Does Smalltalk Have Over Other languages?
+
+<ul>
+<p><li>All the usual benefits that Smalltalk has over other languages
+<p><li>Smalltalk code can be rendered portable so that not only
+can data be accessed over the web, but application code can as well.
+<p><li>Smalltalk can dump and load objects from the Web instead of
+some other canonicalized, hard to parse, less extensible format
+(SGML,Mime,XDR).
+</ul>
+
+:------------------------------------------------------------------
+:slide How Does Smalltalk Compare to Java?
+
+<ul>
+<p><li>On the face of it, both provide similiar capabilities
+<ul>
+<li>Object oriented
+<li>Portable binary code format
+<li>Ability to load and run code in a running application
+</ul>
+
+<p><li>Significant differences
+<ul>
+<li>Network access classes not 'standard' in Smalltalk
+<li>Application tool towers non-existant in Java (database, GUI builder)
+<li>Smalltalk implementations are stable; Java just out of beta.
+<li>Lack of object dumper/persistance.
+<li>Lack of development environment and tools
+</ul>
+
+</ul>
+
+:==================================================================
+:= Summary
+:==================================================================
+
+:------------------------------------------------------------------
+:slide Summary
+
+<ul>
+<p><li>Web application in HTML is clunky.
+<p><li>A different approach of using HTTP as an RPC mechanism provides
+more usable client code
+<p><li>Java is a contender to Smalltalk in this arena - who will move
+faster to catch up to the other?
+</ul>

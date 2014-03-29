@@ -1,0 +1,519 @@
+<html>
+
+<!-- ====================================================== -->
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title id="head_title">Remote Web Inspector - Baby Steps</title>
+</head>
+
+<!-- ====================================================== -->
+<body onload="body_onload()">
+<div id="body">
+    
+<h1 id="body_title">title should have been filled in via JavaScript</h1>
+
+<!-- ====================================================== -->
+
+<table>
+
+<tr>
+<td><b>Author:</b>
+<td>Patrick Mueller - 
+<a href="http://pmuellr.blogspot.com">[blog]</a>
+<a href="http://muellerware.org">[web]</a> 
+
+<tr>
+<td><b>Permalink:</b>
+<td><a class="autolink" href="http://muellerware.org/papers/remote-web-inspector-baby-steps.html"></a>
+
+<tr>
+<td valign="top"><b>History:</b>
+<td>
+2010-02-02 - updated Crossfire link<br>
+2010-02-01 - initial write-up
+
+</table>
+
+<!-- ====================================================== -->
+<!--
+<h2>Table of Contents</h2>
+<ul id="toc_ul">
+</ul>
+-->
+
+<!-- ====================================================== -->
+<h2>First step</h2>
+
+<div>
+<a href="http://www.flickr.com/photos/pmuellr/4313999894/sizes/o/">
+<img class="graphic" src="http://farm3.static.flickr.com/2681/4313999894_b17c06cb2b.jpg">
+</a>
+<br><center><b><i>click image to see larger version</i></b></center>
+
+<p><i>(Note that some areas of the image above have been
+redacted in white, as they contained host names / ip addresses)</i>
+
+<p>This is a baling-wire-and-duct-tape effort to get a version of the
+Web Inspector debugger that ships with WebKit to run targeting a remote
+browser.  In this case, an iPhone.  Well, the picture shows the iPhone
+simulator, but this actually runs on my iPod Touch also.
+
+<p>You're looking at three programs running, each potentially on a separate machine:
+<ul>
+    
+<li><p>the debug client - on the upper left is
+Safari running on Windows (in VNC), loaded with the Web Inspector code
+running as a "web app"
+
+<li><p>the debug target - on the right is the iPhone Simulator
+running as a Mac app, running a very simple page which responds to
+the "click me" link by writing some text to the console.  
+
+<li><p>the debug agent - on the bottom
+is a web server running in Python in a green Terminal window 
+that is talking to both of the other
+programs, acting as a switchboard.
+</ul>
+
+<p>Technically, this effort is less functional that Joe Hewitt's
+<a href="http://www.joehewitt.com/blog/firebug_for_iph.php">"Firebug for iPhone"</a>
+code.  Namely, the 
+<a href="http://en.wikipedia.org/wiki/Read-eval-print_loop">REPL</a> 
+for the console is non-operational; the only thing
+that works is <tt>console.log()</tt> invocations being forwarded to
+Web Inspector's console.  (Note however, I wasn't able to get Joe's
+code linked to in the blog post to run correctly.)
+The big upside to this hack over "Firebug for iPhone"
+is that this is running with the current
+Web Inspector code, unchanged, but with some of "overridden"
+function added.
+
+<!-- ====================================================== -->
+<h2>Technical Details</h2>
+
+<p>Basically what's happening is that the two web apps - 
+the debug target and the debug client - are communicating via XHR to the
+debug agent, which is a Python program; it's acting as an
+HTTP server (obviously).  When one of the web apps wants to
+send a message to the other web app, it sends it via XHR to the agent,
+which forwards it to the other web app.
+
+<p>Both web apps also poll the agent to wait for a command
+from the other web app.  Because I was too lazy to figure out
+how to run the Python server threaded, this isn't using a 
+"long poll", but a "short/frequent" poll.  Survivable, for the
+moment, but this has to change.  You can see the frequent polling
+in the debug agent Terminal window - each line is the terminal
+output is an HTTP request.
+
+<p>Also note that the debug agent also serves up the Web Inspector
+code (HTML/CSS/JS) to the debug client, and so the XHRs between
+the two are same-origin.  However, it's a pain to have the debug
+target have to use same-origin for the code being debugged (your app), as
+well as for talking to the debug agent.  For this linkage, I took
+advantage of Mobile Safari's 
+<a href="http://www.w3.org/TR/2009/WD-cors-20090317/">CORS</a>
+support so the debug agent doesn't have to be same origin
+as the code being debugged.
+
+<p>This is literally baby steps; there's lots of work to do here.
+
+<!-- ====================================================== -->
+<h2>Digging a little deeper</h2>
+
+<h3>Debug target</h3>
+
+<p>Here's the code which makes up the debug target, which is the
+code being debugged.  Note that the idea here is that this is 
+actually the application being debugged, so I've highlighted the
+extra code needed to enable the debugging.
+
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+
+&lt;script&gt;
+<b>RemWiServer = &quot;http://debug-agent-host/&quot;</b> <span class="num-marker">1</span>
+&lt;/script&gt;
+
+<b>&lt;script src=&quot;json2.js&quot;&gt;&lt;/script&gt;</b>  <span class="num-marker">2</span>
+
+<b>&lt;script src=&quot;http://debug-agent-host/remwi-common.js&quot;&gt;&lt;/script&gt;</b>  <span class="num-marker">3</span>
+<b>&lt;script src=&quot;http://debug-agent-host/remwi-target.js&quot;&gt;&lt;/script&gt;</b>  
+
+&lt;script&gt;
+function dumpObject(name, object) {
+
+    var output = name + &quot;:\n&quot;
+    for (var key in object) {
+        output += &quot;   &quot; + key + &quot;: &quot; + object[key] + &quot;\n&quot;
+    }
+    return output + &quot;\n&quot;
+}
+
+function whenClicked() {
+    <b>console.log(&quot;the link was clicked at &quot; + new Date())</b>  <span class="num-marker">4</span>
+    <b>console.log(dumpObject(&quot;navigator&quot;, navigator))</b> 
+    <b>console.log(dumpObject(&quot;screen&quot;, screen))</b>  
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+@media only screen and (max-device-width: 480px) { 
+body {
+    font-size: 400%;
+}
+}
+
+&lt;/style&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href=&quot;javascript:whenClicked()&quot;&gt;click me&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;    
+</pre>
+
+<p>Notes on the highlighted lines above:
+
+<p><span class="num-marker">1</span> - 
+This line sets the base URL for the debug agent, used by the code in the
+<tt>remwi-*.js</tt> files.
+    
+<p><span class="num-marker">2</span> -
+Mobile Safari doesn't include the <tt>JSON</tt> object!  And my code
+makes use of JSON, so I pulled in Crockford's version.
+
+<p><span class="num-marker">3</span> - 
+These contain the code which provides the linkages to the debug agent;
+the <tt>remwi-common.js</tt> file contains code used by both the
+debug target (this file) and the debug client.
+
+<p><span class="num-marker">4</span> -
+The lines make calls to the standard <tt>console.log()</tt> function, which in this
+case is overridden by the <tt>remwi-target.js</tt> file.
+
+<h3>Debug client</h3>
+
+<p>The debug client is literally the Web Inspector code as shipped with
+WebKit nightlies, with some additional scripts added to override bits of 
+functionality here and there.
+
+<p>Because Web Inspector needs to support Chrome's multi-process architecture,
+it turns out that a lot of the interaction between the debug client and the
+target has been spec'd out as a set of functional interfaces.  Which makes
+an effort like this a lot easier.
+
+<!-- ====================================================== -->
+<h2>What else can we conceivably do?</h2>
+
+<p>Since we've got the Web Inspector code running, kind of,
+it's easy to look at the function it provides and wonder about
+how we could get that to work with this technique.  Let's go
+panel-by-panel:
+
+<ul>
+    
+<li><p><b>Elements</b>
+<p>I'm unfamiliar with how this pane is populated by Web Inspector today;
+it may be too slow to rely on the existing JavaScript engine to gather all
+the information for this pane.  But that would be true for big web apps,
+maybe it would be ok to do this in user-space for smaller apps, like something
+running on a mobile device.
+
+<li><p><b>Resources</b>
+<p>Resources are a bit of a problem, since JavaScript generally has no
+knowledge of other resources being loaded.  This can be solved by 
+proxying your entire app through the debug agent.  Then the debug
+agent can capture which resources are being accessed, when they were
+loaded, how long it took to load them, etc.  The proxy could be a simple
+proxy for a specific app, so you would always debug your app by
+targetting the debug agent as the opening page, or could be a general 
+HTTP proxy set up at the device level.
+    
+<li><p><b>Storage</b>
+<p>At least some bits of the Storage pane seem possible to implement,
+but will require overriding the existing APIs.  For instance, for the
+SQL databases, there's no API to determine the name of the databases
+being used.  The existing APIs could be wrappered so that you could
+at least get the names of the databases your code is accessing.
+    
+<li><p><b>Console</b>
+<p>The first bit of Console is already proven here.  The 
+REPL needs to be added.  The console also catches messages
+from WebKit that users don't typically see and aren't 
+available via any existing JavaScript API.  Eventually, will
+be nice to have these also.
+    
+</ul>
+
+<!-- ====================================================== -->
+<h2>What <b>can't</b> we do?</h2>
+
+<p>Here's the panel-by-panel breakdown of what we can't easily
+do with this technique:
+
+<ul>
+    
+<li><p><b>Scripts</b> 
+<p>This is the JavaScript source-level debugging pane, where you can
+set breakpoints, etc in your JavaScript source.  Supporting this will
+be impossible with the user-land debug story, as JavaScript debug
+APIs aren't available to web applications.  Actually, there aren't any
+debug APIs at all for JavaScriptCore.
+    
+<li><p><b>Timeline</b>
+<p>Timeline provides low-level eventing information, for example,
+when painting events occur.  Since this level of information isn't
+available to user-land JavaScript, we'd need some new public APIs
+for this.
+    
+<p>But see below for thoughts on instrumenting existing libraries to
+generate some Timeline-ish information.
+    
+<li><p><b>Profiles</b>
+    
+<p>Profiling JavaScript code seems right out, with user-land code,
+but see below for thoughts on instrumenting code to generate
+data for the Profiles panel.
+    
+</ul>
+
+<!-- ====================================================== -->
+<h2>Other ideas</h2>
+
+<h3>APIs for source-level JavaScript debug</h3>
+
+<p>The lack of source-level JavaScript debug (see above) is 
+very sad, especially since both FireBug and Web Inspector
+provide pretty good capabilities there.  In my mind, 
+these sort of APIs need to be made available, so that
+we can write source-level debuggers in JavaScript.  Presumably
+standardized as part of ECMAScript.
+
+<p>In case you're wondering how you would write a source-level debugger
+for JavaScript in JavaScript:
+
+<ul>
+<li>see Smalltalk
+<li>probably involves <a href="http://www.w3.org/TR/workers/">Workers</a>
+</ul>
+
+<h3>Function/Class/Module-level debugging for JavaScript</h3>
+
+<p>Source-level debugging for JavaScript is hard without real
+APIs, but you can do some interesting things if you know about
+the structure of your code.  For instance, see
+<a href="http://pmuellr.blogspot.com/2009/12/who-called-that-function.html">"who called that function?"</a>
+and
+<a href="http://pmuellr.blogspot.com/2009/09/javascript-tracing.html">"JavaScript tracing"</a>.
+
+<p>So while you might not be able to step through lines of a function, you
+could probably have breakpoints just before a function is called, and just
+after it returns (or throws an exception).  Might be good enough.
+
+<p>You could also perhaps generate some information that could be used by
+the Profiles pane.
+
+<p>It's not a stretch to imagine library-specific extensions for debuggers; 
+libraries/frameworks like
+<a href="http://dojotoolkit.org/">Dojo</a>,
+<a href="http://code.google.com/closure/library/docs/overview.html">Closure</a>, and
+<a href="http://commonjs.org/">CommonJS</a>
+seem like they'd be amenable, technically, to being instrumented to provide
+information to the debugger.  They could, for instance, provide the list of
+class/modules loaded, the relationships between the classes/modules, the contents
+of them, etc.
+
+<p>Many of these libraries also provide various eventing capabilities, which
+could also be instrumented to provide information like the Timeline panel does.
+
+<!-- ====================================================== -->
+<h2>End goal</h2>
+
+<p>At the end of the day, you don't want to have to run something like the
+debug agent I've written, nor do you want to have Web Inspector running
+as a web page, since it already runs fine within WebKit-enabled browsers.
+The debug agent needs to be embedded into WebKit, and the current Web Inspector
+needs to become able to connect to (or accept connections from) a remote
+browser.
+
+<p>One thing I'm thinking of doing is rewriting the debug agent using
+<a href="http://nodejs.org/">node.js</a>.  If we have to add more code
+to WebKit, then I'd like for it to be JavaScript code instead of C++ code,
+so that would be a step in the right direction.
+
+<p>Presumably, if this is all in WebKit, all of the panels, including
+the Scripts panel, can be supported, for any debug targets that include
+the relevant support.
+
+<!-- ====================================================== -->
+<h2>Related things</h2>
+
+<ul>
+    
+<li><p><a href="http://code.google.com/p/chromedevtools/">Google Chrome Developer Tools</a>
+
+<li><p><a href="http://my.opera.com/dragonfly/blog/scope-protocol-specification">Opera's Scope protocol</a>
+
+<li><p><a href="http://getfirebug.com/wiki/index.php/Crossfire">FireBug's Crossfire extension</a>
+<ul>
+<li><a href="http://groups.google.com/group/webdebugprotocol/browse_thread/thread/7561e8db80af7daa">older: FireBug's Crossfire protocol</a>
+</ul>
+
+<li><p><a href="http://groups.google.com/group/firebug-working-group/web/http-tracing---export-format">HTTP Archive format</a>
+</ul>
+
+</div>
+</body>
+
+<!-- ====================================================== -->
+<style type="text/css">
+
+/*-----------------------------------------------------------------*/
+body {
+	font-family:        sans-serif;
+    color:              #333;
+    background:         #F7F7F7;
+	margin-left:        20%;
+	margin-right:       10%;
+}
+
+/*-----------------------------------------------------------------*/
+code {
+    font-weight:        bold;
+	font-family:        monospace;
+}
+
+/*-----------------------------------------------------------------*/
+pre, xmp {
+    border-width:       1;
+    border-style:       solid;
+    overflow:           auto;
+    padding-top:        0.4em;
+    padding-bottom:     0.4em;
+    padding-left:       1.4em;
+    padding-right:      1.4em;
+    margin-left:        1.4em;
+    margin-right:       1.4em;
+	background:         #FFFFDF;
+}
+
+pre b {
+	background:         #FFFFFF;
+}
+
+.graphic {
+    border:                1 thin;
+    margin-bottom:         0.5em;
+	box-shadow:            0.5em 0.5em 0.5em 0em #AAA; 
+	-moz-box-shadow:       0.5em 0.5em 0.5em 0em #AAA; 
+	-webkit-box-shadow:    0.5em 0.5em 0.5em 0em #AAA; 
+}
+
+.num-marker {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #FFF;
+    background-color: #00F;
+}
+/*-----------------------------------------------------------------*/
+h1,h2 {
+    padding:               0.3em 0.3em 0.3em 2em;
+    border:                1 solid #000;
+	background:            #EEE;
+	box-shadow:            0.3em 0.3em 0.3em 0em #DDD; 
+	-moz-box-shadow:       0.3em 0.3em 0.3em 0em #DDD; 
+	-webkit-box-shadow:    0.3em 0.3em 0.3em 0em #DDD; 
+	border-radius:         0.5em; 
+    -moz-border-radius:    0.5em; 
+    -webkit-border-radius: 0.5em;	
+}
+
+h1 {
+	margin-left:         -3em;
+	font-size:          250%;
+}
+
+h2 {
+	margin-left:         -2em;
+}
+
+h3 {
+	margin-left:         -2em;
+}
+
+#body {
+    display: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s linear;
+}
+
+/*-----------------------------------------------------------------*/
+@media screen {
+	body {
+	    font-size: 120%;
+	}
+}
+
+/*-----------------------------------------------------------------*/
+@media print {
+	body {
+	    background:         #FFF;
+	}
+	
+	pre, xmp {
+	    overflow:           hidden;
+		background:         #FFFFEF;
+	}
+}
+
+</style>
+<script type="text/javascript">
+function body_onload() {
+    // fill in title
+	var head_title = document.getElementById("head_title").innerHTML
+	document.getElementById("body_title").innerHTML = head_title
+	
+	// build TOC
+	var tocElement = document.getElementById("toc_ul")
+	if (tocElement) {
+    	var h2s = document.getElementsByTagName("h2")
+    	var toc_entries = []
+    	for (var i=1; i<h2s.length; i++) {
+    		var h2 = h2s[i]
+    		var h2_text = h2.innerHTML
+
+    		var entry = "<li><a href='#toc." + i + "'>" + h2_text + "</a></li>"
+    		toc_entries.push(entry)
+
+    		var anchor = document.createElement("a")
+    		anchor.id = "toc." + i
+    		h2.parentNode.insertBefore(anchor,h2)
+    	}
+
+    	toc_entries = toc_entries.join("\n")
+    	tocElement.innerHTML = toc_entries
+	}
+	
+	// auto-link
+	var links = document.getElementsByTagName("a")
+	for (var i=0; i<links.length; i++) {
+	    var link = links[i]
+	    if (link.className.indexOf("autolink") != -1) {
+	        link.innerHTML = link.href
+	    }
+	}
+
+    document.getElementById("body").style.display = "block"
+    
+    setTimeout(function() {
+        document.getElementById("body").style.opacity = 1
+    }, 10)
+}
+</script>
+
+</html>

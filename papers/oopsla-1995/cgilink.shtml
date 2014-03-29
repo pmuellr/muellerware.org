@@ -1,0 +1,17 @@
+<!-- title: CGI-Link -->
+
+<font size=40>
+<ul>
+<li>A client/server protocol to pass a CGI request from one
+program to another, and receive the results of the CGI request.<p>
+<li>Current implementation uses tcp/ip for the transport, but other
+transports are possible (and advantageous)<p>
+<ul>
+<li>Named pipes<p>
+<li>FIFOs<p>
+<li>Shared memory<p>
+</ul>
+<li>CGI-Link client is actually a CGI-BIN program.  CGI-Link server
+has been implemented in Smalltalk
+</ul>
+</font>

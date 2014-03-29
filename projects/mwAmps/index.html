@@ -1,0 +1,33 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/mwAmps");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>mwAmps</h1>
+<p>Some Ableton 6.x Racks that serve as cheap-ass guitar amps.
+</p>
+
+<p>I'm cheap.  Rather than go buy something like Amplitube or Guitar Rig,
+I figure I can get close enough for rock+roll by building some amps
+in Ableton itself.  Each amp is a rack, with up to 8 radial controllers
+to modify things in the amp.  If you're a cheap-ass like me, enjoy!</p>
+
+<p><a href="mwAmps.zip">mwAmps.zip</a></p>
+
+<h2>AU Presets for AmpliTube2Live</h2>
+
+<p>I've 'saved' all the presets from AmpliTube2 Live from
+within Ableton Live as AU presets for the mac.  The file is available here:</p>
+
+<p><tt><a href="AmpliTube2Live-AU-Presets.zip">AmpliTube2Live-AU-Presets.zip</a></tt></p>
+
+<p>Unzip the file, and then drop the top level directory, 
+<tt>AmpliTube2Live</tt> into the directory
+<tt>/Users/[username]/Library/Audio/Presets/IK Multimedia/</tt>
+</p>
+
+<?php $page->writeFooter(); ?>

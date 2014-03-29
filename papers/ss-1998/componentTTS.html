@@ -1,0 +1,32 @@
+<!-- generated from MwSS98SlideSet componentTTS on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Text-To-Speech Component</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="componentViaVoice.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Text-To-Speech Component</h1></td>
+<td align="right" valign="top"><a href="componentPortIO.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>IBM ViaVoice includes Text-To-Speech (TTS) component called VirtualVoices.
+<li>VirtualVoices packaged as an ActiveX control.
+<li>Wrapped into Smalltalk with OleApplicationFramework.
+<li>Application variable created as single access point.
+<li>Existing Smalltalk classes such as Time, Date, Integer, Fraction extended with method
+<bold>speakString</bold>.  speakString answers a string which can be 'spoken' by VirtualVoices.
+Examples:
+<ul>
+<li>Date today speakString -- 'Tuesday, April 14th 1998'
+<li>Time now speakString -- '11:05 p m'
+<li>(1/7) speakString -- '1 seventh'
+</ul>
+<li>TTS usage had to be coordinated with Voice Recognition and RealAudio since only one can use
+the sound card at a time.
+<li>Audio volume level temporarily reset to a 'standard' volume.
+</ul>
+</body>
+</html>

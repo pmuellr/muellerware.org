@@ -1,0 +1,32 @@
+<!-- generated from MwSS98SlideSet designPatterns1 on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Design Patterns: Actors</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="software.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Design Patterns: Actors</h1></td>
+<td align="right" valign="top"><a href="designPatterns2.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Smalltalk application designed called for ~20 independent Smalltalk processes
+<li>Needed an interprocess communication mechanism
+<li>Used Actors
+<li>An Actor is
+<ul>
+<li>A process which receives messages from a queue
+<li>Queue is Process-safe, so many objects can write to it at once
+<li>Actor process is the only process to read the queue
+</ul>
+<li>Easy to implement - a BlockingQueue class which:
+<ul>
+<li>uses a mutex Semaphore to read and write 'atomically'
+<li>uses an event Semaphore to allow blocking read
+<li>OrderedCollection to hold 'messages'
+</ul>
+</ul>
+</body>
+</html>

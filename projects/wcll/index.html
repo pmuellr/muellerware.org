@@ -1,0 +1,32 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/wcll");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>wcll</h1>
+<p>A
+<a href="http://greasemonkey.mozdev.org/">Greasemonkey</a> 
+script to enable looking up books displayed in
+Amazon pages, for the Wake County Public Library system (NC).
+</p>
+
+<p>I inherited this script from my next-door cube-mate,
+<a href="http://joshstaiger.org/projects/wakelibrary/">Josh Staiger</a>,
+who no longer lives in Wake County, and so wasn't keeping it up to date.
+Lazy ass.</p>
+
+<p>Right click over this link to install the script: <b><a href="wcll.user.js">wcll.user.js</a></b></p>
+
+<p><b>Updates:</b></p>
+
+<p>2007/03/21 - version 0.3; change to the ISBN lookup logic, 
+to search on the page if the ISBN seem to be in the URI.  Also
+move the output to the top of the page.  I don't really want it
+at the top of the page, but am also unwilling to figure out
+how to do the right thing.</p>
+
+<?php $page->writeFooter(); ?>

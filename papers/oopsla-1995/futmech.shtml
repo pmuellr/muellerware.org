@@ -1,0 +1,19 @@
+<!-- title: Web Mechanisms to Leverage -->
+
+<font size=30>
+<ul>
+<li>Netscape inline/embedded objects - objects which are transported
+as part of an HTML page, but which are controlled by external
+applications.<p>
+<li>Interfaces to Java<p>
+<ul>
+<li>Have Java call out to Smalltalk.  VisualAge includes interfaces
+to allow Smalltalk to be called into from C.<p>
+<li>Have Smalltalk call out to Java.  Not sure if call-in is currently
+supported in Java.<p>
+<li>Interpret Java code in Smalltalk<p>
+<li>Compiling Smalltalk into Java bytecodes is not practical due to the
+strong typing in Java.<p>
+</ul>
+</ul>
+</font>

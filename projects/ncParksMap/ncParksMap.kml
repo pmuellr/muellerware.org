@@ -1,0 +1,1044 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+   <Document>
+      <name>North Carolina Parks</name>
+      <Style id="hiking-icon">
+         <IconStyle>
+            <Icon>
+               <href>http://kh.google.com:80/flatfile?lf-0-icons/hiking_n.png</href>
+            </Icon>
+         </IconStyle>
+      </Style>     
+      
+      <Folder>
+         <name>North Carolina Parks</name>
+         <open>1</open>
+         <description>Parks of North Carolina.</description>
+         <Placemark>
+            <name>Carolina Beach State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/cabe/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.047788&fLon=-77.908323&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 81 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 85 Low: 75<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 74<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Carolina_Beach__NC/*http://weather.yahoo.com/forecast/USNC0104_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28428'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-77.908323,34.047788,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Chimney Rock State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/chro/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.442183&fLon=-82.258944&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/20.gif"/><br />
+<b>Current Conditions:</b><br />
+Fog, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 84 Low: 64<br />
+Mon - Isolated Thunderstorms. High: 85 Low: 62<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Chimney_Rock__NC/*http://weather.yahoo.com/forecast/USNC0125_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28720'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-82.258944,35.442183,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Cliffs of the Neuse State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/clne/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.237303&fLon=-77.886704&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 75 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 86 Low: 72<br />
+Mon - PM Thunderstorms. High: 89 Low: 70<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Seven_Springs__NC/*http://weather.yahoo.com/forecast/USNC0621_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28578'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-77.886704,35.237303,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Crowders Mountain State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/crmo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.219793&fLon=-81.283325&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 84 Low: 66<br />
+Mon - Isolated Thunderstorms. High: 87 Low: 63<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kings_Mountain__NC/*http://weather.yahoo.com/forecast/USNC0358_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28086'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.283325,35.219793,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Dismal Swamp State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/disw/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.5057&fLon=-76.3551&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 85 Low: 71<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 69<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/South_Mills__NC/*http://weather.yahoo.com/forecast/USNC0643_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27976'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-76.3551,36.5057,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Elk Knob State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/elkn/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.332714&fLon=-81.695985&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 72 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 76 Low: 56<br />
+Mon - Partly Cloudy. High: 73 Low: 52<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Todd__NC/*http://weather.yahoo.com/forecast/USNC0696_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28684'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.695985,36.332714,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Eno River State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/enri/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.0642256649322&fLon=-78.9671516418457&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 69<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 65<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Durham__NC/*http://weather.yahoo.com/forecast/USNC0192_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27705'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.9671516418457,36.0642256649322,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Falls Lake State Recreation Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/fala/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.0235573733793&fLon=-78.717041015625&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 74 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 86 Low: 70<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 66<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Wake_Forest__NC/*http://weather.yahoo.com/forecast/USNC0724_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27587'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.717041015625,36.0235573733793,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Fort Fisher State Recreation Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/fofi/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=33.9814457097916&fLon=-77.9172706604004&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 81 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 85 Low: 75<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 74<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kure_Beach__NC/*http://weather.yahoo.com/forecast/USNC0365_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28449'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-77.9172706604004,33.9814457097916,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Fort Macon State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/foma/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.697237&fLon=-76.690514&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 79 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 83 Low: 76<br />
+Mon - Isolated Thunderstorms. High: 84 Low: 75<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Atlantic_Beach__NC/*http://weather.yahoo.com/forecast/USNC0025_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28512'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-76.690514,34.697237,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Goose Creek State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/gocr/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.4673810596041&fLon=-76.9097900390625&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 81 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 87 Low: 75<br />
+Mon - PM Thunderstorms. High: 88 Low: 74<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Washington__NC/*http://weather.yahoo.com/forecast/USNC0735_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27889'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-76.9097900390625,35.4673810596041,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Gorges State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/gorg/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.0974398093642&fLon=-82.8743362426758&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 75 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 74 Low: 58<br />
+Mon - Isolated Thunderstorms. High: 75 Low: 57<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Sapphire__NC/*http://weather.yahoo.com/forecast/USNC0607_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28774'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-82.8743362426758,35.0974398093642,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Hammocks Beach State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/habe/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.6332079113796&fLon=-77.1441078186035&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 81 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - AM Clouds/PM Sun. High: 83 Low: 77<br />
+Mon - Isolated Thunderstorms. High: 86 Low: 76<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Swansboro__NC/*http://weather.yahoo.com/forecast/USNC0680_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28584'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-77.1441078186035,34.6332079113796,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Hanging Rock State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/haro/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.3922694470964&fLon=-80.2764129638672&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 72 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 84 Low: 64<br />
+Mon - Mostly Sunny. High: 86 Low: 61<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Danbury__NC/*http://weather.yahoo.com/forecast/USNC0176_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27016'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-80.2764129638672,36.3922694470964,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Haw River State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/hari/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.2491878469391&fLon=-79.7545623779297&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/26.gif"/><br />
+<b>Current Conditions:</b><br />
+Cloudy, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 85 Low: 68<br />
+Mon - Mostly Sunny. High: 87 Low: 64<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Browns_Summit__NC/*http://weather.yahoo.com/forecast/USNC0079_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27214'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.7545623779297,36.2491878469391,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Jockey's Ridge State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/jori/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.960500862781&fLon=-75.6343460083008&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 78 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Cloudy. High: 84 Low: 76<br />
+Mon - PM Thunderstorms. High: 86 Low: 74<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Nags_Head__NC/*http://weather.yahoo.com/forecast/USNC0479_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27959'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-75.6343460083008,35.960500862781,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Jones Lake State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/jone/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.6721821495184&fLon=-78.6130142211914&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 75 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 87 Low: 72<br />
+Mon - PM Thunderstorms. High: 90 Low: 69<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Elizabethtown__NC/*http://weather.yahoo.com/forecast/USNC0205_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28337'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.6130142211914,34.6721821495184,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Jordan Lake State Recreation Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/jord/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.7371771377966&fLon=-79.0267181396484&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 74 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 85 Low: 71<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 68<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Eagle_Rock__NC/*http://weather.yahoo.com/forecast/USNC0193_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27523'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.0267181396484,35.7371771377966,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Kerr Lake State Recreation Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/kela/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.4312272624799&fLon=-78.3682250976562&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 85 Low: 68<br />
+Mon - Partly Cloudy. High: 87 Low: 65<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Henderson__NC/*http://weather.yahoo.com/forecast/USNC0307_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27537'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.3682250976562,36.4312272624799,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Lake James State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/laja/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.7340419632154&fLon=-81.890459060669&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/20.gif"/><br />
+<b>Current Conditions:</b><br />
+Fog, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 87 Low: 66<br />
+Mon - PM Thunderstorms. High: 88 Low: 64<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Nebo__NC/*http://weather.yahoo.com/forecast/USNC0483_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28761'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.890459060669,35.7340419632154,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Lake Norman State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/lano/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.6570172916138&fLon=-80.9392833709717&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/26.gif"/><br />
+<b>Current Conditions:</b><br />
+Cloudy, 69 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Cloudy. High: 84 Low: 65<br />
+Mon - Isolated Thunderstorms. High: 87 Low: 61<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Troutman__NC/*http://weather.yahoo.com/forecast/USNC0702_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28166'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-80.9392833709717,35.6570172916138,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Lake Waccamaw State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/lawa/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.2651614245261&fLon=-78.4667587280274&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 75 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 87 Low: 73<br />
+Mon - PM Thunderstorms. High: 90 Low: 71<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Lake_Waccamaw__NC/*http://weather.yahoo.com/forecast/USNC0370_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28450'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.4667587280274,34.2651614245261,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Lumber River State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/luri/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.411583263902&fLon=-79.0239715576172&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 74 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 87 Low: 70<br />
+Mon - PM Thunderstorms. High: 91 Low: 68<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Orrum__NC/*http://weather.yahoo.com/forecast/USNC0508_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28369'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.0239715576172,34.411583263902,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Medoc Mountain State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/memo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.2560401695552&fLon=-77.8817367553711&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 74 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 84 Low: 69<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 66<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Hollister__NC/*http://weather.yahoo.com/forecast/USNC0324_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27844'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-77.8817367553711,36.2560401695552,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Merchants Millpond State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/memi/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.4308129204614&fLon=-76.6813087463379&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 77 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 72<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 69<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Gatesville__NC/*http://weather.yahoo.com/forecast/USNC0258_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27938'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-76.6813087463379,36.4308129204614,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Morrow Mountain State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/momo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.3613361053276&fLon=-80.0834655761719&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/26.gif"/><br />
+<b>Current Conditions:</b><br />
+Cloudy, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Mostly Sunny. High: 85 Low: 67<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 65<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Albemarle__NC/*http://weather.yahoo.com/forecast/USNC0005_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28001'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-80.0834655761719,35.3613361053276,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Mount Jefferson State Natural Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/moje/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.3976929375189&fLon=-81.4649534225464&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 64 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 78 Low: 60<br />
+Mon - Partly Cloudy. High: 78 Low: 57<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Jefferson__NC/*http://weather.yahoo.com/forecast/USNC0346_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28640'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.4649534225464,36.3976929375189,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Mount Mitchell State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/momi/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.7616620866649&fLon=-82.2686290740967&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 72 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 80 Low: 58<br />
+Mon - Isolated Thunderstorms. High: 80 Low: 55<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Burnsville__NC/*http://weather.yahoo.com/forecast/USNC0088_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28714'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-82.2686290740967,35.7616620866649,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>New River State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/neri/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.4134776313536&fLon=-81.388349533081&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 64 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 78 Low: 60<br />
+Mon - Partly Cloudy. High: 78 Low: 57<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Jefferson__NC/*http://weather.yahoo.com/forecast/USNC0346_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28640'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.388349533081,36.4134776313536,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Occoneechee Mountain State Natural Area</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/ocmo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.0612248409598&fLon=-79.116861820221&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 69<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 65<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Durham__NC/*http://weather.yahoo.com/forecast/USNC0192_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27705'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.116861820221,36.0612248409598,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Pettigrew State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/pett/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.7901777253673&fLon=-76.409740447998&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 79 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 85 Low: 73<br />
+Mon - PM Thunderstorms. High: 89 Low: 71<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Creswell__NC/*http://weather.yahoo.com/forecast/USNC0164_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27928'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-76.409740447998,35.7901777253673,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Pilot Mountain State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/pimo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.3390508217186&fLon=-80.4770851135254&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 72 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 87 Low: 66<br />
+Mon - Mostly Sunny. High: 87 Low: 62<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Pinnacle__NC/*http://weather.yahoo.com/forecast/USNC0536_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27043'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-80.4770851135254,36.3390508217186,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Raven Rock State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/raro/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.4626274158698&fLon=-78.9117050170898&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 71<br />
+Mon - PM Thunderstorms. High: 89 Low: 68<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Lillington__NC/*http://weather.yahoo.com/forecast/USNC0390_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27546'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.9117050170898,35.4626274158698,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Singletary Lake State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/sila/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=34.5843230246475&fLon=-78.4746551513672&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 75 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Sunny. High: 86 Low: 72<br />
+Mon - PM Thunderstorms. High: 89 Low: 71<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kelly__NC/*http://weather.yahoo.com/forecast/USNC0352_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28448'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.4746551513672,34.5843230246475,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>South Mountains State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/somo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.5943669031223&fLon=-81.6479873657226&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 66 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 84 Low: 63<br />
+Mon - Isolated Thunderstorms. High: 86 Low: 61<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Connellys_Springs__NC/*http://weather.yahoo.com/forecast/USNC0151_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28612'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.6479873657226,35.5943669031223,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Stone Mountain State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/stmo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=36.3884002290336&fLon=-81.0684585571289&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 64 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Isolated Thunderstorms. High: 80 Low: 60<br />
+Mon - Partly Cloudy. High: 80 Low: 56<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Roaring_Gap__NC/*http://weather.yahoo.com/forecast/USNC0574_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28668'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-81.0684585571289,36.3884002290336,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Weymouth Woods - Sandhills Nature Preserve</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/wewo/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.1479507199209&fLon=-79.3543338775635&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/29.gif"/><br />
+<b>Current Conditions:</b><br />
+Partly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 87 Low: 71<br />
+Mon - PM Thunderstorms. High: 89 Low: 67<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Southern_Pines__NC/*http://weather.yahoo.com/forecast/USNC0644_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=28387'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.3543338775635,35.1479507199209,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>William B. Umstead State Park</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.ncparks.gov/Visit/parks/wium/main.php">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.8492654712739&fLon=-78.7475967407226&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 72<br />
+Mon - Isolated Thunderstorms. High: 88 Low: 68<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Raleigh__NC/*http://weather.yahoo.com/forecast/USNC0558_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27612'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.7475967407226,35.8492654712739,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Swift Creek Bluffs</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.tlc-nc.org/lands/tlc/swift_creek_np.shtml">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat= 35.717643°&fLon=-78.753262&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 70<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 66<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Cary__NC/*http://weather.yahoo.com/forecast/USNC0107_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27518'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.753262, 35.717643°,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>White Pines Nature Preserve</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.tlc-nc.org/lands/tlc/white_pines_np_access.shtml">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.614483&fLon=-79.1577&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/33.gif"/><br />
+<b>Current Conditions:</b><br />
+Fair, 70 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 70<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 66<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Sanford__NC/*http://weather.yahoo.com/forecast/USNC0606_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27330'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-79.1577,35.614483,0</coordinates>
+            </Point>
+         </Placemark>
+         <Placemark>
+            <name>Hemlock Bluffs Nature Preserve</name>
+            <styleUrl>#hiking-icon</styleUrl>
+            <description><![CDATA[
+               <p>Visit the <a href="http://www.townofcary.org/depts/prdept/parks/hemlock.htm">park's web site</a>.
+               Show <a href="http://www.flickr.com/map/?&fLat=35.7229&fLon=-78.7832&zl=5">geotagged Flickr pictures</a>.</p>
+               
+<img src="http://l.yimg.com/a/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 73 F<BR />
+<BR /><b>Forecast:</b><BR />
+Sun - Partly Cloudy. High: 86 Low: 70<br />
+Mon - Isolated Thunderstorms. High: 89 Low: 66<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Cary__NC/*http://weather.yahoo.com/forecast/USNC0107_f.html">Full Forecast at Yahoo! Weather</a><BR/><BR/>
+(provided by <a href="http://www.weather.com" >The Weather Channel</a>)<br/>
+
+               <p><a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=27512'>Weather Underground Forecast</a>
+               <p><i><small>Scraped at 06:42 UTC on Sun, Aug 30 2009.</small></i></p>
+            ]]></description>
+            <Snippet></Snippet>
+            <Point>
+               <coordinates>-78.7832,35.7229,0</coordinates>
+            </Point>
+         </Placemark>
+      </Folder>
+   </Document>
+</kml>

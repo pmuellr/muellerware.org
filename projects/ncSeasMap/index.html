@@ -1,0 +1,52 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/ncSeasMap");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>ncSeasMap</h1>
+
+<p>The program linked to below creates a .kml file
+suitable for use with Google Earth or Google Maps, 
+which contains markers and data for NOAA sea / wave height forecasts
+for the coast of North Carolina.  The
+.kml file itself is updated every few hours, to keep the
+data current.</p>
+
+<p>The weather data is pulled from the NOAA; they provide lots and lots of data, 
+so much so that it can be hard to find what you need.  Sea/wave forecasts for
+the US are available by drilling down through the
+<a href="http://www.nws.noaa.gov/om/marine/zone/usamz.htm">Marine Forecasts</a>
+site.
+</p>
+
+<p><a href="ncSeasMap.kml">ncSeasMap.kml</a> - 
+the .kml file to use with Google Earth, or 
+<a href="http://maps.google.com/maps?q=http://muellerware.org/projects/ncSeasMap/ncSeasMap.kml">view
+the .kml file in Google Maps</a>.
+</p>
+
+<p><a href="ncSeasMap.rb">ncSeasMap.rb</a> -
+Ruby program to build the .kml file
+</p>
+
+<h2>Updates</h2>
+
+<p>2007/09/06 - version 0.2<br/> 
+<ul>
+<li>added weather from Yahoo!</li>
+<li>removed night forecasts</li>
+<li>added my boogie board as an icon</li>
+</ul>
+</p>
+
+<p>2007/09/05 - version 0.1<br/> 
+<ul>
+<li>initial release.</li>
+</ul>
+</p>
+
+<?php $page->writeFooter(); ?>

@@ -1,0 +1,31 @@
+<!-- generated from MwSS97SlideSet::cachingProblem on 3/5/97 at 3:56:21 PM by MwHtmlSlidesApp -->
+<html>
+<head>
+<title>The Caching Problem</title>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="browserBugs.html"><img src="hand_l.gif" alt="&lt;---" WIDTH="47" HEIGHT="35"></a></td>
+<td align="center"><h1>The Caching Problem</h1></td>
+<td align="right" valign="top"><a href="totallyBadBrowsers.html"><img src="hand_r.gif" alt="---&gt;" WIDTH="47" HEIGHT="35"></a><br>Page 13</td>
+</tr>
+</table>
+<hr>
+<font size="6">
+<ul>
+<li>Netscape 3.0 incorrectly caches HTTP POST requests.
+<li>Causes problems when redisplaying same page with different inputs/outputs.
+<li>Solved by either
+<ul>
+<li>Tell users to set <b>Verify Documents</b> to <b>Every Time</b>
+<li>Force unique data input on all forms via hidden input.
+<li>Use expires/pragma: no-cache HTTP headers
+<ul>
+<li>but this causes other problems ...
+</ul>
+<li>or maybe this behaviour is appropriate for your application ...
+</ul>
+</ul>
+</font>
+</body>
+</html>

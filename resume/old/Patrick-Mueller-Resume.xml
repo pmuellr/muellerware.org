@@ -1,0 +1,414 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/xsl" href="resume.xsl.xml" ?>
+
+<resume 
+	title = "Patrick Mueller Resume" 
+	css   = "Patrick-Mueller-Resume.css"
+	image = "glasses-down-115x115-gradient.jpg"
+	>
+
+	<personal-info>
+		<line>Apex, NC</line>
+		<email>pmuellr@muellerware.org</email>
+		<webpage>http://muellerware.org/</webpage>
+	</personal-info>
+
+	<sections>
+	
+	<!-- ================================================================== -->
+	<section title="Goals">	
+		Member of a small software development team engineering 
+		solutions to customer's problems with cutting edge technologies.  
+		Areas of interest: web-enabled applications, markup languages, scripting languages, 
+		embedded programming, tools for software developers, 
+        music / audio, all things math.
+	</section>
+	
+	<!-- ================================================================== -->
+	<section title="Positions">
+		<positions>
+
+			<position>
+				<date>2009 - present</date>
+				<company>IBM / Emerging Technologies</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>WebKit contributor</title>
+				<description>
+					<p>IBM's sole contributor to the WebKit project, to 
+					    get IBM's skin in the game for this important
+					    technology.  Currently focusing on improving the
+					    Web Inspector debugger.</p>
+				</description>
+			</position>
+			
+			<position>
+				<date>2008 - 2009</date>
+				<company>IBM / Rational</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>Member Rational CTO team</title>
+				<description>
+					<p>Various tasks for the CTO team including contributing
+					    to the design of the Jazz Foundation Services,
+					    consulting for Rational product development, 
+					    and early investigation on usage of cloud-based
+					    computing for Rational products.</p>
+				</description>
+			</position>
+			
+			<position>
+				<date>2006 - 2008</date>
+				<company>IBM / WebSphere</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>WebSphere Development - various</title>
+				<description>
+					<p>Various tasks relating to the Project Zero project,
+					    including coordinating IBM's involvement with the PHP community,
+					    developing REST-based modeling tools, and
+					    working on the Project Zero web-based IDE.</p>
+				</description>
+			</position>
+			
+			<position>
+				<date>2005 - 2006</date>
+				<company>IBM / Rational</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>Jazz: RESTy web services in Java </title>
+				<description>
+					<p>Developed the web services framework 
+					for IBM Rational's <a href="http://jazz.net">Jazz project</a>.</p>
+				</description>
+			</position>
+			
+			<position>
+				<date>2004 - 2005</date>
+				<company>IBM / OTI Labs</company>
+				<location>Raleigh, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>VMs and Scripting</title>
+				<description>
+					<p>Worked with a small team
+					investigating scripting languages and VMs.</p>
+					<p>Continued with the Open Source Java Guru / 
+					Apache Geronimo tracking work from before, to a lesser extent.</p>
+				</description>
+			</position>
+			
+			<position>
+				<date>2004</date>
+				<company>IBM / OTI Labs</company>
+				<location>Raleigh, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>Open Source Java Guru / Apache Geronimo tracking</title>
+				<description>
+					<p>Analysis work for IBM Director-ish folk who 
+					needed to keep abreast of Open Source Java technology.  
+					Lots of reading and playing with stuff.</p>
+					<p>Tracked the Apache Geronimo project quite closely, 
+					including doing a bit of development, though not contributing.</p>
+				</description>
+			</position>
+			
+			
+			<position>
+				<date>2002 - 2003</date>
+				<company>IBM / OTI Labs</company>	
+				<location>Raleigh, NC</location>
+				<level>Senior Technical Staff Member</level>
+				<title>WSDD Runtimes Architect / Embedded GUI Architect</title>
+				<description>
+					<p>Technical lead for the embedded GUI libraries for the WebSphere 
+					Device Developer (WSDD) runtimes, including MIDP, AWT, P3ML and BMG 
+					technologies.  Most of this work was done with a set of small teams in 
+					the former OTI Lab in Raleigh.  Worked on operating systems/libraries 
+					including PalmOS, WinCE/PocketPC, Qt, SymbianOS, and devices such as 
+					Palm devices from various manufacturers, HP/Compaq iPAQs, Nokia 
+					Communicator.  Also worked on deeply embedded systems using QNX and 
+					MontaVista Linux on development boards such as the Motorola MobileGT 
+					platform and Intel CerfCruiser.</p>
+					<p>Coordinated the releases of the runtime code in the WSDD product 
+					for versions 5.0, 5.0.1 and 5.5.</p>
+					<p>Designed/developed the audio interfaces for MIDP 2.0 for the initial 
+					releases of this functionality for the WSDD product.</p>
+					<p>Member of the J2ME JCP Review team that met weekly to discuss IBM's 
+					role in the Java Community Process for the J2ME related JSRs.</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>2001 - 2002</date>
+				<company>OTI</company>
+				<location>Raleigh, NC</location>
+				<level>Lab Director</level>
+				<title>Embedded GUI Guru / Lab Director</title>
+				<description>
+					<p>
+					Started these new roles in late 2001.  Additional responsibilities, 
+					over and above TL role, were assisting in the management of the 
+					lab's employees, as well as helping to set the technical direction 
+					for the lab.  Personnel work included doing employee appraisals, 
+					counseling, mentoring, hiring, and firing.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1998 - 2002</date>
+				<company>OTI</company>
+				<location>Raleigh, NC</location>
+				<level>TL - Team/Tech Lead</level>
+				<title>Embedded Java</title>
+				<description>
+					<p>
+					Lead developer of the jxeLink project, an embedded java linker.
+                    Other contributions included serial port 
+					runtime libraries, the Degas/EGFX GUI package, the BMG GUI package, 
+					bbAWT (AWT implemented on SWT), and doing project management for 
+					two releases of the VAME product.  Co-wrote the initial SWT port to QNX/Photon.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1997 - 1998</date>
+				<company>OTI</company>
+				<location>Raleigh, NC</location>
+				<level>Senior Software Developer</level>
+				<title>Embedded Smalltalk/Java</title>
+				<description>
+					<p>
+					Went on assignment to Object Technology International 
+					(OTI).  Worked with embedded 
+					Smalltalk and then embedded Java, trying to understand the 
+					technologies and how to exploit them.  Designed / developed 
+					concept car with Delco and Sun for Comdex 97 
+					in Las Vegas.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1995 - 1997</date>
+				<company>IBM</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Senior Software Developer</level>
+				<title>VisualAge Smalltalk / Java Features</title>
+				<description>
+					<p>
+					Lead developer of the  
+					"Web Connection" feature of VisualAge Smalltalk.  Before moving 
+					on, developed the the initial prototype of the VisualAge Java version of 
+					this project using the nascent Servlet technology.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1993 - 1995</date>
+				<company>IBM</company>
+				<location>Research Triangle Park, NC</location>
+				<level>Advisory Software Developer</level>
+				<title>IBM VisualAge Distributed Smalltalk</title>
+				<description>
+					<p>
+					Designed / developed the communications layer (TCP/IP) and 
+					GSS-API security API usage for the Distributed Smalltalk feature of VisualAge Smalltalk. 
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1992 - 1993</date>
+				<company>IBM</company>
+				<location>Cary, NC</location>
+				<level>Staff Software Developer</level>
+				<title>CORBA implementation on top of DCE</title>
+				<description>
+					<p>
+					Development team member of an OMG CORBA implementation 
+					on top of DCE for OS/2 and AIX.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1991 - 1992</date>
+				<company>IBM</company>
+				<location>Cary, NC</location>
+				<level>Software Developer</level>
+				<title>Hickory Editor</title>
+				<description>
+					<p>
+					Designed / developed the REXX macro interface into the Hickory editor 
+					control, which was a follow-on to the OS/2 Multi-Line Edit Control. 
+                    Designed / developed the text model for the follow-on to the Hickory editor. 
+                    
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1989 - 1991</date>
+				<company>IBM</company>
+				<location>Bethesda, MD</location>
+				<level>Software Developer</level>
+				<title>PLNLP Dictionary Development</title>
+				<description>
+					<p>
+                    Designed / developed dictionary building tools and dictionary
+                    access APIs for a grammar checking editor for both 
+                    VM/CMS and OS/2.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1988 - 1989</date>
+				<company>IBM</company>
+				<location>Bethesda, MD</location>
+				<level>Software Developer</level>
+				<title>Twain Library Development</title>
+				<description>
+					<p>
+					Designed / developed text-processing algorithms 
+					for use in the natural language processing Twain library
+                    for OS/2.
+					</p>
+				</description>
+			</position>
+	
+			<position>
+				<date>1985 - 1988</date>
+				<company>IBM</company>
+				<location>Lexington, KY</location>
+				<level>Software Developer</level>
+				<title>Master Product Inventory</title>
+				<description>
+					<p>
+                    Designed / developed programs for the internal IBM product
+                    MPI.  Batch programming for MVS, interactive CICS programs
+                    for 3270, and REXX programming tools as development aids 
+                    for VM/CMS and MS-DOS.
+					</p>
+				</description>
+			</position>
+		
+		</positions>
+
+	</section>
+
+	<!-- ================================================================== -->
+	<section title="Education">
+		<educations>
+		
+			<education>
+				<date>1981 - 1985</date>
+				<school>Purdue University</school>	
+				<location>West Lafayette, IN</location>
+				<degree>
+					<p>B.S. Computer Science, Systems option</p>
+					<p>B.S. Mathematics, Computer option</p>
+				</degree>
+			</education>
+		
+		</educations>
+	</section>
+
+	<!-- ================================================================== -->
+<!--
+	<section title="Associations">
+		<associations>
+			<p>Card-carrying Associate Member of the Free Software Foundation</p>
+			<p>Member, IBM NC Technical Experts Council, an IBM Academy Affiliate organization</p>
+		</associations>
+	</section>
+-->
+	
+	<!-- ================================================================== -->
+	<section title="Standards Work">
+		<standardswork>
+			<p>Object Management Group, 
+            <a href="http://muellerware.org/papers/omg-smalltalk-99-07-65.pdf">OMG IDL Mappings to Smalltalk</a>, 1995</p>
+			<p>IBM J2ME JCP Review Board, 2001-2004</p>
+			<p>Expert Group Member, 
+			<a href="http://www.jcp.org/en/jsr/detail?id=241">JSR 241: The Groovy Programming Language</a>, 
+			2004</p>
+		</standardswork>
+	</section>
+	
+
+	<!-- ================================================================== -->
+	<section title="Papers">
+		<papers>
+			Forward to Book: "OS/2 2.1 REXX Handbook: Basics, Applications, and Tips" By Hallett German, 1993
+			<p>IBM Technical report, "cPost - Typesetting C Language Files With PostScript", 1994</p>
+			<p>IBM Technical report, "The Design and Implementation of REXX Object Extension - ROX", 1994</p>
+			<p>IBM Technical report, "REXX Source Level Debugging with System Exits", 1994</p>
+			<p>REXX Language Symposium, "The Design and Implementation of REXX Object Extension - ROX", 1994</p>
+			<p>OOPSLA 1995 Workshop on "Objects, Scripts and the Web": 
+            "<a href="http://muellerware.org/papers/oopsla-1995/">Smalltalk Scripts for the Web</a>"</p>
+			<p>Smalltalk Report, 
+            "<a href="http://muellerware.org/papers/GopherArticle.pdf">Building a Gopher from Sockets and Widgets</a>", 1995.  
+            Republished in "<a href="http://www.amazon.com/Wisdom-Gurus-Sigs-Developers-Guide/dp/0134998499">Wisdom of the Gurus: A Sigs Developer's Guide</a>", 
+            ISBN: 0134998499</p>
+			<p>OOPSLA 1996 Workshop on "Toward the integration of WWW and Distributed Object Technology": 
+            "<a href="http://muellerware.org/papers/oopsla-1996/">Use of HTTP as a Transport for Distributed Object Systems</a>"</p>
+			<p>1996 Smalltalk Solutions Panel on Smalltalk and the Web: 
+            "<a href="http://muellerware.org/papers/ss-1996/">The Future of Application Development for the Web with Smalltalk</a>"</p>
+			<p>1997 Smalltalk Solutions Presentation: 
+            "<a href="http://muellerware.org/papers/ss-1997/">Interfacing Smalltalk Systems to the Web</a>"</p>
+			<p>1998 Smalltalk Solutions Presentation: 
+            "<a href="http://muellerware.org/papers/ss-1998/">Smalltalk in the Network Vehicle</a>"</p>
+			<p>OOPSLA 2003 Workshop on "Pervasive Computing": 
+            "<a href="http://muellerware.org/papers/oopsla-2003/OOPSLA-2003-Perv-Mueller.pdf">Java Community Process and Embedded Java User Interface</a>"</p>
+		</papers>
+	</section>
+
+	<!-- ================================================================== -->
+    <!--
+	<section title="Patents">
+		<patents>
+		
+			<patent 
+				number = "6446254"
+				title  = "Packaging memory image files"
+				link   = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=6446254.WKU.&amp;OS=PN/6446254&amp;RS=PN/6446254"
+			/>
+			
+			<patent 
+				number = "6584612"
+				title  = "Transparent loading of resources from read-only memory for an application program"
+				link   = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=6584612.WKU.&amp;OS=PN/6584612&amp;RS=PN/6584612"
+			/>
+			
+			<patent 
+				number = "6658647"
+				title  = "Access to resource files stored in ROM"
+				link   = "http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&amp;Sect2=HITOFF&amp;d=PALL&amp;p=1&amp;u=/netahtml/srchnum.htm&amp;r=1&amp;f=G&amp;l=50&amp;s1=6658647.WKU.&amp;OS=PN/6658647&amp;RS=PN/6658647"
+			/>
+			
+		</patents>
+		<p>1 Pending, 3 Published, 6 Closed Disclosures</p>
+	</section>
+    -->
+
+	<!-- ================================================================== -->
+ 	<section title="Personal Interests">
+		Bicycling, hiking, car camping, family fun, guitar.
+		<p>Extracurricular hacking: see various projects at my site
+		<a href="http://muellerware.org/">http://muellerware.org</a>,
+		at <a href="http://github.com/pmuellr">github</a>, and my
+		personal <a href="http://muellerware.org/hg/">mercurial repository</a>.</p>
+	</section>
+	
+	<!-- ================================================================== -->
+ 	<section>
+		Last updated, November 2009.
+	</section>
+
+	</sections>
+	
+</resume>

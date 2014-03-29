@@ -1,0 +1,49 @@
+BODY {
+   background:                 #EEF6F2 url(images/unob6.gif);
+}
+
+A {
+   text-decoration: none;
+   color:           blue;
+}
+
+A:hover {
+   text-decoration: underline;
+}
+
+A:link {
+}
+
+A:visited {
+}
+
+A:active {
+}
+
+H1 {
+   font-family:  "Comic Sans Ms,Gill Sans";
+   font-style:   italic;
+   font-weight:  bold;
+   color:        black;
+   background:   #E0E0E0;
+   border-style: outset;
+}
+
+H2 {
+   font-family:  "Comic Sans Ms,Gill Sans";
+   font-style:   italic;
+   font-weight:  bold;
+   color:        black;
+   background:   #E0E0E0;
+   border-style: outset;
+}
+
+H3 {
+   font-family:  "Comic Sans Ms,Gill Sans";
+   font-style:   italic;
+   font-weight:  bold;
+   color:        black;
+   background:   #E0E0E0;
+   border-style: outset;
+}
+

@@ -1,0 +1,298 @@
+<html>
+
+<!-- ====================================================== -->
+<head>
+<title id="head_title">A Survey of Data Display in JavaScript Debuggers</title>
+<link rel="stylesheet" href="paper.css" type="text/css">
+<link rel="shortcut icon"   href="../../images/logo-32x32.gif">
+<link rel="icon"            href="../../images/logo-32x32.gif">
+
+<script src="test.js" type="text/javascript"></script>
+</head>
+
+<!-- ====================================================== -->
+<body>
+
+<h1 id="body_title">A Survey of Data Display in JavaScript Debuggers</h1>
+
+<!-- ====================================================== -->
+
+<h3>History</h3>
+<ul>
+<li>2009-07-02 - <a href="http://muellerware.org">Patrick Mueller</a> - initial write-up</li>
+</ul>
+
+<!-- ====================================================== -->
+<h2>Introduction</h2>
+
+<p>I thought it would be interesting to compare the methods used to display
+data in JavaScript debuggers. I surveyed:
+<ul> 
+<li><a href="http://getfirebug.com/">Firebug</a> 1.4.0b4 on FireFox 3.5 
+<li><a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/UsingtheWebInspector/UsingtheWebInspector.html">Web Inspector</a> in WebKit nightly r45193
+<li><a href="http://www.opera.com/dragonfly/">Dragonfly</a> in Opera 10.00.6477
+</ul>
+
+<p>I suppose I should test Internet Explorer as well, but I don't think I have the
+requisite tooling installed to use the debugger (if someone wants to contact
+me offline about how to set up IE for debugging without having a for-pay
+version of Visual Studio installed, please do). 
+
+<p>I also included Eclipse's Java debugger in the survey.
+
+<p>For the test, I constructed an HTML
+file with some JavaScript code that created a set of data, and then compared
+how this data was displayed in the various debuggers.
+    
+<!-- ====================================================== -->
+<h2>The Data</h2>
+
+<p>The data used in the tests was constructed as local variables within a function
+which was programmatically invoked.  Note, this paper includes a link (below)
+to run the test.
+    
+<p>First a set of basic objects is created:
+    
+<pre>
+    var anInteger        = 42;
+    var aFloat           = 6.66;
+    var aBoolean         = true;
+    var aString          = "Lorem ipsum dolor sit amet,..."; // 180 chars total
+    var aNull            = null;
+    var anUndefined      = undefined;
+    var aNaN             = 1/undefined;
+    var anObject         = {x: 5, y: 25};
+    var aPrintableObject = {x: 5, y: 25};
+    var aMap             = {};
+    var anArray          = [];
+    var anArguments      = arguments;
+    var anElement        = document.getElementById("body_title")    
+</pre>
+
+<p>Then, the <code>aMap</code> object has a number of properties added; a
+property with the name of each of the variables above is added, with the value
+being the variable's value. Then, the <code>anArray</code> object has a number
+of elements added; each of the variable's value above is added to the list.
+The <code>aPrintableObject</code> object is augmented with a 
+<code>toString()</code> method which displays the values of it's properties.
+
+<p>For Java, a method similar to this function is created as a <code>static
+main</code> for a class.
+    
+<p>Note that initial attempts at creating recursive versions of
+<code>anArray</code> and <code>aMap</code> by adding those objects to
+themselves resulted in "odd behavior" in some browsers and even the Eclipse
+debugger.  This should be further investigated, but for the purposes of this
+exercise, the immediately recursive structures were not used.
+
+<p>To run the test yourself, bring up the JavaScript debugger for your
+browser, and then
+<a href="javascript:run()">click here</a>.  Because there is
+a <code>debugger</code> statement in the <code>run()</code> function which is 
+invoked, you typically won't
+need to set a breakpoint to get to the point where all the variables are set,
+however, you will likely need to display and/or enable the debugger before 
+traversing the link.
+    
+<p>JavaScript source: <a href="test.js">test.js</a> 
+    
+<p>Java source: <a href="Test.java">Test.java</a>
+
+<!-- ====================================================== -->
+<h2>Initial unexpanded variable list</h2>
+
+<p>This is the list of variables that the debugger initially displays when
+it hits the breakpoint.
+
+<p>Notes:
+    
+<ul>
+       
+<li><p>Firebug's list is unusually larger than the others, looks like it could
+set the line height a bit smaller.  
+
+<li><p>This beta release of Firebug is currently printing the object representation
+as <b>undefined</b>.  In previous releases, instead of seeing <b>undefined</b>,
+you'd see the result of the object's <code>toString()</code> method, or 
+the name of the object's constructor.  Presumably this is a bug in the beta
+release which will get fixed eventually.
+
+<li><p>In addition to the <code>toString()</code> representation, or class
+name, Firebug also displays additional information beside a variable.  
+For instance, the <code>this</code> variable shows the base name of the
+url the window is diplaying.  For the <code>aMap</code> variable, it shows
+some of they key/value pairs in the map.
+
+<li><p>Although it's not shown here, because it's not the default behavior,
+Eclipse can be configured to show the <code>toString()</code> representation
+of a value instead of the class name and (useless) id value.
+    
+<li><p>All of the debuggers use trees to display nested structures,
+using "disclosure triangle" or "squared plus" glyphs.  Firebug and Eclipse
+additionally separate the variables and values, keeping the values left 
+aligned to themselves.  We'll see this causes problems later when the nested
+structures expand and the values need to be shifted to the right.
+
+<li><p>Dragonfly's "squared plus" glyphs for nested structures align with
+non-nested property names.  Messy.
+
+<li><p>Firebug and Dragonfly make use of color and font for different
+values.  Firebug also displays some special values in a "reverse video"
+style - <code>null</code> and <code>undefined</code>, but not <code>NaN</code>.
+
+<li><p>Dragonfly makes no attempt at displaying at least the class name
+for an object, unlike the other debuggers, it just always displays "object".
+
+<li><p>Web Inspector and Eclipse only display a small amount of the 
+string.  Dragonfly displays a bit more, but it spills into a second line,
+messily.  Firebug displays the entire line.  Wonder how long of a string
+they'll display?
+    
+<li><p>Firebug shows the <code>anArguments</code> variable as an array,
+but no structure, and Web Inspector and Dragonfly show it only as an object.
+Having both would be nice, in terms of being able to view it as an array,
+but also see the properties if expanded.
+
+</ul>
+
+<p>Though it's not displayed, expanding the <code>aMap</code> variable
+results in a sublist for each of the debuggers which is similar to this
+list itself.  For Eclipse, well, let's not go there.
+
+<div class="figure">Firebug       <p><img src="fb-01.png"></div>
+<div class="figure">Web Inspector <p><img src="wi-01.png"></div>
+<div class="figure">Dragonfly     <p><img src="df-01.png"></div>
+<div class="figure">Eclipse       <p><img src="ej-01.png"></div>
+    
+<!-- ====================================================== -->
+<h2>aPrintableObject expanded</h2>
+
+<p>In this set of images, we see the <code>aPrintableObject</code>
+expanded.
+
+<ul>
+    
+<li><p>Firebug does not display the <code>toString()</code> method,
+Web Inspector only shows the first line of the function (pretty useless), and 
+Dragonfly shows it as an object.
+
+<li><p>Worth nothing again that Firebug would typically display the
+result of the <code>toString</code> invocation beside the 
+<code>aPrintableObject</code> variable, but doesn't for this beta release,
+incorrectly showing <b>undefined</b> instead.
+
+<li><p>We show the additional area below the variable list for
+Eclipse in this image.  In this case, we see the <code>toString()</code>
+representation.  And again, Eclipse can be configured to show this in the
+variable display, but it's not the default.
+
+</ul>
+
+<div class="figure">Firebug       <p><img src="fb-02.png"></div>
+<div class="figure">Web Inspector <p><img src="wi-02.png"></div>
+<div class="figure">Dragonfly     <p><img src="df-02.png"></div>
+<div class="figure">Eclipse       <p><img src="ej-02.png"></div>
+    
+<!-- ====================================================== -->
+<h2>anArray expanded</h2>
+
+<p>In this set of images, we see the <code>anArray</code>
+variable expanded.  No big surprises based on anything we've so far.
+Except that Web Inspector appears to be sorting the key names
+alphabetically, which is confusing.
+
+<div class="figure">Firebug       <p><img src="fb-03.png"></div>
+<div class="figure">Web Inspector <p><img src="wi-03.png"></div>
+<div class="figure">Dragonfly     <p><img src="df-03.png"></div>
+<div class="figure">Eclipse       <p><img src="ej-03.png"></div>
+    
+<!-- ====================================================== -->
+<h2>anElement expanded</h2>
+
+<p>The main point in showing this set of images is to demonstrate how
+generally useless it is.  Rather than display a large number of 
+nested value whose values, it might be nice to optionally filter this list 
+somehow.
+
+<ul>
+<li><p>The Firebug display has grown significantly wider, presumably to 
+accommodate longer property names after expansion.  This is not a good thing.
+</ul>
+
+<div class="figure">Firebug       <p><img src="fb-04.png"></div>
+<div class="figure">Web Inspector <p><img src="wi-04.png"></div>
+<div class="figure">Dragonfly     <p><img src="df-04.png"></div>
+<div class="figure">Eclipse       <p><img src="ej-04.png"></div>
+    
+<!-- ====================================================== -->
+<h2>REPL</h2>
+
+<p>Each of the JavaScript debuggers supports a 
+<a href="http://en.wikipedia.org/wiki/Read-eval-print_loop">REPL</a>
+in some form.  For this set of images, I sequentially evaluated
+the variable names <code>aMap</code>, <code>anArray</code>, and
+<code>anElement</code>.
+
+<p>The results are pretty much what we would expect given what we've 
+seen so far, with some surprises.
+
+<ul>
+    
+<li><p>For Firebug and Web Inspector, when <code>anElement</code> is evaluated by itself, it renders
+an HTML source rendition of the element.  For Web Inspector, the HTML
+source rendition is also displayed for the element within the <code>anArray</code>
+variable.
+
+<li><p>Web Inspector also provides disclosure triangles for nested objects
+within the console display.  The second Web Inspector image shows
+the result of clicking on a disclosure triangle; the results are 
+displayed inline within the console.  Nifty!
+    
+</ul>
+
+<div class="figure">Firebug                            <p><img src="fb-05.png"></div>
+<div class="figure">Web Inspector                      <p><img src="wi-05.png"></div>
+<div class="figure">Web Inspector with expanded Object <p><img src="wi-06.png"></div>
+<div class="figure">Dragonfly                          <p><img src="df-05.png"></div>
+    
+<!-- ====================================================== -->
+<h2>Summary / Thoughts</h2>
+
+<p>As noted, Firebug has a bug or two to work out, but is considered the gold
+standard of JavaScript debuggers.  Primarily because it's the only debugger 
+that developers even realize exist today.  But it also currently wins 
+on features alone, including:
+
+<ul>
+<li>displaying <code>toString()</code> representations where appropriate
+<li>use of color to distinguish data types
+</ul>
+
+<p>Dragonfly is the newest of the debuggers, and has some room for growth.
+Once some of the styling issues are resolved, it really just needs to add
+<code>toString()</code> representations where appropriate.
+
+<p>Web Inspector could make use of styling data types ala Firebug and Dragonfly,
+adding <code>toString()</code> representations where appropriate, and it will
+then be pretty much up-to-snuff.
+
+<p>General issues concerning all the debuggers is dealing with objects
+which you'd like to see different representations.  Web Inspector and
+Firebug both display nice renderings of HTML elements, but only in the 
+console.  And frankly, this is too browser specific.  Need to think wider,
+as more folks start to look at using JavaScript on the server.  How can
+we accommodate application- or user- specific renderings for objects to
+make debugging that much nicer of an environment.
+
+<p>One feature I didn't show was Eclipse's 
+<a href="http://blog.jcake.com/2008/03/05/eclipse-debugger-part-i-detailed-formatters/">Detail Formatters</a>.
+A Detail Formatter provides a runtime override of the <code>toString()</code> 
+method for a particular class.  These are stored persistently in your 
+workspace, so you don't need to edit them every time.
+
+<p>This feature is nice, as it allows you to extend runtime behavior just 
+while debugging - no code was harmed or edited while debugging.  Such a 
+feature would be nice to provide for JavaScript as well.  
+
+</body>
+</html>

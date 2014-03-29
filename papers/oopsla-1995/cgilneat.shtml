@@ -1,0 +1,17 @@
+<!-- title: CGI-Link Advantages -->
+
+<font size=40>
+<ul>
+<li>Allows CGI-BIN to remain running<p>
+<ul>
+<li>Avoids costly application or database startup/termination<p>
+<li>Can implement 'light' persistance easily by maintaining state
+in memory<p>
+<li>Can service multiple requests with same program by using threads
+(or in Smalltalk, using Processes).<p>
+</ul>
+
+<li>IPC between CGI-Link client and server allows HTTPD server and
+CGI programs to reside on different hosts
+</ul>
+</font>

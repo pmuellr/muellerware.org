@@ -1,0 +1,13 @@
+<!-- title: Smalltalk Applications over the Web -->
+
+<font size=30>
+<ul>
+<li>Most Smalltalk implementations provide a way to store classes
+in a portable, distributable format (worse case is to store the
+source code).<p>
+<li>VisualAge provides a facility to dynamically load compiled classes to a
+running image.<p>
+<li>Provides the same basic capability as Java - ship the entire
+application (applet) over the network.
+</ul>
+</font>

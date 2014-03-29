@@ -1,0 +1,14 @@
+<!-- title: Coming Soon -->
+
+<font size=40>
+<ul>
+<li>CGI-Link<p>
+<ul>
+<li>Allows CGI requests to be serviced by programs which are
+already running<p>
+<li>Works with existing CGI interface and HTTP servers<p>
+<li>Can be used by other (non-Smalltalk) programs that want
+to leave CGI programs running<p>
+</ul>
+</ul>
+</font>

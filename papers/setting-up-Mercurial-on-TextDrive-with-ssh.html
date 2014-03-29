@@ -1,0 +1,241 @@
+<p>The completely fleshed out version of my my blog post
+<a href="http://www-03.ibm.com/developerworks/blogs/page/pmuellr?entry=setting_up_mercurial_on_textdrive">setting up mercurial on textdrive with ssh</a>.
+</p>
+
+<hr/>
+
+<div style='width:180; float:right; text-align:right; font-size:xx-small; border-width:1px; border-color:#444444; border-style:solid; padding:3px; margin-bottom:30px; margin-left:30px;'>
+<img width='180' height='240' alt='Mercury, the Winged Messenger' src='http://farm1.static.flickr.com/181/397556249_1a4e562885_m.jpg'>
+<br/>
+<a href='http://flickr.com/photos/matsuyuki/397556249/'>Mercury, the Winged Messenger</a>
+<br/>&copy;
+<a href='http://flickr.com/people/matsuyuki'>Toshiyuki IMAI</a>
+<br/><a href='http://creativecommons.org/licenses/by-sa/2.0/'><img src='http://i.creativecommons.org/l/by-sa/2.0/80x15.png' title='used under a Creative Commons Attribution-ShareAlike License' width='80' height='15' border='0'/></a>
+</div>
+
+<p>I've been thinking about setting up a simpler, change-set based source code
+repository for my little personal projects for a while now.  
+For the past six months or so I've been using SVN on my TextDrive account
+but ... looking for something different.
+</p>
+
+<p>I ran across
+<a href="http://www.selenic.com/mercurial/wiki/">Mercurial</a>
+(<tt>hg</tt>) at 
+<a href="http://blogs.sun.com/mr/entry/openjdk_scm">least</a> 
+<a href="http://weblogs.mozillazine.org/preed/2007/04/version_control_system_shootou_1.html">twice</a>
+now recently, so that speaks to me "check it out".  Getting it set up on my local box 
+was straightforward, and of course the next step is getting it set up on your server.
+I host at TextDrive.  And Bill de h&Oacute;ra recently 
+<a href="http://www.dehora.net/journal/2007/04/mercurial_part_ii.html">posted some instructions</a>
+on how to do just that.  Kind of.
+</p>
+
+<p>The problem with Bill's instructions are that you're setting it up to run using 
+Basic Auth but using http instead of https.  Bill points out himself, that
+<b>"This isn't secure"</b>.  Using https with TextDrive is possible, but at
+times confusing.  Luckily, there is a fairly straight-forward way to get to
+a secure solution.
+</p>
+
+<p>The basic idea is to use the <tt>ssh</tt> instead of <tt>http</tt> for when accessing your hg
+repositories programmatically.  Instructions on using <tt>ssh</tt> with <tt>hg</tt> are available in the
+<a href="http://www.selenic.com/mercurial/hg.1.html">hg(1) man page</a>.
+</p>
+
+<p>In a nutshell, follow Bill's instructions, with a few slight changes, and 
+it just works, assuming you have 
+<a href="http://kimmo.suominen.com/docs/ssh/">ssh set up in the first place</a>.</p>
+
+<p>If this doesn't work, ping me; I perhaps forgot a step.</p>
+
+<p>I also created a <tt>~.hgrc</tt> file on my client box, with the following
+contents.  The ssh setting causes ssh to use compression when transfering the data/files.</p>
+
+<pre>
+    [ui]
+    username = your name &lt;yourname@yourmail&gt;
+    ssh = ssh -C
+</pre>
+
+<p>The only thing I don't like about the resulting set up is having to
+update the <tt>hgweb.config</tt> file on the server whenever you create
+a new repository.  Though I suppose it's nice that you can selectively
+make repositories easily publicly accessible or not this way.  I 
+don't think I'd rely on this trick to hide something.</p>
+
+<p>Here are Bill's instructions, with changes made.  
+Stuff I've deleted is in <span style="background-color:FFAFAF"><strike>red and striked out</strike></span>,
+stuff I've added is in <span style="background-color:AFFFAF">green</span>,
+stuff I've changed is in <span style="background-color:AFAFFF">blue</font>.
+</p>
+
+<div style="background-color:#CFCFCF; border-width:1; padding:5; border-style:solid;">
+<p>Install mercurial in your home folder:</p>
+
+<pre>
+    #mkdir ~/local; mkdir ~/local/mercurial
+    # cd ~local
+    # wget http://www.selenic.com/mercurial/release/mercurial-0.9.3.tar.gz 
+    # tar xvzf mercurial-0.9.3.tar.gz 
+    # cd  ~/local/mercurial-0.9.3
+    # python setup.py install --home=~/local/mercurial
+    # nano ~/.profile
+    PYTHONPATH=${HOME}/local/mercurial/lib/python; <span style="background-color:AFFFAF">export PYTHONPATH</span>
+    PATH=${HOME}/local/mercurial/bin:$PATH; <span style="background-color:AFFFAF">export PATH</span>
+    #export PYTHONPATH=${HOME}/local/mercurial/lib/python
+    #export PATH=${HOME}/local/mercurial/bin:$PATH
+</pre>
+
+<p><span style="background-color:AFFFAF">
+To get <tt>hg</tt> running with <tt>ssh</tt>, you'll also need to make sure
+your shell initialization for <tt>ssh</tt> sessions runs these commands as well.  I just copied
+the <tt>PYTHONPATH</tt> and <tt>PATH</tt> settings to my <tt>.bashrc</tt> file
+as well.  Not very DRY; ah well.  I've not spent a whole lot of time setting up
+my shell account <i>up there</i>.</span>
+</p>
+
+<p>Create a base configuration file:</p>
+
+<pre>
+    # touch ~/.hgrc
+    # nano ~/.hgrc
+    [ui]
+    username = your name <span style="background-color:AFFFAF">&lt;yourname@yourmail&gt;</span>
+    </pre>
+
+<p>Check your setup:</p>
+
+<pre>
+    # hg debuginstall
+    Checking encoding (US-ASCII)...
+    Checking extensions...
+    Checking templates...
+    Checking patch...
+    Checking merge helper...
+    Checking commit editor...
+    Checking username...
+    No problems detected
+</pre>
+
+<p>Make a public repository area, and serve it:</p>
+
+<pre>
+# mkdir ~/web/public/hg
+# mkdir ~/web/public/hg/repos
+<span style="background-color:AFFFAF"># ln -s ~/web/public/hg/ ~/hg</span>
+</pre>
+
+<p><span style="background-color:AFFFAF">The symlink was added because
+using ssh means having to specify the complete path to your repository
+relative to your home directory.  Which would mean that <tt>web/public</tt>
+would show up in your <tt>ssh</tt> urls.  Ick.  Even still, you'll
+see that the <tt>repos</tt> path segment shows up in the <tt>ssh</tt>
+urls, but not in the http ones.  Deal.</span>
+</p>
+
+<p>~/web/public/hg/repos is where you will create your public mercurial repositories. 
+<span style="background-color:FFAFAF"><strike>Note that symlinking into here doesn't work, they have to be housed.</strike></span> 
+To serve it out</p>
+
+<pre>
+    # cp  ~/local/mercurial-0.9.3/hgwebdir.cgi  ~/web/public/hg
+    # chmod 755 ~/web/public/hg/hgwebdir.cgi
+    # nano ~/web/public/hg/hgwebdir.cgi
+    import sys
+    sys.path.insert(0, "/users/home/$youraccountname/local/mercurial/lib/python")
+</pre>
+
+<p>Now tell the cgi where the repos are (for example suppose we had created a repo called 'weblog'):</p>
+
+<pre>
+    # nano ~/web/public/hg/hgweb.config 
+    [paths]
+    weblog = repos/weblog
+</pre>
+
+<p><span style="background-color:FFAFAF"><strike>Create a user account for pushing changes:</strike></span></p>
+
+<pre>
+<span style="background-color:FFAFAF"><strike>    # mkdir etc
+    # htpasswd -c ~/etc/hgpasswd $mercurialname</strike></span>
+</pre>
+
+<p>Configure apache access to the repositories:</p>
+
+<pre>
+    # nano ~/web/public/hg/.htaccess 
+
+    Options +ExecCGI
+    RewriteEngine On
+    RewriteBase /hg
+    RewriteRule ^$ hgwebdir.cgi  [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule (.*) hgwebdir.cgi/$1  [QSA,L]
+<span style="background-color:FFAFAF"><strike>    AuthUserFile /users/home/$youraccountname/etc/hgpasswd
+    AuthGroupFile /dev/null
+    AuthName "My Repository"
+    AuthType Basic
+    &lt;Limit POST PUT&gt;
+    Require valid-user
+    &lt;/Limit&gt;</strike></span>
+</pre>
+
+<p>the above will allow anyone to browse</p>
+
+<pre>
+    http://$yourdomain/hg
+</pre>
+
+and see all the repositories under:
+
+<pre>
+    ~/web/public/hg/repos
+</pre>
+
+<p>The Auth* directives mean commits are restricted to authenticated users, but anyone can browse (if you want to restrict browsing add GET to the methods in &lt;Limit&gt;. The rewrite rules are <a href="http://www.selenic.com/mercurial/wiki/index.cgi/PublishingRepositories">explained in the mercurial wiki</a>. </p>
+
+<p><span style="background-color:FFAFAF"><strike>For each repository under repos you'll need to add the following to its .hg/hgrc file:</strike></span></p>
+
+<pre>
+<span style="background-color:FFAFAF"><strike>    [web]
+    push_ssl = false
+    allow_push = $mercurialname</strike></span>
+</pre> 
+
+<p><span style="background-color:FFAFAF"><strike>where "$mercurialname " matches what you added to hgpasswd earlier. 
+<b>This isn't secure</b> - mercurial by default does not allow push over http, 
+with good reason, you have to disable via push_ssl. If you can get a https setup 
+running in TextDrive, you should do so (and tell me what you did ;).</strike></span>
+
+<p>To pull a repository down via HTTP use "hg clone":</p>
+
+<pre>
+    # hg clone <span style="background-color:AFAFFF">ssh</span>://$yourdomain/hg/<span style="background-color:AFFFAF">repos/</span>weblog weblog
+
+</pre>
+
+<p>To commit <span style="background-color:FFAFAF"><strike>(you'll be challenged for auth details)</strike></span>:</p>
+
+<pre>
+    # cd weblog
+    do work
+    # hg ci -m "my changes"
+    # hg push <span style="background-color:AFAFFF">ssh</span>://$yourdomain/hg/<span style="background-color:AFFFAF">repos/</span>weblog
+    pushing to <span style="background-color:AFAFFF">ssh</span>://$yourdomain/hg/<span style="background-color:AFFFAF">repos/</span>weblog
+    searching for changes
+<span style="background-color:FFAFAF"><strike>    http authorization required
+    realm: My Repository
+    user: $mercurialname
+    password: </strike></span>
+    adding changesets
+    adding manifests
+    adding file changes
+    added 1 changesets with 1 changes to 1 files
+</pre>
+
+</div>
+
+
+

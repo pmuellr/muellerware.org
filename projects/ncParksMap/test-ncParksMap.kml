@@ -1,0 +1,991 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<kml xmlns='http://earth.google.com/kml/2.1'>
+	<Document>
+		<name>North Carolina State Parks</name>
+		<Folder>
+			<name>North Carolina State Parks</name>
+			<open>1</open>
+			<description>State parks of North Carolina.</description>
+			<Placemark>
+				<name>Carolina Beach State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/cabe/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.047788&fLon=-77.908323&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 58 Low: 32<br />
+  Wed - Sunny. High: 50 Low: 29<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Carolina_Beach__NC/*http://xml.weather.yahoo.com/forecast/28428_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-77.908323,34.047788,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Cliffs of the Neuse State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/clne/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.237303&fLon=-77.886704&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/31.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Clear, 43 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 57 Low: 30<br />
+  Wed - Sunny. High: 49 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Seven_Springs__NC/*http://xml.weather.yahoo.com/forecast/28578_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-77.886704,35.237303,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Crowders Mountain State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/crmo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.219793&fLon=-81.283325&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 36 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 54 Low: 28<br />
+  Wed - Sunny. High: 49 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kings_Mountain__NC/*http://xml.weather.yahoo.com/forecast/28086_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.283325,35.219793,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Eno River State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/enri/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.06422566493219&fLon=-78.9671516418457&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 40 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 27<br />
+  Wed - Sunny. High: 48 Low: 24<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Durham__NC/*http://xml.weather.yahoo.com/forecast/27705_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.9671516418457,36.06422566493219,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Falls Lake State Recreation Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/fala/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.023557373379276&fLon=-78.717041015625&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 28<br />
+  Wed - Sunny. High: 48 Low: 25<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Wake_Forest__NC/*http://xml.weather.yahoo.com/forecast/27587_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.717041015625,36.023557373379276,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Fort Fisher State Recreation Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/fofi/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=33.98144570979165&fLon=-77.91727066040039&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 58 Low: 32<br />
+  Wed - Sunny. High: 50 Low: 29<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kure_Beach__NC/*http://xml.weather.yahoo.com/forecast/28449_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-77.91727066040039,33.98144570979165,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Fort Macon State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/foma/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.697237&fLon=-76.690514&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear/Wind. High: 54 Low: 34<br />
+  Wed - Sunny/Wind. High: 47 Low: 32<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Atlantic_Beach__NC/*http://xml.weather.yahoo.com/forecast/28512_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-76.690514,34.697237,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Goose Creek State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/gocr/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.46738105960409&fLon=-76.9097900390625&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 59 Low: 32<br />
+  Wed - Sunny. High: 50 Low: 28<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Washington__NC/*http://xml.weather.yahoo.com/forecast/27889_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-76.9097900390625,35.46738105960409,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Gorges State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/gorg/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.097439809364175&fLon=-82.87433624267578&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/26.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Cloudy, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Few Snow Showers. High: 44 Low: 21<br />
+  Wed - Sunny. High: 43 Low: 21<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Sapphire__NC/*http://xml.weather.yahoo.com/forecast/28774_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-82.87433624267578,35.097439809364175,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Hammocks Beach State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/habe/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.633207911379564&fLon=-77.14410781860352&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 58 Low: 33<br />
+  Wed - Sunny. High: 50 Low: 29<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Swansboro__NC/*http://xml.weather.yahoo.com/forecast/28584_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-77.14410781860352,34.633207911379564,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Hanging Rock State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/haro/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.39226944709639&fLon=-80.27641296386719&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 38 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Few Snow Showers. High: 52 Low: 24<br />
+  Wed - Flurries. High: 45 Low: 23<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Danbury__NC/*http://xml.weather.yahoo.com/forecast/27016_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-80.27641296386719,36.39226944709639,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Jockey's Ridge State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/jori/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.96050086278097&fLon=-75.63434600830078&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/27.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Mostly Cloudy, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Partly Cloudy. High: 54 Low: 35<br />
+  Wed - Sunny. High: 43 Low: 34<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Nags_Head__NC/*http://xml.weather.yahoo.com/forecast/27959_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-75.63434600830078,35.96050086278097,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Jones Lake State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/jone/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.67218214951836&fLon=-78.6130142211914&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 43 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 57 Low: 30<br />
+  Wed - Sunny. High: 50 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Elizabethtown__NC/*http://xml.weather.yahoo.com/forecast/28337_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.6130142211914,34.67218214951836,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Jordan Lake State Recreation Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/jord/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.737177137796635&fLon=-79.02671813964844&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 29<br />
+  Wed - Sunny. High: 49 Low: 27<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Eagle_Rock__NC/*http://xml.weather.yahoo.com/forecast/27523_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-79.02671813964844,35.737177137796635,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Kerr Lake State Recreation Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/kela/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.431227262479894&fLon=-78.36822509765625&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 41 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 55 Low: 27<br />
+  Wed - Sunny. High: 47 Low: 24<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Henderson__NC/*http://xml.weather.yahoo.com/forecast/27537_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.36822509765625,36.431227262479894,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Lake James State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/laja/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.734041963215354&fLon=-81.89045906066895&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/29.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Partly Cloudy, 41 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 29<br />
+  Wed - Sunny. High: 51 Low: 28<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Nebo__NC/*http://xml.weather.yahoo.com/forecast/28761_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.89045906066895,35.734041963215354,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Lake Norman State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/lano/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.65701729161382&fLon=-80.93928337097168&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 36 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 53 Low: 27<br />
+  Wed - Sunny. High: 48 Low: 24<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Troutman__NC/*http://xml.weather.yahoo.com/forecast/28166_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-80.93928337097168,35.65701729161382,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Lake Waccamaw State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/lawa/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.26516142452612&fLon=-78.46675872802734&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 45 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 60 Low: 34<br />
+  Wed - Sunny. High: 52 Low: 31<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Lake_Waccamaw__NC/*http://xml.weather.yahoo.com/forecast/28450_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.46675872802734,34.26516142452612,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Lumber River State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/luri/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.41158326390199&fLon=-79.02397155761719&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 43 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 57 Low: 29<br />
+  Wed - Sunny. High: 51 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Orrum__NC/*http://xml.weather.yahoo.com/forecast/28369_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-79.02397155761719,34.41158326390199,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Medoc Mountain State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/memo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.25604016955519&fLon=-77.8817367553711&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 41 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 57 Low: 31<br />
+  Wed - Sunny. High: 49 Low: 28<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Hollister__NC/*http://xml.weather.yahoo.com/forecast/27844_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-77.8817367553711,36.25604016955519,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Merchants Millpond State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/memi/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.430812920461356&fLon=-76.68130874633789&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/21.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Haze, 41 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 31<br />
+  Wed - Sunny. High: 47 Low: 27<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Gatesville__NC/*http://xml.weather.yahoo.com/forecast/27938_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-76.68130874633789,36.430812920461356,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Morrow Mountain State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/momo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.36133610532758&fLon=-80.08346557617188&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 56 Low: 29<br />
+  Wed - Sunny. High: 50 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Albemarle__NC/*http://xml.weather.yahoo.com/forecast/28001_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-80.08346557617188,35.36133610532758,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Mount Jefferson State Natural Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/moje/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.39769293751893&fLon=-81.46495342254639&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/14.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Light Snow, 30 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Snow Showers/Wind. High: 34 Low: 23<br />
+  Wed - Few Snow Showers/Wind. High: 39 Low: 27<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Jefferson__NC/*http://xml.weather.yahoo.com/forecast/28640_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.46495342254639,36.39769293751893,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Mount Mitchell State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/momi/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.76166208666489&fLon=-82.26862907409668&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/14.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Light Snow, 28 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Snow Showers/Wind. High: 41 Low: 24<br />
+  Wed - Few Snow Showers. High: 42 Low: 23<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Burnsville__NC/*http://xml.weather.yahoo.com/forecast/28714_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-82.26862907409668,35.76166208666489,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>New River State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/neri/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.41347763135365&fLon=-81.38834953308105&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/14.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Light Snow, 30 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Snow Showers/Wind. High: 34 Low: 23<br />
+  Wed - Few Snow Showers/Wind. High: 39 Low: 27<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Jefferson__NC/*http://xml.weather.yahoo.com/forecast/28640_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.38834953308105,36.41347763135365,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Occoneechee Mountain State Natural Area</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/ocmo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.06122484095983&fLon=-79.11686182022095&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 40 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 56 Low: 27<br />
+  Wed - Sunny. High: 48 Low: 24<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Durham__NC/*http://xml.weather.yahoo.com/forecast/27705_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-79.11686182022095,36.06122484095983,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Pettigrew State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/pett/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.7901777253673&fLon=-76.40974044799805&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/29.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Partly Cloudy, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 58 Low: 34<br />
+  Wed - Sunny. High: 47 Low: 31<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Creswell__NC/*http://xml.weather.yahoo.com/forecast/27928_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-76.40974044799805,35.7901777253673,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Pilot Mountain State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/pimo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.33905082171858&fLon=-80.47708511352539&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 37 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Rain/Snow Showers. High: 52 Low: 28<br />
+  Wed - Flurries. High: 47 Low: 25<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Pinnacle__NC/*http://xml.weather.yahoo.com/forecast/27043_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-80.47708511352539,36.33905082171858,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Raven Rock State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/raro/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.462627415869775&fLon=-78.91170501708984&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 41 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 56 Low: 28<br />
+  Wed - Sunny. High: 49 Low: 25<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Lillington__NC/*http://xml.weather.yahoo.com/forecast/27546_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.91170501708984,35.462627415869775,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Singletary Lake State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/sila/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=34.584323024647524&fLon=-78.47465515136719&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 43 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 58 Low: 31<br />
+  Wed - Sunny. High: 51 Low: 28<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Kelly__NC/*http://xml.weather.yahoo.com/forecast/28448_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.47465515136719,34.584323024647524,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>South Mountains State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/somo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.59436690312231&fLon=-81.64798736572266&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Few Snow Showers. High: 51 Low: 27<br />
+  Wed - Flurries. High: 48 Low: 26<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Connellys_Springs__NC/*http://xml.weather.yahoo.com/forecast/28612_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.64798736572266,35.59436690312231,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Stone Mountain State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/stmo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.38840022903361&fLon=-81.0684585571289&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/27.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Mostly Cloudy, 28 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Scattered Snow Showers/Wind. High: 39 Low: 24<br />
+  Wed - Few Snow Showers. High: 40 Low: 23<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Roaring_Gap__NC/*http://xml.weather.yahoo.com/forecast/28668_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-81.0684585571289,36.38840022903361,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>The Summit at Haw River State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/TheSummit/">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=36.249187846939115&fLon=-79.75456237792969&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 37 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 54 Low: 27<br />
+  Wed - Sunny. High: 47 Low: 25<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Browns_Summit__NC/*http://xml.weather.yahoo.com/forecast/27214_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-79.75456237792969,36.249187846939115,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>Weymouth Woods - Sandhills Nature Preserve</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/wewo/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.14795071992091&fLon=-79.35433387756348&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 39 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Clear. High: 56 Low: 26<br />
+  Wed - Sunny. High: 49 Low: 24<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Southern_Pines__NC/*http://xml.weather.yahoo.com/forecast/28387_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-79.35433387756348,35.14795071992091,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+			<Placemark>
+				<name>William B. Umstead State Park</name>
+				<description><![CDATA[
+					<p>Visit the <a href="http://ils.unc.edu/parkproject/visit/wium/home.html">park's web site</a>.
+					Show <a href="http://www.flickr.com/map/?&fLat=35.84926547127391&fLon=-78.74759674072266&zl=5">geotagged Flickr pictures</a>.</p>
+					
+<img src="http://us.i1.yimg.com/us.yimg.com/i/us/we/52/33.gif" /><br />
+ <b>Current Conditions:</b><br />
+ Fair, 40 F<BR /><BR />
+ <b>Forecast:</b><BR />
+  Tue - Mostly Clear. High: 57 Low: 30<br />
+  Wed - Sunny. High: 48 Low: 28<br />
+ <br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/Raleigh__NC/*http://xml.weather.yahoo.com/forecast/27612_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+ (provided by The Weather Channel)<br/>
+ 
+					<p><i><small>Scraped at 10:08 PM on Tue, Jan 09 2007.</small></i></p>
+				]]></description>
+				<Snippet></Snippet>
+				<Point>
+					<coordinates>-78.74759674072266,35.84926547127391,0</coordinates>
+				</Point>
+				<Style>
+					<Icon>
+						<href>icons/tree.png</href>
+					</Icon>
+				</Style>
+			</Placemark>
+		</Folder>
+	</Document>
+</kml>

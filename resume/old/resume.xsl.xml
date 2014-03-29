@@ -1,0 +1,305 @@
+<?xml version="1.0" ?>
+
+<!-- ===========================================================================
+resume.xml - generate HTML from a resume in XML
+Copyright (C) 2004 Patrick Mueller
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+Or go here: http://www.gnu.org/copyleft/gpl.html
+============================================================================ -->
+
+<xsl:stylesheet
+    xmlns:xsl = "http://www.w3.org/1999/XSL/Transform"
+    version   = "1.0"
+    >
+
+	<xsl:output 
+		indent               = "no" 
+		method               = "html"
+		omit-xml-declaration = "yes" 
+	/>
+
+    <!-- =======================================================================
+    remove everything within a no-xsl element; will end up displaying in 
+    a web browser that doesn't do xslt though.
+    =========================================================================-->
+	<xsl:template match="no-xsl">
+	</xsl:template>
+	
+    <!-- =======================================================================
+    by default, copy everything into the output stream
+    =========================================================================-->
+	<xsl:template match="*">
+		<xsl:element name="{name()}">
+			<xsl:for-each select="@*">
+				<xsl:attribute name="{name()}">
+					<xsl:value-of select="."/>
+				</xsl:attribute>
+			</xsl:for-each>
+			<xsl:apply-templates select="*|text()" />
+		</xsl:element>
+
+	</xsl:template>
+
+    <!-- =======================================================================
+	just handle the root resume element
+	=========================================================================-->
+    <xsl:template match="/">
+        <xsl:apply-templates select="resume"/>
+    </xsl:template>
+
+    <!-- =======================================================================
+	do the skeleton of the html
+	=========================================================================-->
+    <xsl:template match="resume">
+        <xsl:choose>
+            <xsl:when test="@title" />
+            <xsl:otherwise>
+                <xsl:message terminate="yes">
+                    The resume element requires a title attribute.
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+
+        <html>
+
+            <head>
+                <title><xsl:value-of select="@title"/></title>
+                <xsl:choose>
+                    <xsl:when test="@css">
+                        <link rel="stylesheet">
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="@css"/>
+                            </xsl:attribute>
+                        </link>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <link rel="stylesheet" href="resume.css"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </head>
+
+            <body>
+                <xsl:choose>
+                    <xsl:when test="@image">
+                    	<img align="right">
+                            <xsl:attribute name="src">
+                                <xsl:value-of select="@image"/>
+                            </xsl:attribute>
+                    	</img>
+                    </xsl:when>
+                </xsl:choose>
+                
+                <h1 class="title"><xsl:value-of select="@title"/></h1>
+
+                <xsl:apply-templates select="personal-info"/>
+
+				<table cellpadding="5">
+    	            <xsl:for-each select="sections/section">
+        	            <xsl:apply-templates select="."/>
+	                </xsl:for-each>
+                </table>
+            </body>
+
+        </html>
+
+    </xsl:template>
+
+    <!-- =======================================================================
+	do the personal-info section
+	=========================================================================-->
+    <xsl:template match="personal-info">
+    	<div class="personal-info-div">
+    		<xsl:for-each select="*">
+    		
+    			<xsl:choose>
+	    			<xsl:when test="name()='line'">
+	    				<xsl:value-of select="." /> <br/>
+    				</xsl:when>
+    				
+	    			<xsl:when test="name()='email'">
+	    				<a>
+	    					<xsl:attribute name="href">mailto:<xsl:value-of select="."/></xsl:attribute>
+		    				<xsl:value-of select="."/> 
+		    			</a>
+		    			<br/>
+    				</xsl:when>
+    				
+	    			<xsl:when test="name()='webpage'">
+	    				<a>
+	    					<xsl:attribute name="href">
+	    						<xsl:value-of select="."/>
+	    					</xsl:attribute>
+		    				<xsl:value-of select="."/> 
+		    			</a>
+		    			<br/>
+    				</xsl:when>
+    				
+    				<xsl:otherwise>
+    					<xsl:message terminate="yes">
+    						Inside a personal-info element, you can only
+    						have line, email and webpage elements.
+    					</xsl:message>
+    				</xsl:otherwise>
+    				
+    			</xsl:choose>
+    			
+    		</xsl:for-each>
+    	</div>
+    </xsl:template>
+
+    <!-- =======================================================================
+	do a section
+	=========================================================================-->
+    <xsl:template match="section">
+    
+    	<tr><td colspan="2"><hr/></td></tr>
+    	
+    	<xsl:choose>
+    	
+    		<xsl:when test="@title">
+		    	<tr class="sectionRow">
+    				<td class="sectionTitle" valign="top">
+    					<div class="sectionTitle">
+							<xsl:value-of select="@title"/>
+						</div>
+				   	</td>
+    	
+		    		<td class="sectionBody">
+			    	    <xsl:for-each select="*|text()">
+    				    	<xsl:apply-templates select="."/>
+    				    </xsl:for-each>
+		    		</td>
+    			</tr>
+    		</xsl:when>
+    		
+    		<xsl:otherwise>
+		    	<tr class="sectionRow">
+		    		<td class="sectionBody" colspan="2">
+			    	    <xsl:for-each select="*|text()">
+    				    	<xsl:apply-templates select="."/>
+    				    </xsl:for-each>
+		    		</td>
+    			</tr>
+    		</xsl:otherwise>
+    		
+    	</xsl:choose>
+    	
+    </xsl:template>
+
+    <!-- =======================================================================
+	do positions
+	=========================================================================-->
+    <xsl:template match="positions">
+    	<table width="100%" cellspacing="0" cellpadding="3">
+			<xsl:for-each select="position">
+				<xsl:apply-templates select="."/>
+			</xsl:for-each>
+    	</table>
+    </xsl:template>
+
+    <!-- =======================================================================
+	do position
+	=========================================================================-->
+    <xsl:template match="position">
+		<tr class="DateCompanyLocation">
+			<td colspan="1" class="DateCompanyLocation"> <xsl:value-of select="date/text()"/></td>
+			<td colspan="1" class="DateCompanyLocation"> <xsl:value-of select="company/text()"/></td>
+			<td colspan="1" class="DateCompanyLocation"> <xsl:value-of select="location/text()"/></td>
+		</tr>
+		
+		<tr class="Title">
+			<td colspan="2" class="TitleLevel"> <xsl:value-of select="title/text()"/></td>
+			<td colspan="1" class="TitleLevel"> <xsl:value-of select="level/text()"/></td>
+		</tr>
+	
+		<tr>
+			<td colspan="3">
+				<xsl:for-each select="description/p">
+					<p class="position-description-p">
+						<xsl:value-of select="."/>
+					</p>
+				</xsl:for-each>
+			</td>
+		</tr>
+		
+    </xsl:template>
+
+    <!-- =======================================================================
+	do educations
+	=========================================================================-->
+    <xsl:template match="educations">
+    	<table width="100%" cellspacing="0" cellpadding="3">
+			<xsl:for-each select="education">
+				<xsl:apply-templates select="."/>
+			</xsl:for-each>
+    	</table>
+    </xsl:template>
+
+    <!-- =======================================================================
+	do education
+	=========================================================================-->
+    <xsl:template match="education">
+
+   		<tr class="DateSchoolLocation">
+			<td colspan="1" class="DateSchoolLocation"> <xsl:value-of select="date/text()"/></td>
+			<td colspan="1" class="DateSchoolLocation"> <xsl:value-of select="school/text()"/></td>
+			<td colspan="1" class="DateSchoolLocation"> <xsl:value-of select="location/text()"/></td>
+		</tr>
+	
+    	<tr>
+    		<td colspan="3">
+	    		<xsl:for-each select="degree/p">
+    				<p class="education-degree-p">
+    					<xsl:value-of select="."/>
+    				</p>
+	    		</xsl:for-each>
+	    	</td>
+    	</tr>
+    	
+    </xsl:template>
+
+    <!-- =======================================================================
+	do patents
+	=========================================================================-->
+    <xsl:template match="patents">
+    	<table width="100%">
+			<xsl:for-each select="patent">
+				<xsl:apply-templates select="."/>
+			</xsl:for-each>
+    	</table>
+    </xsl:template>
+
+    <!-- =======================================================================
+	do patent
+	=========================================================================-->
+    <xsl:template match="patent">
+    	<tr>
+    		<td valign="top" class="PatentNumber">
+	    		<a>
+					<xsl:attribute name="href">
+			    		<xsl:value-of select="@link"/>
+	    			</xsl:attribute>
+	    			<xsl:value-of select="@number"/>
+	    		</a>
+	    	</td>
+	    	<td>
+	    		<xsl:value-of select="@title"/>
+	    	</td>
+	    </tr>
+    </xsl:template>
+
+
+</xsl:stylesheet>

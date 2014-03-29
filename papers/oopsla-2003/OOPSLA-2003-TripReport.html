@@ -1,0 +1,310 @@
+<html>
+<head>
+<title>OOPSLA 2003 Trip Report</title>
+
+<style>
+BODY {
+   background:      #F0F0F0
+}
+
+A {
+   text-decoration: none;
+   color:           blue;
+}
+
+A:hover {
+   text-decoration: underline;
+}
+
+A:link {
+}
+
+A:visited {
+}
+
+A:active {
+}
+
+H1 {
+   font-family:  "Comic Sans Ms,Gill Sans";
+   font-style:   italic;
+   font-weight:  bold;
+   color:        black;
+   background:   #E0E0E0;
+   border-style: outset;
+}
+
+H2 {
+   font-family:  "Comic Sans Ms,Gill Sans";
+   font-style:   italic;
+   font-weight:  bold;
+   color:        black;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ============================================================= -->
+<h1>OOPSLA 2003 Trip Report</h1>
+
+<p><a href="http://oopsla.acm.org/oopsla2003/files/">OOPSLA 2003</a>
+was Sunday, October 26 through Thursday, October 30, in Anaheim, CA.
+Across the street from Disney World, which will be the site of
+<a href="http://www.eclipsecon.org">EclipseCon</a>
+early next year.  A guess at attendance was about ~1200, based on the
+number of seats available at the keynote sessions.  There was no exhibit
+hall as in previous years (this is my first OOPSLA since, I think, 1999),
+although they did have a room with a lot of books you could buy.
+
+<p>Highlights for me were the eclipse Technology Exchange (Sunday) and Welcome Reception (Monday),
+as these were poster-based, so you could actually talk one-on-one with the folks doing the work.
+
+<p>The Los Angeles and San Diego areas had lots of fires before, during,
+and after OOPSLA. I could see some fires burning when I flew in.  On Sunday,
+it was quite smoky in the city, and smelled like a big camp fire.  The
+rest of the week was not quite as bad.
+
+<p>I have two pictures of the smoke or effects.  The first is
+<a href="CaliforniaFires2003-Midday-Sun.jpg">10am outside the hotel on Sunday</a>.  The second is
+a smoke plume I happened to catch at
+<a href="CaliforniaFires2003-Zuma.jpg">Zuma beach about 2pm on Sunday</a> (an hour north of
+Anaheim).
+
+<p>Stop by if you want to take a look at the proceedings, which contain
+all the technical papers presented at the conference.
+
+<!-- ============================================================= -->
+<h1>Sunday</h1>
+
+<h2>Special Event: eclipse Technology Exchange</h2>
+
+<p>This event had a number of
+'posters' on eclipse-related projects.  In fact, many (all?) of the projects were all awarded
+<a href="http://www-3.ibm.com/software/info/university/products/eclipse/eig-2003.html">eclipse innovation grants</a>, and this was their opportunity to show off their
+work.
+
+<!-- ============================================================= -->
+<h1>Monday</h1>
+
+<h2>Workshop: Pervasive Computing: Going beyond the Internet for small screens</h2>
+
+<p>This was my free ticket to OOPSLA.  You can see the position papers
+<a href="http://jeckstein.com/oopsla/pervasive-computing/">here</a>.
+The focus of the workshop is a little vaguer than I would like, I suspect
+I won't go to the one next year (I think this is the 3rd annual workshop for
+them).
+
+<h2>Special Event: Welcome Reception</h2>
+
+<p>This event had all the OOPSLA posters; lots of interesting ones; lots of
+dull ones (on UML/Modelling/Design - blechh!).  There are no links to the poster contents that I
+know of, but there is a list of them at:
+<a href="http://oopsla.acm.org/oopsla2003/files/pos.html">http://oopsla.acm.org/oopsla2003/files/pos.html</a>,
+and the poster contents are available in hardcopy in the OOPSLA 2003 Companion 'book' (stop by to borrow).
+
+<!-- ============================================================= -->
+<h1>Tuesday</h1>
+
+<h2>Invited Speaker: Free Culture: The limited but essential role of property in building an environment for creativity</h2>
+
+<p>This was a talk by <a href="http://www.lessig.org/">Lawrence Lessig</a>.  Really entertaining, and educational if
+you aren't a regular Slashdot reader and don't know what the DMCA is <tt>:-)</tt>.
+
+<h2>Technical Paper: Language independent aspect-oriented programming</h2>
+
+<p>This is AspectJ, only for <strike>Microsoft's</strike> ECMA's Common
+Language Runtime (ie, C# et al), and in a completely unwritable and unreadable
+XML syntax.  Can't wait!  I left early.  The work is called Weave.net.
+
+<h2>Demo: F-Script: Smalltalk scripting for the Mac OSX object system</h2>
+
+<p>Pure eye candy: Smalltalk.  Mac OSX.  But only as a big honkin' script;
+you can't actually define your own classes or anything (in Smalltalk anyway).
+Makes use of anything in the Cocoa (NextStep) class libraries.  Has a
+Cocoa Class Hierarchy Browser, as well as an 'object inspector' browser.
+Kinda cool; I'll definitely download it to take a look.
+
+<p>Info on web at:
+<a href="http://www.fscript.org/">http://www.fscript.org/</a>.
+
+<h2>Invited Speaker: Grid-supported communications applications</h2>
+
+<p>Gerald Labedz  from Motorola who invented the secondary channels on the family
+radio walkie talkies back in the 70's.  I didn't really understand the big
+deal of the talk, which basically boiled down to: faster computers are faster
+than slower computers; more than one computer can do more work than one
+computer; and, you can take multiple pieces of software and program them so they
+can do something useful.  I left early to go to the demo below, and then, having
+left the demo early, came back here to see the 'amazing demo', but sadly I missed
+it.  Something about doing 3-D on a grid.  Damn, I bet it was great, to!
+I also thought the speaker was rather annoying.
+
+<h2>Demo: ATCT: a Java framework that offers new approach to developing asynchronous processes</h2>
+
+<p>This was the first of the first of two demos that purported to, in
+the presented papers, to do something really interesting, and basically,
+seemingly impossible, with standard Java VMs.  The other being the JPie demo (see
+below).
+
+<p>So, this guy claimed to have continuations in Java.  Clearly impossible,
+at least with any standard VM.  A continuation is like a setjmp()/longjmp()
+in C, which let's a function (method in Java), return to it's caller, but
+remember it's state so it can be restarted later.
+Here's a link to <a href="http://www.jroller.com/page/alexkrut/">examples using the ATCT framework</a>.
+
+<p>Continuations are obviously pretty cool, and if you think about it for
+a minute, clearly impossible to implement in a standard VM with just C
+and Java; they're aren't enough APIs to implement them.  BTW, Envy Smalltalk
+had continuations, but they came kind of late, and were implemented as
+part of an exception handling scheme that would allow you to try to
+'fix' whatever caused the exception, and try the thing that caused the
+exception again.  Very cool.  Lisp, Python, et al, have continuations.
+
+<p>Anyhoo, this guy basically started talking about the 'secondary'
+interpreter, and so you could see where this was going.  He actually has
+his own Java bytecode interpreter, that he runs when he has to do bits
+with the continuation stuff.  And no doubt this is a big wad of horrifying
+C code, since you'd need to do it in C for speed.  Like it matters, since
+he's selling this as a product.  Move along, nothing interesting to see here.
+
+<p>Info on web at:
+<a href="http://velare.com/product/atct.htm">http://velare.com/product/atct.htm</a>
+
+<h2>Practictioner Report: Experience in developing the UrbanSim System</h2>
+
+<p>Bjorn Freeman-Benson (ex-OTI guy) did this talk.  It was supposed
+to be on the tools he used to build his project, however he gave the
+crowd a choice of hearing about the tools or the project itself, and
+almost all 15 of us voted to hear about the project itself.
+
+<p>Best described as a real-life version of SimCity, only generating
+lots of numbers instead of cartoonish cities, and aimed at
+determining traffic patterns in the future for urban environments.
+The talk was entertaining, and included lots of interesting anecdotes
+on his experiences running UrbanSim for a number of municipalities.
+
+<p>Info on web at:
+<a href="http://www.urbansim.org/">http://www.urbansim.org/</a>
+
+<h2>Demo: Using events to debug Java programs backwards in time</h2>
+
+<p>I got to this demo real late, and the guy running it seemed a bit
+odd.  He was running a demo showing a debugger stepping backwards in
+time.  Chris Laffra asked how much space was required to store the debug data,
+and he didn't answer, so Chris asked again, and he didn't answer, so I left.
+
+<p>I knew there was going to be something weird about this demo, since
+part of the description included the text: "To our best knowledge, this
+is the first event model for Java".  Oh yeah, noone had <b>ever</b>
+used events before this ...
+
+<h2>Special Event: Java Community Process reception</h2>
+
+<p>I was honestly hoping to meet some of the clowns responsible
+for the JCP and various JSRs, but seeing as they had ~500 people
+in a really small room, with no clear indication of who these
+people might be, I left early.
+
+<h2>Special Event: eclipse Plug-in Reception</h2>
+
+<p>Erich Gamma and John Wiegand ran this session, which I will admit
+I went mainly so I could get a fast internet connection to check my
+mail, only to find out that they weren't providing interet access.
+Bastards!  But, got dinner, chatted with folks, etc.  They had quite a few
+people there, and were running some kind of you-program-the-cars
+racing game.
+
+<!-- ============================================================= -->
+<h1>Wednesday</h1>
+
+<h2>Keynote: Seven Paradoxes of Object-Oriented Programming Languages</h2>
+
+Dave Ungar gave this talk.  He only talked about three of the paradoxes,
+and the talk could have easily been retitled: Why Self does not suffer the
+seven paradoxes of most other Object-Oriented Programming Languages.
+General bashing of C++ and Java.  So, that was fun.  And actually
+the talk was quite interesting.
+<p>Link to overview on the web at:
+<a href="http://www.oopsla.org/oopsla2003/files/long-spe.html#key-4">http://www.oopsla.org/oopsla2003/files/long-spe.html#key-4</a>
+
+<h2>Technical Paper: Model Driven Development: The case for domain oriented programming</h2>
+
+<p>Dave Thomas (the OTI one) gave this paper, and talked about the need to have
+domain experts and computer scientists work on problems together, using
+non-standard 'programming' tools.  For some specific types of applications.
+As usual, from Dave, interesting, and
+made you think a little.
+
+<h2>Demo: Jazz: A collaborative application development environment</h2>
+
+<p>Some guys from IBM Cambridge who have some eclipse plugins that talk to
+their "Collaboration Server" so you can do all kinds of cool collaborative
+things within eclipse (think, Sametime within Eclipse, only you can also
+use contexts from the environment).  Lots of eye candy, but I'm not sure
+if it would really be useful.  The code is not yet available to the public,
+but I asked him after the demo if IBMers could get access to it, and
+he said yes.  If anyone's interested.  Persona record of the guy is
+<a href="http://w3.ibm.com/persona/users/8/0/7/8073712A4.html">here</a>.
+
+<h2>Demo: JPie: An environment for live software construction in Java</h2>
+
+<p>This was the second "runs on a standard vm" and yet does something impossible
+demo.  The other was the ATCT stuff.  This one purported to suppport dynamic classes
+such that you could add/change methods, fields, etc in the class, while it was
+running.  Again, seems impossible.  Although, you can do some amount of class changes
+using 'hot code swap' when debugging.
+
+<p>But no, this was another 'we have our own bytecode interpreter' story.  Bonus, you
+couldn't really add new methods, only override methods of your superclass.  Bonus,
+provided a programming interface that looked like Lego Mindstorms on steroids.  This
+was supposed to be for beginning programmers, but it looked way too confusing, beyond
+the obvious 'useless' aspect.
+
+<h2>Demo: AspectJ development tools</h2>
+
+<p>This was really an intro to AspectJ, and we'll use the eclipse plugins to show you
+how to do it.  I guess they had to do this, for folks not familiar with AspectJ, but
+it taking too long, so I didn't stay long.
+
+<h2>Panel: Innovate</h2>
+
+<p>This was supposed to be a panel discussion of how to get you or folks you
+work with to innovate more.  But, to me, it was more like: you need to plan
+to innovate, you need to get management approval to innovate, etc.  In a word,
+they made it sound really distasteful to innovate.  What a bummer.
+
+<h2>Demo: Building compilers for micro-programmable graphics processors</h2>
+
+<p>The guy giving this demo, Yahya Mirza, talked my ear off on
+Sunday night about the work he's hoping to do on PlayStation 3 graphics, as
+if I could help him get contacts for this in IBM (I guess they are using
+PowerPC).  I promised him I'd go to the demo.  It was basically a quick overview
+of how current GPUs used in graphics cards are used with OpenGL and DirectX9.
+Pretty interesting.
+
+<h2>Panel: Model Driven Architecture: How far have we come, how far can we go?</h2>
+
+<p>This was the last event I went to, and a great way to end the conference.
+The panel was a bunch of UML / Modelling wienies, including some big names
+like Ivar Jakobson and Stephen Mellor.  And Dave Thomas (the OTI one). So, everyone did their
+opening statement, talking about how great MDM and UML are, and then it's Dave
+turn, and he spares not a second cutting them all down.  And the vocal
+crowd (~200 people) were clearly on his side.  Lots of fun.  And then
+for the final statements, Dave went out with a bang, starting off with
+something to the effect "When you get home, have your company write a letter
+to Richard Soley (head of the OMG) telling them you are cancelling your
+membership because OMG (organization that 'owns' UML) is an organization
+that just does design-by-committee paper
+specs that have no basis in reality .... blah blah blah".  Again, lots of
+fun.
+
+<!-- ============================================================= -->
+<h1>Thursday</h1>
+<p>Missed the whole day, as I was travelling home.
+
+<!-- ============================================================= -->
+</body>
+
+</html>

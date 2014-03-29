@@ -1,0 +1,11 @@
+<!-- title: CGI-Link processing -->
+
+<font size="16">
+<ul>
+<li>HTTP Server is any HTTP server
+<li>CGI-Link Client is a CGI-BIN program in C
+<li>CGI-Link Server is a Smalltalk program
+</ul>
+<br>
+<img src="cgilpict.gif" WIDTH="600" HEIGHT="500">
+</font>

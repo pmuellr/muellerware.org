@@ -1,0 +1,543 @@
+<!doctype html>
+
+<!--
+Licensed under the Tumbolia Public License. See footer for details.
+-->
+
+<html>
+<head>
+    <title>building and debugging Apache Cordova apps</title>
+    <meta charset='utf-8'>
+
+    <link rel="stylesheet" href="css/html5slides.css">
+    <link rel="stylesheet" href="css/local.css">
+
+    <script src="js/prettify.js"></script>
+    <script src="js/d3.v2.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/html5slides.js"></script>
+    <script src="js/local.js"></script>
+</head>
+<body style='display: none'>
+<section class='slides layout-regular template-default'>
+
+<!-- ======================================================= -->
+<article>
+    <h1><span style="font-size:80%;">building and debugging Apache Cordova apps</span></h1>
+
+    <indent>
+      <a href="http://lanyrd.com/2013/apache-cordova-phonegap-cincinnati-community-eve-2/">Cincinnati Community Event</a> - Feb 13 2013
+      <br>- sponsored by IBM
+    </indent>
+
+      <!--
+      -->
+    <p>by:
+
+      <a style="float:right" width=50 title="webkit"  href="http://webkit.org"><img src="images/logo-webkit.png"></a>
+      &nbsp;
+      <a style="float:right" width=50 title="cordova" href="http://cordova.io"><img src="images/logo-phonegap.png"></a>
+      &nbsp;
+      <a style="float:right" width=50 title="ibm"     href="http://www.ibm.com/"><img src="images/logo-ibm.jpg"></a>
+      &nbsp;
+    <indent><i>
+      Patrick Mueller
+      <br><a href="http://twitter.com/pmuellr">@pmuellr</a>
+      <br><a href="http://muellerware.org/">http://muellerware.org/</a>
+    </i></indent>
+</article>
+
+<!-- ======================================================= -->
+<article class="smaller">
+    <h3>etc</h3>
+
+    <!--
+    <p><b>attributions</b>
+    -->
+
+    <p><b>canonical links to presentation</b>
+    <ul>
+    <li>
+          <a href="http://muellerware.org/papers/2013-02-Cinci-Cordova">muellerware.org/papers/2013-02-Cinci-Cordova</a>
+    <li>
+          <a href="http://dl.dropbox.com/u/2192156/Papers/2013-02-Cinci-Cordova/index.html">dl.dropbox.com/u/2192156/Papers/2013-02-Cinci-Cordova/index.html</a>
+    </ul>
+
+    <p><b>other mobile development presentations by me</b>
+    <ul>
+    <li>
+          <a href="http://muellerware.org/papers">muellerware.org/papers</a>
+    </ul>
+
+    <p><b>slide template</b>
+    <ul>
+        <li>html5slides -
+        <a href="http://code.google.com/p/html5slides/">code.google.com/p/html5slides/</a>
+    </ul>
+
+    <p><b>last modified</b>
+    <ul>
+        <li class="lastModified">???</li>
+    </ul>
+
+
+</article>
+
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+    <h3>who</h3>
+
+    <p>Patrick Mueller:
+    <ul>
+      <li>has worked at IBM for a long time
+      <li>has worked on Web Stuff for a long time
+      <li>live and work in the Raleigh area of North Carolina
+      <li>grew up in Northern Kentucky
+      <li>reformed WebKit contributor,<br> primary focus: Web Inspector
+      <li>current Apache Cordova committer,<br> primary focus: weinre debugger
+    </ul>
+
+</article>
+
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+    <h3>what</h3>
+
+    <p>This presentation will cover:
+    <ul>
+      <li>what is a <b>mobile app</b>?
+      <li>why build a mobile app with <b>Apache Cordova</b>?
+      <li>how do you <b>build</b> a mobile app with Cordova?
+      <li>how do you <b>debug</b> a mobile app built with Cordova?
+    </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>what is a mobile app?</h1>
+</article>
+
+<!-- ======================================================= -->
+<article class="fill"><img src="images/angry-birds-ios.png"></article>
+<article class="fill"><img src="images/angry-birds-android.png"></article>
+<article class="fill"><img src="images/angry-birds-blackberry.png"></article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>what is a mobile app?</h3>
+  <h1>how do you <b>build</b> a mobile app?</h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>how do you build a mobile app?</h3>
+
+  <p>iOS (iPhone, iPad, i*):
+
+  <ul>
+    <li>coding in Objective C
+    <li>build your UI with Interface Builder
+    <li>use Xcode as your IDE
+  </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>how do you build a mobile app?</h3>
+
+  <p>Android:
+
+  <ul>
+    <li>coding in Java
+    <li>build your UI with XML and Java
+    <li>use Eclipse as your IDE
+  </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>how do you build a mobile app?</h3>
+
+  <p>Windows Phone:
+  <ul>
+    <li>moar stuff ...
+  </ul>
+
+  <p>Blackberry:
+  <ul>
+    <li>moar stuff ...
+  </ul>
+
+  <p>...:
+  <ul>
+    <li>moar stuff ...
+  </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>what is a mobile app?</h3>
+  <h1>limited/no code sharing when building apps for multiple platforms</h1>
+</article>
+
+<!-- ======================================================= -->
+<article class="fill"><img src="images/frustration.png"></article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>what if you could use:
+    <br>
+    <ul>
+      <li>HTML
+      <li>CSS
+      <li>JavaScript
+    </ul>
+  </h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>&rarr; Apache Cordova
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <q>Apache Cordova is a platform for building native mobile
+        applications <b>using HTML, CSS and JavaScript</b></q>
+</article>
+
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+  <h1>who uses Cordova to build mobile apps?</h1>
+</article>
+
+<article class="fill"><img src="images/wikipedia-ios.png"></article>
+<article class="fill"><img src="images/wikipedia-android.png"></article>
+<article class="fill"><img src="images/wikipedia-blackberry.png"></article>
+
+<article class="fill"><img src="images/wikipedia-phonegap.png"></article>
+
+<article class="smaller"><q>
+This release is based on the same code that powers our Android application – an advantage of basing our app on Apache Cordova
+</q></article>
+
+<article><q>
+This enables us to reach the most number of platforms with the least amount of code. </q></article>
+
+<article><q>
+Fully embracing HTML5, CSS3, &amp; Javascript commits us to the open Web technologies of the future.
+</q></article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>the web isn't going away</h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <p>see also:
+  <ul>
+    <li><a href="https://developers.google.com/chrome/web-store/docs/get_started_simple">Chrome OS Apps</a>
+    <li><a href="http://www.codeproject.com/Articles/338916/Windows-8-JavaScript-Metro-Application-Getting-Sta">Windows 8 Metro Apps</a>
+    <li><a href="http://www.mozilla.org/en-US/firefoxos/">Firefox OS Apps</a>
+  </ul>
+</article>
+
+<!-- ======================================================= -->
+<article >
+  <h1>
+  <a href="http://phonegap.com/app/">phonegap.com/app</a>
+  <p>&nbsp;
+  <p>more than 1200 apps listed
+  </h1>
+</article>
+
+<!-- ======================================================= -->
+<article class="fill"><img src="images/phonegap-apps.png"></article>
+
+<!-- ======================================================= -->
+<article class="fill"><img src="images/9-year-old-phonegap.png"></article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: Cordova platforms</h3>
+
+    <ul>
+      <li>Android
+      <li>Bada
+      <li>Blackberry
+      <li>iOS
+      <li>Mac OS X
+      <li>WebOS
+      <li>Windows (desktop)
+      <li>Windows Phone 7
+      <li>Windows Phone 8
+      <li>QT
+    </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: Cordova device access</h3>
+
+    <ul>
+      <li>Accelerometer
+      <li>Camera
+      <li>Audio/Video Capture/Playback
+      <li>Compass
+      <li>Connection
+      <li>Contacts
+      <li>File
+      <li>Geolocation
+      <li>Globalization
+      <li>Visual/Audible/Tactile Notification
+      <li>and more ...
+    </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: device access</h3>
+
+    <p>or add your own device access with our plugin APIs
+    <p>or use one of the hundreds of other plugins at:
+    <br><a href="https://github.com/phonegap/phonegap-plugins">github.com/phonegap/phonegap-plugins</a>
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: Cordova goverance / backing</h3>
+
+    <ul>
+      <li>top-level Apache project
+      <li>liberal Apache open source license (obviously)
+      <li>committers from Adobe, IBM, Google, Blackberry
+      <li>used in products from Adobe - Edge
+      <li>used in products from IBM - Worklight
+    </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: ui libraries</h3>
+
+    <ul>
+      <li>we don't ship one
+      <li>we're agnostic
+      <li>use whatever you're comfortable with
+    </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: server backends</h3>
+
+    <ul>
+      <li>we don't ship one
+      <li>we're agnostic
+      <li>use whatever you're comfortable with
+    </ul>
+
+    <p>hint: see <a href="http://www-01.ibm.com/software/mobile-solutions/worklight/">IBM Worklight</a>
+</article>
+
+<!-- ======================================================= -->
+<article>
+    <h3>details: more info</h3>
+
+    <ul>
+      <li><a href="http://cordova.apache.org/">cordova.apache.org</a>
+      <p>main web site, link to downloads, doc, etc
+
+      <li><a href="http://groups.google.com/group/phonegap">groups.google.com/group/phonegap</a>
+      <p>user mailing list - ~50 posts/day
+
+      <li><a href="http://www.ibm.com/software/mobile-solutions/worklight/">www.ibm.com/software/mobile-solutions/worklight</a>
+      <p>information about IBM Worklight
+    </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+  <h1>how do you <b>build</b> a mobile app with Cordova?</h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>notes</h3>
+  <ul>
+    <li>You <b>will</b> need to install plaform-specific native tooling like
+    XCode, Eclipse, etc
+    <li>You <b>will</b> need to learn a bit about these native platforms
+    <li>But you <b>won't</b> need to spend all your time in them
+  </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>basic work flow</h3>
+  <ul>
+    <li>create initial app files with Cordova tools
+    <li>edit your HTML / CSS / JavaScript
+    <li>build / test
+    <li>rinse and repeat
+    <li>... later
+    <li>submit your app to app stores
+    <li>you thought <i>building</i> the apps was the hard part?
+  </ul>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>demo: build an app</h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>demo: index.html</h3>
+  <pre class=prettyprint>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+    &lt;head&gt;
+        &lt;meta name="viewport" content="width=device-width"/&gt;
+        &lt;link rel="stylesheet" href="css/index.css" /&gt;
+        &lt;script src="cordova-2.4.0.js"&gt;&lt;/script&gt;
+        &lt;script src="js/jquery.js"&gt;&lt;/script&gt;
+        &lt;script src="js/index.js"&gt;&lt;/script&gt;
+        &lt;title&gt;WhoDey&lt;/title&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;img src="img/hu-dey.jpeg" width="100%"&gt;
+        &lt;button id="playSong-button"&gt;play&lt;/button&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>demo: index.css</h3>
+  <pre class=prettyprint>
+button {
+    font-size: 200%;
+}
+  </pre>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>demo: index.js</h3>
+  <pre class=prettyprint>
+document.addEventListener('deviceready', deviceReady, false)
+
+function deviceReady() {
+    song = new Media("audio/who-dey.mp3")
+
+    $("#playSong-button").click(function() {
+        song.play()
+    })
+}
+  </pre>
+</article>
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+  <h1>how do you <b>debug</b> a mobile app built with Cordova?</h1>
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>debug mobile web apps</h3>
+
+  <p>on a desktop, you debug web apps with:
+  <ul>
+    <li>Chrome Dev Tools (Webkit Web Inspector)
+    <li>Safari Web Inspector (Webkit Web Inspector)
+    <li>Firebug
+  </ul>
+  <p>what do you use for mobile web?
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>debug mobile web apps</h3>
+
+  <p>ios 6: use built-in Web Inspector
+
+  <ul>
+  <li>kinda horky, but useful in a pinch
+  <li><a href="http://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/DebuggingSafarioniPhoneContent/DebuggingSafarioniPhoneContent.html">instructions here</a>
+  </ul>
+
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h3>debug mobile web apps</h3>
+
+  <p>Blackberry: use built-in Web Inspector
+</article>
+
+
+<!-- ======================================================= -->
+<article>
+  <h3>debug mobile web apps</h3>
+
+  <p>for anything else, try
+    <a href="http://people.apache.org/~pmuellr/weinre/">weinre</a>,
+    <b>WE</b>b <b>IN</b>spector <b>RE</b>mote
+
+  <p>or try <a href="http://ripple.incubator.apache.org/">Apache Ripple</a>,
+    a mobile simulator for Chrome, so you can use Chrome Dev Tools
+
+  <p>also see some of my
+    <a href="http://muellerware.org/papers">other papers</a>
+    for additional debugging tools
+</article>
+
+<!-- ======================================================= -->
+<article>
+  <h1>demo: debug an app</h1>
+</article>
+
+<!-- ======================================================= -->
+<!-- ======================================================= -->
+<article>
+    <h1>questions?</h1>
+</article>
+
+<!-- ======================================================= -->
+</section>
+</body>
+</html>
+
+<!--
+#===============================================================================
+# Copyright (c) 2013 Patrick Mueller
+#
+# Tumbolia Public License
+#
+# Copying and distribution of this file, with or without modification, are
+# permitted in any medium without royalty provided the copyright notice and
+# this notice are preserved.
+#
+# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+#
+#   0. opan saurce LOL
+#===============================================================================
+-->

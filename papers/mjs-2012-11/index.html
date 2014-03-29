@@ -1,0 +1,1821 @@
+<!doctype html>
+
+<!--
+Licensed under the Tumbolia Public License. See footer for details.
+-->
+
+
+<html>
+    <head>
+        <title>debugging mobile web apps</title>
+
+        <meta charset='utf-8'>
+        <style>
+            a {
+                text-decoration:  none;
+            }
+            code {
+                background-color: #DDD;
+
+            }
+            h3 {
+                border-bottom:    solid thin black;
+            }
+            indent {
+                display:     block;
+                margin-left: 2em;
+            }
+        </style>
+        <script src="js/prettify.js"></script>
+        <script src="js/d3.v2.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/profile-data.js"></script>
+        <script src="js/rsprofiler-client-hacked.js"></script>
+        <link rel="stylesheet" href="css/rsprofiler.css">
+    </head>
+
+    <body style='display: none'>
+        <section class='slides layout-regular template-default'>
+
+            <!-- ======================================================= -->
+            <article>
+                <h1><span style="font-size:80%;">debugging mobile web apps</span></h1>
+
+                <p>for:
+                <indent>
+                  <a href="http://www.environmentsforhumans.com/2012/mobile-javascript-summit/">2012 Mobile JavaScript Summit</a>
+                  <br>November 12 2012
+                </indent>
+
+                  <!--
+                  <a style="float:right" width=50 title="webkit"  href="http://webkit.org"><img src="images/logo-webkit.png"></a>
+                  -->
+                <p>by:
+
+                  <a style="float:right" width=50 title="cordova" href="http://cordova.io"><img src="images/logo-phonegap.png"></a>
+                  &nbsp;
+                  <a style="float:right" width=50 title="ibm"     href="http://www.ibm.com/"><img src="images/logo-ibm.jpg"></a>
+                <indent><i>
+                  Patrick Mueller
+                  <br><a href="http://twitter.com/pmuellr">@pmuellr</a>
+                  <br><a href="http://muellerware.org/">http://muellerware.org/</a>
+                </i></indent>
+            </article>
+
+            <!-- ======================================================= -->
+            <article class="smaller">
+                <h3>etc</h3>
+
+                <!--
+                <p><b>attributions</b>
+
+                <indent>
+                  November 12 2012 is Veterans Day (observed; actual day is November 11).
+                  US Veteran's Day poster thumbnails from:
+                  <indent>
+                    <a href="http://www1.va.gov/opa/vetsday/gallery.asp">http://www1.va.gov/opa/vetsday/gallery.asp</a>
+                  </indent>
+                </indent>
+                -->
+
+                <p><b>canonical links to presentation</b>
+                <indent>
+                      <a href="http://muellerware.org/papers/mjs-2012-11/index.html">http://muellerware.org/papers/mjs-2012-11/index.html</a>
+                  <br><a href="http://dl.dropbox.com/u/2192156/Papers/mjs-2012-11/index.html">http://dl.dropbox.com/u/2192156/Papers/mjs-2012-11/index.html</a>
+                </indent>
+
+                <p><b>slide template</b>
+                <indent>
+                  html5slides
+                  <indent>
+                    <a href="http://code.google.com/p/html5slides/">http://code.google.com/p/html5slides/</a>
+                  </indent>
+                </indent>
+
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>what</h3>
+
+                <p>This presentation will cover:
+                <ul>
+                  <li><b>tools</b> that can be used to debug ...
+                  <li>... <b>mobile web apps</b>
+                </ul>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>what's a '<i>mobile web app</i>'?</h3>
+
+                <ul>
+                  <li>web pages running in a mobile browser
+                  <li>native app that uses a 'web control' (eg,
+                    <a href="http://cordova.io">Apache Cordova</a>,
+                    <a href="http://phonegap.com/">Adobe PhoneGap</a>,
+                    <a href="http://www.ibm.com/software/mobile-solutions/worklight/">IBM Worklight</a>,
+                    etc)
+                </ul>
+
+                <p>Basically, an app that uses modern HTML, CSS and JavaScript
+                on a mobile device.
+
+            </article>
+
+            <!-- ======================================================= -->
+            <!-- ======================================================= -->
+            <article>
+                <h1>platforms</h1>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>RIM</h3>
+
+                <p>first mobile platform vendor to ship
+                   real remote Web Inspector implementation from WebKit
+
+                <ul>
+                <li>works just like Chrome Dev Tools
+                <li>should just work on modern RIM devices since PlayBook
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="https://developer.blackberry.com/html5/documentation/web_inspector_overview_1553586_11.html">[RIM docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>iOS</h3>
+                <p>Real remote Web Inspector like Safari 6 Web Inspector
+
+                    <ul>
+                    <li>"like Safari 6 Web Inspector" not neccessarily a good thing, wrt UI
+                    <li>only on iOS 6
+                    <li>must use Safari 6 as the client
+                    <li>must have the latest Xcode
+                    </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariWebContent/DebuggingSafarioniPhoneContent/DebuggingSafarioniPhoneContent.html">[Apple docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>Android</h3>
+
+                <p>Real remote Web Inspector like Chrome Dev Tools
+                <ul>
+                    <li>enabled for Chrome/Android only
+                    <li>not enabled for WebView
+                    <li>so won't work with Cordova :-(
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                  <li><a href="https://developers.google.com/chrome/mobile/docs/debugging">[Google docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>Windows</h3>
+
+                <p>???
+
+                <p>Ongoing work to
+                <a href="https://issues.apache.org/jira/browse/CB-1193">get weinre running on Windows Phone</a>.
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>Boot to Gecko / Firefox OS</h3>
+
+                <p>Runs applications implemented entirely in HTML, CSS and
+                JavaScript.
+                <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox_OS">[link]</a>
+
+                <p>Also see the slide on <b>r2d2b2g</b> in this presentation.
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Boot_to_Gecko/Debugging_on_Boot_to_Gecko">[Mozilla docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <!-- ======================================================= -->
+            <article>
+                <h1>simulators</h1>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>ripple</h3>
+
+                <p>Chrome extension allowing you to quickly see how your
+                   application looks and functions on multiple mobile devices
+                   and platforms.
+
+                <ul>
+                    <li>supports using WebWorks and Cordova APIs
+                    <li>supports JavaScript debugging
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                   <li><a href="https://developer.blackberry.com/html5/documentation/getting_started_with_ripple_1866966_11.html">[RIM docs]</a>
+                   <li><a href="http://incubator.apache.org/projects/ripple.html">[Apache Incubator docs]</a>
+                </ul>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>r2d2b2g</h3>
+
+                <p>Firefox extension to run the Boot to Gecko desktop and
+                apps within Firefox.
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="https://hacks.mozilla.org/2012/10/r2d2b2g-an-experimental-prototype-firefox-os-test-environment/">[Mozilla intro docs]</a>
+                    <li><a href="http://www.blueskyonmars.com/2012/11/08/r2d2b2g-is-becoming-the-firefox-os-simulator/">[Mozilla announcement of r2d2b2g becoming the Firefox OS Simulator]</a>
+                </ul>
+                <p>
+            </article>
+
+            <!-- ======================================================= -->
+            <!-- ======================================================= -->
+            <article>
+                <h1>tools</h1>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>jsbin</h3>
+
+                <p>From the web site:
+
+                <p><indent>
+                <i>JS Bin is a webapp specifically designed to help
+                JavaScript and CSS folk test snippets of code, within some
+                context, and debug the code collaboratively.</i>
+                </indent>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://jsbin.com/">[JS Bin docs]</a>
+                    <li><a href="http://www.youtube.com/watch?v=vsmJq7tU_2o">[JS Bin and Cordova apps???]</a>
+                </ul>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>aardwolf</h3>
+
+                <p>From the web site:
+
+                <p><indent><i>
+                Aardwolf is a remote JavaScript debugger for iPhone / Android
+                / WindowsPhone 7 / BlackBerry OS 6+. It is written in JavaScript.
+                </i></indent>
+
+                <ul>
+                    <li>only cross-platform tool to debug JavaScript
+                    <li>instruments your code before running it
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://lexandera.com/aardwolf/">[Aardwolf docs]</a>
+                </ul>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>jsfiddle</h3>
+
+                <p>Popular HTML, CSS, JavaScript snippet testing environment
+
+                <ul>
+                    <li>includes "Run" option to debug with weinre via
+                    the busy, busy public weinre server at
+                    debug.phonegap.com
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://jsfiddle.net/">[jsFiddle]</a>
+                    <li><a href="http://doc.jsfiddle.net/">[jsFiddle docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>Adobe Edge Inspect</h3>
+
+                <p>Preview and inspect web designs on mobile devices.
+
+                <ul>
+                    <li>besides lots of other goodies, embeds weinre functionality
+                    <li>hosted service, part of Adobe Creative Cloud
+                    <li>free for one concurrent connection, $$$ for more than one
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://html.adobe.com/edge/inspect/">[Adobe docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>rsprofiler <img src="images/rs-profiler-icon-32x32.png"></h3>
+
+                <p>proof-of-concept project for extracting and displaying
+                dtrace-ishly precise JavaScript performance profiling
+
+                <ul>
+                    <li>can be used wherever you can use Safari 6 desktop or
+                    iOS 6 remote debug
+                    <li>currently displays profile data as an interactive flame
+                    graph
+                </ul>
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://pmuellr.github.com/rsprofiler/">[static rsprofiler demo]</a>
+                    <li><a href="https://github.com/pmuellr/rsprofiler">[rsprofiler at github]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>rsprofiler <img src="images/rs-profiler-icon-32x32.png"> demo source</h3>
+
+                <!--
+                <script src="https://gist.github.com/4048039.js?file=rsprofiler-demo-code.js"></script>
+                -->
+
+                <pre class="prettyprint" style="font-size: 60%">
+function run() {
+    rsprofiler.start("jquery profile")
+    runTests()
+    rsprofiler.stop(function(err) { ... })
+}
+
+function runTests() {
+    for (var i=0; i&lt;40; i++) { runTestsDiv1(); runTestsSpan1() }
+}
+
+function runTestsDiv1() {
+    for (var i=0; i&lt;1000; i++) { $("#div-1").text() }
+}
+
+function runTestsSpan1() {
+    for (var i=0; i&lt;1000; i++) { $("#span-1").text($("#span-1").text()) }
+}
+                </pre>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>rsprofiler <img src="images/rs-profiler-icon-32x32.png"> demo flame graph</h3>
+
+                <div id="profiles-chart"></div>
+
+                <p>Hover over a box! Click a box!
+                <pre id="identified-node"></pre>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>iWebInspector</h3>
+
+                <p>Debug using real remote Web Inspector for iOS 5 simulator
+
+                <ul>
+                    <li>for iOS 5 simulator only
+                    <li>not everything works correctly
+                    <li><b>JAVASCRIPT SOURCE DEBUGGING WORKS</b>
+                    <li>if you have Safari 6.0 installed (you probably do):
+                    <ul>
+                        <li>you'll need to install and use old version of
+                            Chromium for your debug client; see
+                            <a href="http://www.iwebinspector.com/help.html">
+                               the iWebInspector help page
+                            </a>
+                            for more info.
+                    </ul>
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://www.iwebinspector.com/">[iWebInspector docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>weinre</h3>
+
+                <ul>
+                    <li>UI and a lot of function from Web Inspector
+                    <li>mainly for WebKit-based browsers, other platforms
+                        being tinkered with
+                    <li><b>NO JAVASCRIPT SOURCE DEBUGGING</b>
+                    <li>run the weinre server on your desktop box
+                    <ul>
+                        <li>or <a href='https://www.google.com/search?q="weinre+target+debug"'>find a weinre server on the internets</a>
+                    </ul>
+                    <li>install via <code>sudo npm -g install weinre</code>
+                </ul>
+
+                <p><b>links</b>
+                <ul>
+                    <li><a href="http://people.apache.org/~pmuellr/weinre/">[weinre docs]</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>weinre tips and tricks</h3>
+
+                <ul>
+                    <li>use <tt>--verbose</tt> and <tt>--debug</tt> when things are b0rken
+                    <li>did you use the <tt>--boundHost</tt> option?
+                    <li>are your device and desktop on the same network?
+                    <li>does the demo shipped with weinre work?
+                </ul>
+
+                <p>For issues with Cordova, PhoneGap, Worklight:
+                <ul>
+                    <li>switch order of the &lt;script src=&gt; entries for weinre.js and cordova.js
+                    <li>did you add your weinre server to the white-list?
+                </ul>
+
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>demo time!</h3>
+
+                <p>weinre movies here:
+                <ul>
+                    <li><a href="http://www.youtube.com/results?search_query=weinre">http://www.youtube.com/results?search_query=weinre</a>
+                </ul>
+
+                <p>old rsprofiler movie here:
+                <ul>
+                    <li><a href="http://www.youtube.com/watch?v=ZbpS9QYbGvw">http://www.youtube.com/watch?v=ZbpS9QYbGvw</a>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>contribute to weinre!</h3>
+                <ul>
+                    <li><a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?pid=12312420&components=12316604&priority=3&issuetype=1">report a bug</a>
+                    <li><a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?pid=12312420&components=12316604&priority=3&issuetype=2">request a new feature</a>
+                    <li><a href="http://wiki.apache.org/cordova/ContributorWorkflow">hack some stuff:</a>
+                    <ul>
+                        <li>doc
+                        <li>code:
+                        <ul>
+                            <li>replace XHR transport with socket.io
+                            <li>help with <a href="https://issues.apache.org/jira/browse/CB-1193">Windows Phone 7 support</a>
+                            <li>help with <a href="https://issues.apache.org/jira/browse/CB-85">media query support</a>
+                            <li>whatever!
+                        </ul>
+                    </ul>
+                </ul>
+            </article>
+
+            <!-- ======================================================= -->
+            <!--
+            <article>
+                <h3>one more thing ...</h3>
+
+                <p>well, not really, not now anyway.  maybe later.
+                <p>watch:
+                <indent>
+                        twitter: <a href="http://twitter.com/pmuellr">@pmuellr</a>
+                    <br>github:  <a href="https://github.com/pmuellr">https://github.com/pmuellr</a>
+                </indent>
+            </article>
+            -->
+
+            <!-- ======================================================= -->
+            <article>
+                <h3>questions?</h3>
+            </article>
+
+
+            <!-- ======================================================= -->
+
+        </section>
+
+    </body>
+<style>
+/*
+  Google HTML5 slides template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+*/
+
+/* Framework */
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  display: block !important;
+
+  height: 100%;
+  min-height: 740px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: rgb(215, 215, 215);
+  background: -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background: -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background: -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+
+  xxx-webkit-font-smoothing: antialiased;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+  position: absolute;
+
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.slides > article {
+  display: block;
+
+  position: absolute;
+  overflow: hidden;
+
+  width: 900px;
+  height: 700px;
+
+  left: 50%;
+  top: 50%;
+
+  margin-left: -450px;
+  margin-top: -350px;
+
+  padding: 40px 60px;
+
+  box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  background-color: white;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, .3);
+
+  transition: transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  -moz-transition: -moz-transform .3s ease-out;
+  -webkit-transition: -webkit-transform .3s ease-out;
+}
+.slides.layout-widescreen > article {
+  margin-left: -550px;
+  width: 1100px;
+}
+.slides.layout-faux-widescreen > article {
+  margin-left: -550px;
+  width: 1100px;
+
+  padding: 40px 160px;
+}
+
+.slides.template-default > article:not(.nobackground):not(.biglogo) {
+
+  background-color: white;
+}
+
+.slides.template-io2011 > article:not(.nobackground):not(.biglogo) {
+
+  background-size: 100%, 225px;
+
+  background-color: white;
+}
+.slides.layout-widescreen > article:not(.nobackground):not(.biglogo),
+.slides.layout-faux-widescreen > article:not(.nobackground):not(.biglogo) {
+  background-position-x: 0, 840px;
+}
+
+/* Clickable/tappable areas */
+
+.slide-area {
+  z-index: 1000;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 700px;
+
+  left: 50%;
+  top: 50%;
+
+  cursor: pointer;
+  margin-top: -350px;
+
+  tap-highlight-color: transparent;
+  -o-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+#prev-slide-area {
+  margin-left: -550px;
+}
+#next-slide-area {
+  margin-left: 400px;
+}
+.slides.layout-widescreen #prev-slide-area,
+.slides.layout-faux-widescreen #prev-slide-area {
+  margin-left: -650px;
+}
+.slides.layout-widescreen #next-slide-area,
+.slides.layout-faux-widescreen #next-slide-area {
+  margin-left: 500px;
+}
+
+/* Slide styles */
+
+.slides.template-default article.biglogo {
+}
+
+.slides.template-io2011 article.biglogo {
+
+  background-size: 600px;
+}
+
+/* Slides */
+
+.slides > article {
+  display: none;
+}
+.slides > article.far-past {
+  display: block;
+  transform: translate(-2040px);
+  -o-transform: translate(-2040px);
+  -moz-transform: translate(-2040px);
+  -webkit-transform: translate3d(-2040px, 0, 0);
+}
+.slides > article.past {
+  display: block;
+  transform: translate(-1020px);
+  -o-transform: translate(-1020px);
+  -moz-transform: translate(-1020px);
+  -webkit-transform: translate3d(-1020px, 0, 0);
+}
+.slides > article.current {
+  display: block;
+  transform: translate(0);
+  -o-transform: translate(0);
+  -moz-transform: translate(0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.slides > article.next {
+  display: block;
+  transform: translate(1020px);
+  -o-transform: translate(1020px);
+  -moz-transform: translate(1020px);
+  -webkit-transform: translate3d(1020px, 0, 0);
+}
+.slides > article.far-next {
+  display: block;
+  transform: translate(2040px);
+  -o-transform: translate(2040px);
+  -moz-transform: translate(2040px);
+  -webkit-transform: translate3d(2040px, 0, 0);
+}
+
+.slides.layout-widescreen > article.far-past,
+.slides.layout-faux-widescreen > article.far-past {
+  display: block;
+  transform: translate(-2260px);
+  -o-transform: translate(-2260px);
+  -moz-transform: translate(-2260px);
+  -webkit-transform: translate3d(-2260px, 0, 0);
+}
+.slides.layout-widescreen > article.past,
+.slides.layout-faux-widescreen > article.past {
+  display: block;
+  transform: translate(-1130px);
+  -o-transform: translate(-1130px);
+  -moz-transform: translate(-1130px);
+  -webkit-transform: translate3d(-1130px, 0, 0);
+}
+.slides.layout-widescreen > article.current,
+.slides.layout-faux-widescreen > article.current {
+  display: block;
+  transform: translate(0);
+  -o-transform: translate(0);
+  -moz-transform: translate(0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.slides.layout-widescreen > article.next,
+.slides.layout-faux-widescreen > article.next {
+  display: block;
+  transform: translate(1130px);
+  -o-transform: translate(1130px);
+  -moz-transform: translate(1130px);
+  -webkit-transform: translate3d(1130px, 0, 0);
+}
+.slides.layout-widescreen > article.far-next,
+.slides.layout-faux-widescreen > article.far-next {
+  display: block;
+  transform: translate(2260px);
+  -o-transform: translate(2260px);
+  -moz-transform: translate(2260px);
+  -webkit-transform: translate3d(2260px, 0, 0);
+}
+
+/* Styles for slides */
+
+.slides > article {
+  xxx-font-family: 'Open Sans', Arial, sans-serif;
+  font-family: Verdana, sans-serif;
+
+  color: rgb(102, 102, 102);
+  xxx-text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+
+  font-size: 30px;
+  line-height: 36px;
+
+  letter-spacing: -1px;
+}
+
+b {
+  font-weight: 600;
+}
+
+.blue {
+  color: rgb(0, 102, 204);
+}
+.yellow {
+  color: rgb(255, 211, 25);
+}
+.green {
+  color: rgb(0, 138, 53);
+}
+.red {
+  color: rgb(255, 0, 0);
+}
+.black {
+  color: black;
+}
+.white {
+  color: white;
+}
+
+a {
+  color: rgb(0, 102, 204);
+}
+a:visited {
+  color: rgba(0, 102, 204, .75);
+}
+a:hover {
+  background-color: #EEE;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+
+  margin-top: 20px;
+}
+p:first-child {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+
+  padding: 0;
+  margin: 0;
+  margin-top: 200px;
+  padding-right: 40px;
+
+  font-weight: 600;
+
+  letter-spacing: -3px;
+
+  color: rgb(51, 51, 51);
+}
+
+h2 {
+  font-size: 45px;
+  line-height: 45px;
+
+  position: absolute;
+  bottom: 150px;
+
+  padding: 0;
+  margin: 0;
+  padding-right: 40px;
+
+  font-weight: 600;
+
+  letter-spacing: -2px;
+
+  color: rgb(51, 51, 51);
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 36px;
+
+  padding: 0;
+  margin: 0;
+  padding-right: 40px;
+
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  color: rgb(51, 51, 51);
+}
+
+article.fill h3 {
+  background: rgba(255, 255, 255, .75);
+  padding-top: .2em;
+  padding-bottom: .3em;
+  margin-top: -.2em;
+  margin-left: -60px;
+  padding-left: 60px;
+  margin-right: -60px;
+  padding-right: 60px;
+}
+
+ul {
+  xxx-list-style: none;
+  padding-left: 1.0em;
+
+  xxx-margin-top: 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+
+  margin-left: .75em;
+}
+ul:first-child {
+  margin-top: 0;
+}
+ul ul {
+  margin-top: .5em;
+}
+li {
+  padding: 0;
+  margin: 0;
+
+  margin-bottom: .5em;
+}
+zzzli::before {
+  content: '·';
+
+  width: .75em;
+  margin-left: -.75em;
+
+  position: absolute;
+}
+
+pre {
+  xxx-font-family: 'Droid Sans Mono', 'Courier New', monospace;
+
+  font-size: 20px;
+  line-height: 28px;
+  padding: 5px 10px;
+
+  letter-spacing: -1px;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  color: black;
+  background: rgb(240, 240, 240);
+  border: 1px solid rgb(224, 224, 224);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);
+
+  overflow: hidden;
+}
+
+code {
+  font-size: 95%;
+  xxx-font-family: 'Droid Sans Mono', 'Courier New', monospace;
+
+  color: black;
+}
+
+iframe {
+  width: 100%;
+
+  height: 620px;
+
+  background: white;
+  border: 1px solid rgb(192, 192, 192);
+  margin: -1px;
+  /*box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);*/
+}
+
+h3 + iframe {
+  margin-top: 40px;
+  height: 540px;
+}
+
+article.fill iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  margin: 0;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  z-index: -1;
+}
+
+article.fill img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+
+  border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  z-index: -1;
+}
+img.centered {
+  margin: 0 auto;
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 40px;
+}
+th {
+  font-weight: 600;
+  text-align: left;
+}
+td,
+th {
+  border: 1px solid rgb(224, 224, 224);
+  padding: 5px 10px;
+  vertical-align: top;
+}
+
+.source {
+  position: absolute;
+  left: 60px;
+  top: 644px;
+  padding-right: 175px;
+
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+q {
+  display: block;
+  font-size: 60px;
+  line-height: 72px;
+
+  margin-left: 20px;
+
+  margin-top: 100px;
+  margin-right: 150px;
+}
+q::before {
+  content: '“';
+
+  position: absolute;
+  display: inline-block;
+  margin-left: -2.1em;
+  width: 2em;
+  text-align: right;
+
+  font-size: 90px;
+  color: rgb(192, 192, 192);
+}
+q::after {
+  content: '”';
+
+  position: absolute;
+  margin-left: .1em;
+
+  font-size: 90px;
+  color: rgb(192, 192, 192);
+}
+div.author {
+  text-align: right;
+  font-size: 40px;
+
+  margin-top: 20px;
+  margin-right: 150px;
+}
+div.author::before {
+  content: '—';
+}
+
+/* Size variants */
+
+article.smaller p,
+article.smaller ul {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+article.smaller table {
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+article.smaller pre {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+article.smaller q {
+  font-size: 40px;
+  line-height: 48px;
+}
+article.smaller q::before,
+article.smaller q::after {
+  font-size: 60px;
+}
+
+/* Builds */
+
+.build > * {
+  transition: opacity 0.5s ease-in-out 0.2s;
+  -o-transition: opacity 0.5s ease-in-out 0.2s;
+  -moz-transition: opacity 0.5s ease-in-out 0.2s;
+  -webkit-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+.to-build {
+  opacity: 0;
+}
+
+/* Pretty print */
+
+.prettyprint .str, /* string content */
+.prettyprint .atv { /* a markup attribute value */
+  color: rgb(0, 138, 53);
+}
+.prettyprint .kwd, /* a keyword */
+.prettyprint .tag { /* a markup tag name */
+  color: rgb(0, 102, 204);
+}
+.prettyprint .com { /* a comment */
+  color: rgb(127, 127, 127);
+  font-style: italic;
+}
+.prettyprint .lit { /* a literal value */
+  color: rgb(127, 0, 0);
+}
+.prettyprint .pun, /* punctuation, lisp open bracket, lisp close bracket */
+.prettyprint .opn,
+.prettyprint .clo {
+  color: rgb(127, 127, 127);
+}
+.prettyprint .typ, /* a type name */
+.prettyprint .atn, /* a markup attribute name */
+.prettyprint .dec,
+.prettyprint .var { /* a declaration; a variable name */
+  color: rgb(127, 0, 127);
+}
+</style>
+<script>
+/*
+  Google HTML5 slides template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+*/
+
+var PERMANENT_URL_PREFIX = 'http://html5slides.googlecode.com/svn/trunk/';
+var PERMANENT_URL_PREFIX = './html5slides/';
+
+var SLIDE_CLASSES = ['far-past', 'past', 'current', 'next', 'far-next'];
+
+var PM_TOUCH_SENSITIVITY = 15;
+
+var curSlide;
+
+/* ---------------------------------------------------------------------- */
+/* classList polyfill by Eli Grey
+ * (http://purl.eligrey.com/github/classList.js/blob/master/classList.js) */
+
+if (typeof document !== "undefined" && !("classList" in document.createElement("a"))) {
+
+(function (view) {
+
+var
+    classListProp = "classList"
+  , protoProp = "prototype"
+  , elemCtrProto = (view.HTMLElement || view.Element)[protoProp]
+  , objCtr = Object
+    strTrim = String[protoProp].trim || function () {
+    return this.replace(/^\s+|\s+$/g, "");
+  }
+  , arrIndexOf = Array[protoProp].indexOf || function (item) {
+    for (var i = 0, len = this.length; i < len; i++) {
+      if (i in this && this[i] === item) {
+        return i;
+      }
+    }
+    return -1;
+  }
+  // Vendors: please allow content code to instantiate DOMExceptions
+  , DOMEx = function (type, message) {
+    this.name = type;
+    this.code = DOMException[type];
+    this.message = message;
+  }
+  , checkTokenAndGetIndex = function (classList, token) {
+    if (token === "") {
+      throw new DOMEx(
+          "SYNTAX_ERR"
+        , "An invalid or illegal string was specified"
+      );
+    }
+    if (/\s/.test(token)) {
+      throw new DOMEx(
+          "INVALID_CHARACTER_ERR"
+        , "String contains an invalid character"
+      );
+    }
+    return arrIndexOf.call(classList, token);
+  }
+  , ClassList = function (elem) {
+    var
+        trimmedClasses = strTrim.call(elem.className)
+      , classes = trimmedClasses ? trimmedClasses.split(/\s+/) : []
+    ;
+    for (var i = 0, len = classes.length; i < len; i++) {
+      this.push(classes[i]);
+    }
+    this._updateClassName = function () {
+      elem.className = this.toString();
+    };
+  }
+  , classListProto = ClassList[protoProp] = []
+  , classListGetter = function () {
+    return new ClassList(this);
+  }
+;
+// Most DOMException implementations don't allow calling DOMException's toString()
+// on non-DOMExceptions. Error's toString() is sufficient here.
+DOMEx[protoProp] = Error[protoProp];
+classListProto.item = function (i) {
+  return this[i] || null;
+};
+classListProto.contains = function (token) {
+  token += "";
+  return checkTokenAndGetIndex(this, token) !== -1;
+};
+classListProto.add = function (token) {
+  token += "";
+  if (checkTokenAndGetIndex(this, token) === -1) {
+    this.push(token);
+    this._updateClassName();
+  }
+};
+classListProto.remove = function (token) {
+  token += "";
+  var index = checkTokenAndGetIndex(this, token);
+  if (index !== -1) {
+    this.splice(index, 1);
+    this._updateClassName();
+  }
+};
+classListProto.toggle = function (token) {
+  token += "";
+  if (checkTokenAndGetIndex(this, token) === -1) {
+    this.add(token);
+  } else {
+    this.remove(token);
+  }
+};
+classListProto.toString = function () {
+  return this.join(" ");
+};
+
+if (objCtr.defineProperty) {
+  var classListPropDesc = {
+      get: classListGetter
+    , enumerable: true
+    , configurable: true
+  };
+  try {
+    objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+  } catch (ex) { // IE 8 doesn't support enumerable:true
+    if (ex.number === -0x7FF5EC54) {
+      classListPropDesc.enumerable = false;
+      objCtr.defineProperty(elemCtrProto, classListProp, classListPropDesc);
+    }
+  }
+} else if (objCtr[protoProp].__defineGetter__) {
+  elemCtrProto.__defineGetter__(classListProp, classListGetter);
+}
+
+}(self));
+
+}
+/* ---------------------------------------------------------------------- */
+
+/* Slide movement */
+
+function getSlideEl(no) {
+  if ((no < 0) || (no >= slideEls.length)) {
+    return null;
+  } else {
+    return slideEls[no];
+  }
+};
+
+function updateSlideClass(slideNo, className) {
+  var el = getSlideEl(slideNo);
+
+  if (!el) {
+    return;
+  }
+
+  if (className) {
+    el.classList.add(className);
+  }
+
+  for (var i in SLIDE_CLASSES) {
+    if (className != SLIDE_CLASSES[i]) {
+      el.classList.remove(SLIDE_CLASSES[i]);
+    }
+  }
+};
+
+function updateSlides() {
+  for (var i = 0; i < slideEls.length; i++) {
+    switch (i) {
+      case curSlide - 2:
+        updateSlideClass(i, 'far-past');
+        break;
+      case curSlide - 1:
+        updateSlideClass(i, 'past');
+        break;
+      case curSlide:
+        updateSlideClass(i, 'current');
+        break;
+      case curSlide + 1:
+        updateSlideClass(i, 'next');
+        break;
+      case curSlide + 2:
+        updateSlideClass(i, 'far-next');
+        break;
+      default:
+        updateSlideClass(i);
+        break;
+    }
+  }
+
+  triggerLeaveEvent(curSlide - 1);
+  triggerEnterEvent(curSlide);
+
+  window.setTimeout(function() {
+    // Hide after the slide
+    disableSlideFrames(curSlide - 2);
+  }, 301);
+
+  enableSlideFrames(curSlide - 1);
+  enableSlideFrames(curSlide + 2);
+
+  if (isChromeVoxActive()) {
+    speakAndSyncToNode(slideEls[curSlide]);
+  }
+
+  updateHash();
+};
+
+function buildNextItem() {
+  var toBuild  = slideEls[curSlide].querySelectorAll('.to-build');
+
+  if (!toBuild.length) {
+    return false;
+  }
+
+  toBuild[0].classList.remove('to-build', '');
+
+  if (isChromeVoxActive()) {
+    speakAndSyncToNode(toBuild[0]);
+  }
+
+  return true;
+};
+
+function prevSlide() {
+  if (curSlide > 0) {
+    curSlide--;
+
+    updateSlides();
+  }
+};
+
+function nextSlide() {
+  if (buildNextItem()) {
+    return;
+  }
+
+  if (curSlide < slideEls.length - 1) {
+    curSlide++;
+
+    updateSlides();
+  }
+};
+
+/* Slide events */
+
+function triggerEnterEvent(no) {
+  var el = getSlideEl(no);
+  if (!el) {
+    return;
+  }
+
+  var onEnter = el.getAttribute('onslideenter');
+  if (onEnter) {
+    new Function(onEnter).call(el);
+  }
+
+  var evt = document.createEvent('Event');
+  evt.initEvent('slideenter', true, true);
+  evt.slideNumber = no + 1; // Make it readable
+
+  el.dispatchEvent(evt);
+};
+
+function triggerLeaveEvent(no) {
+  var el = getSlideEl(no);
+  if (!el) {
+    return;
+  }
+
+  var onLeave = el.getAttribute('onslideleave');
+  if (onLeave) {
+    new Function(onLeave).call(el);
+  }
+
+  var evt = document.createEvent('Event');
+  evt.initEvent('slideleave', true, true);
+  evt.slideNumber = no + 1; // Make it readable
+
+  el.dispatchEvent(evt);
+};
+
+/* Touch events */
+
+function handleTouchStart(event) {
+  if (event.touches.length == 1) {
+    touchDX = 0;
+    touchDY = 0;
+
+    touchStartX = event.touches[0].pageX;
+    touchStartY = event.touches[0].pageY;
+
+    document.body.addEventListener('touchmove', handleTouchMove, true);
+    document.body.addEventListener('touchend', handleTouchEnd, true);
+  }
+};
+
+function handleTouchMove(event) {
+  if (event.touches.length > 1) {
+    cancelTouch();
+  } else {
+    touchDX = event.touches[0].pageX - touchStartX;
+    touchDY = event.touches[0].pageY - touchStartY;
+  }
+};
+
+function handleTouchEnd(event) {
+  var dx = Math.abs(touchDX);
+  var dy = Math.abs(touchDY);
+
+  if ((dx > PM_TOUCH_SENSITIVITY) && (dy < (dx * 2 / 3))) {
+    if (touchDX > 0) {
+      prevSlide();
+    } else {
+      nextSlide();
+    }
+  }
+
+  cancelTouch();
+};
+
+function cancelTouch() {
+  document.body.removeEventListener('touchmove', handleTouchMove, true);
+  document.body.removeEventListener('touchend', handleTouchEnd, true);
+};
+
+/* Preloading frames */
+
+function disableSlideFrames(no) {
+  var el = getSlideEl(no);
+  if (!el) {
+    return;
+  }
+
+  var frames = el.getElementsByTagName('iframe');
+  for (var i = 0, frame; frame = frames[i]; i++) {
+    disableFrame(frame);
+  }
+};
+
+function enableSlideFrames(no) {
+  var el = getSlideEl(no);
+  if (!el) {
+    return;
+  }
+
+  var frames = el.getElementsByTagName('iframe');
+  for (var i = 0, frame; frame = frames[i]; i++) {
+    enableFrame(frame);
+  }
+};
+
+function disableFrame(frame) {
+  frame.src = 'about:blank';
+};
+
+function enableFrame(frame) {
+  var src = frame._src;
+
+  if (frame.src != src && src != 'about:blank') {
+    frame.src = src;
+  }
+};
+
+function setupFrames() {
+  var frames = document.querySelectorAll('iframe');
+  for (var i = 0, frame; frame = frames[i]; i++) {
+    frame._src = frame.src;
+    disableFrame(frame);
+  }
+
+  enableSlideFrames(curSlide);
+  enableSlideFrames(curSlide + 1);
+  enableSlideFrames(curSlide + 2);
+};
+
+function setupInteraction() {
+  /* Clicking and tapping */
+
+  var el = document.createElement('div');
+  el.className = 'slide-area';
+  el.id = 'prev-slide-area';
+  el.addEventListener('click', prevSlide, false);
+  document.querySelector('section.slides').appendChild(el);
+
+  var el = document.createElement('div');
+  el.className = 'slide-area';
+  el.id = 'next-slide-area';
+  el.addEventListener('click', nextSlide, false);
+  document.querySelector('section.slides').appendChild(el);
+
+  /* Swiping */
+
+  document.body.addEventListener('touchstart', handleTouchStart, false);
+}
+
+/* ChromeVox support */
+
+function isChromeVoxActive() {
+  if (typeof(cvox) == 'undefined') {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+function speakAndSyncToNode(node) {
+  if (!isChromeVoxActive()) {
+    return;
+  }
+
+  cvox.ChromeVox.navigationManager.switchToStrategy(
+      cvox.ChromeVoxNavigationManager.STRATEGIES.LINEARDOM, 0, true);
+  cvox.ChromeVox.navigationManager.syncToNode(node);
+  cvox.ChromeVoxUserCommands.finishNavCommand('');
+  var target = node;
+  while (target.firstChild) {
+    target = target.firstChild;
+  }
+  cvox.ChromeVox.navigationManager.syncToNode(target);
+};
+
+function speakNextItem() {
+  if (!isChromeVoxActive()) {
+    return;
+  }
+
+  cvox.ChromeVox.navigationManager.switchToStrategy(
+      cvox.ChromeVoxNavigationManager.STRATEGIES.LINEARDOM, 0, true);
+  cvox.ChromeVox.navigationManager.next(true);
+  if (!cvox.DomUtil.isDescendantOfNode(
+      cvox.ChromeVox.navigationManager.getCurrentNode(), slideEls[curSlide])){
+    var target = slideEls[curSlide];
+    while (target.firstChild) {
+      target = target.firstChild;
+    }
+    cvox.ChromeVox.navigationManager.syncToNode(target);
+    cvox.ChromeVox.navigationManager.next(true);
+  }
+  cvox.ChromeVoxUserCommands.finishNavCommand('');
+};
+
+function speakPrevItem() {
+  if (!isChromeVoxActive()) {
+    return;
+  }
+
+  cvox.ChromeVox.navigationManager.switchToStrategy(
+      cvox.ChromeVoxNavigationManager.STRATEGIES.LINEARDOM, 0, true);
+  cvox.ChromeVox.navigationManager.previous(true);
+  if (!cvox.DomUtil.isDescendantOfNode(
+      cvox.ChromeVox.navigationManager.getCurrentNode(), slideEls[curSlide])){
+    var target = slideEls[curSlide];
+    while (target.lastChild){
+      target = target.lastChild;
+    }
+    cvox.ChromeVox.navigationManager.syncToNode(target);
+    cvox.ChromeVox.navigationManager.previous(true);
+  }
+  cvox.ChromeVoxUserCommands.finishNavCommand('');
+};
+
+/* Hash functions */
+
+function getCurSlideFromHash() {
+  var slideNo = parseInt(location.hash.substr(1));
+
+  if (slideNo) {
+    curSlide = slideNo - 1;
+  } else {
+    curSlide = 0;
+  }
+};
+
+function updateHash() {
+  location.replace('#' + (curSlide + 1));
+};
+
+/* Event listeners */
+
+function handleBodyKeyDown(event) {
+  switch (event.keyCode) {
+    case 39: // right arrow
+    case 13: // Enter
+    case 32: // space
+    case 34: // PgDn
+      nextSlide();
+      event.preventDefault();
+      break;
+
+    case 37: // left arrow
+    case 8: // Backspace
+    case 33: // PgUp
+      prevSlide();
+      event.preventDefault();
+      break;
+
+    case 40: // down arrow
+      if (isChromeVoxActive()) {
+        speakNextItem();
+      } else {
+        nextSlide();
+      }
+      event.preventDefault();
+      break;
+
+    case 38: // up arrow
+      if (isChromeVoxActive()) {
+        speakPrevItem();
+      } else {
+        prevSlide();
+      }
+      event.preventDefault();
+      break;
+  }
+};
+
+function addEventListeners() {
+  document.addEventListener('keydown', handleBodyKeyDown, false);
+};
+
+/* Initialization */
+
+function addPrettify() {
+};
+
+function addFontStyle() {
+};
+
+function addGeneralStyle() {
+  var el = document.createElement('meta');
+  el.name = 'viewport';
+  el.content = 'width=1100,height=750';
+  document.querySelector('head').appendChild(el);
+
+  var el = document.createElement('meta');
+  el.name = 'apple-mobile-web-app-capable';
+  el.content = 'yes';
+  document.querySelector('head').appendChild(el);
+};
+
+function makeBuildLists() {
+  for (var i = curSlide, slide; slide = slideEls[i]; i++) {
+    var items = slide.querySelectorAll('.build > *');
+    for (var j = 0, item; item = items[j]; j++) {
+      if (item.classList) {
+        item.classList.add('to-build');
+      }
+    }
+  }
+};
+
+function handleDomLoaded() {
+  prettyPrint()
+
+  slideEls = document.querySelectorAll('section.slides > article');
+
+  addVetDayPosters(slideEls)
+
+  setupFrames();
+
+  addFontStyle();
+  addGeneralStyle();
+  addPrettify();
+  addEventListeners();
+
+  updateSlides();
+
+  setupInteraction();
+  makeBuildLists();
+
+  document.body.classList.add('loaded');
+};
+
+function initialize() {
+  getCurSlideFromHash();
+
+  if (window['_DEBUG']) {
+    PERMANENT_URL_PREFIX = '../';
+  }
+
+  if (window['_DCL']) {
+    handleDomLoaded();
+  } else {
+    document.addEventListener('DOMContentLoaded', handleDomLoaded, false);
+  }
+}
+
+//------------------------------------------------------------------------------
+function addVetDayPosters(slideEls) {
+    years = []
+    for (var i=1978; i<=2012; i++) {
+      years.push(("" + i).slice(2))
+    }
+    years.reverse()
+
+    for (var i=1; i<slideEls.length; i++) {
+        var slideEl = slideEls[i]
+        var year    = years.shift()
+        var year    = ("" + (2012 - ((i-1) % 35))).slice(2)
+
+        if (!year) return
+
+        /*
+        var a = document.createElement("a")
+        a.href      = "http://www1.va.gov/opa/vetsday/poster/vetsday" + year + ".jpg"
+        a.target    = "__blank"
+        a.innerHTML = '<img src="images/thumb' + year + '.jpg" height="92" width="72" border="0" class="vet-thumb"/>'
+
+        slideEl.appendChild(a)
+        */
+
+        /*
+        var img = document.createElement("img")
+        img.src       = "images/thumb" + year + ".jpg"
+        img.height    = 92
+        img.width     = 72
+        img.border    = 0
+        img.className = "vet-thumb"
+
+        slideEl.appendChild(img)
+        */
+
+        var pageNo = document.createElement("div")
+        pageNo.className = "page-no"
+        pageNo.innerHTML = i + 1
+
+        slideEl.appendChild(pageNo)
+    }
+}
+
+initialize();
+</script>
+
+<style>
+img.vet-thumb {
+    display:                    block;
+    position:                   absolute;
+    bottom:                     0.0em;
+    right:                      0.0em;
+    border-bottom-right-radius: 10px;
+}
+div.page-no {
+    display:                    block;
+    position:                   absolute;
+    top:                        0.0em;
+    right:                      0.0em;
+    font-size:                  60%;
+    padding-left:               1.0em;
+    padding-right:              1.0em;
+    border-bottom-left-radius:  10px;
+    border-top-right-radius:    10px;
+    border-left:                solid black thin;
+    border-bottom:              solid black thin;
+    background-color:           #EEE;
+}
+</style>
+</html>
+
+<!--
+#===============================================================================
+# Copyright (c) 2012 Patrick Mueller
+#
+# Tumbolia Public License
+#
+# Copying and distribution of this file, with or without modification, are
+# permitted in any medium without royalty provided the copyright notice and
+# this notice are preserved.
+#
+# TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+#
+#   0. opan saurce LOL
+#===============================================================================
+-->

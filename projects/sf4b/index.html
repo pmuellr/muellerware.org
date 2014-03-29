@@ -1,0 +1,21 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/sf4b");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>sf4b - Scrape Flickr 4 Blog</h1>
+<p>A <a href="http://greasemonkey.mozdev.org">GreaseMonkey</a> script 
+to scrape info from a flickr image so
+that I can paste it into my blog.  I like to put pictures in my blog.
+</p>
+
+<p>To install, right click on the link below and select the menu
+item "Install This User Script..."</p>
+
+<p><a href="sf4b.user.js">sf4b.user.js</a></p>
+
+<?php $page->writeFooter(); ?>

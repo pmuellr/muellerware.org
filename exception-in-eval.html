@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<a href="javascript:clickMe();">click me!</a>
+<p>
+<div id="output" style="font-family: monospace"></div>
+<script>
+function clickMe() {
+    var lines99 = new Array(100).join("\n");
+    evalString = lines99 + "for ]](x does not compute)]]\n"; // syntax error on line 100
+    try {
+        eval(evalString); // this is line 12 of the source file
+    }
+    catch(e) {
+        dumpException(e);
+    }
+}
+
+function dumpException(obj) {
+    var result = "Exception:<br>\n";
+    for (var key in obj) {
+        result += "   " + key + ": " + obj[key] + "<br>\n";
+    }
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+</body>
+</html>

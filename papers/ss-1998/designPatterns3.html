@@ -1,0 +1,29 @@
+<!-- generated from MwSS98SlideSet designPatterns3 on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Design Pattern: Reading Serial Ports</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="designPatterns2.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Design Pattern: Reading Serial Ports</h1></td>
+<td align="right" valign="top"><a href="whySmalltalk.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Serial ports must be read constantly to keep from losing data.
+<li>Packets sent over serial port must be assembled, checked for errors.
+<li>Implement as two separate processes:
+<dl>
+<dt>Serial port reader
+<dd>High priority process that reads data from the serial port,
+sends it to the Packet assember actor.
+<dt>Packet assembler actor
+<dd>Lower priority process that reads the raw data from the
+Serial port reader, assembles into packets for higher level protocol.
+</dl>
+<li>Separation keeps things lively, but need to watch actor queue size ...
+</ul>
+</body>
+</html>

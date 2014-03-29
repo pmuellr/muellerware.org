@@ -1,0 +1,84 @@
+/* ------------------------------------------------------- */
+
+@media print {
+    body, table, tr, td  {
+        font-size: 50%;
+    }
+}
+
+@media screen {
+    body, table, tr, td  {
+        font-size: medium;
+    }
+}
+
+/* ------------------------------------------------------- */
+
+a, a:link, a:visited, a:active {
+	text-decoration: none;
+	color:           blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* ------------------------------------------------------- */
+
+body, table, tr, td {
+	font-family: "Verdana,Arial,sans-serif";
+}
+
+body {
+	color:       #000000;
+	background:  #F0F0F0;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+div.sectionTitle {
+	background:   #D0D0FF;
+	padding:      5px;
+	font-weight:  bold;
+	border-width: thin;
+	border-style: solid;
+	border-color: #B0B0EF;
+    -moz-border-radius: 10px;
+}
+
+td.sectionTitle {
+	padding-top: 10px;
+}
+
+td.sectionBody {
+	padding-top: 10px;
+}
+
+tr.DateCompanyLocation {
+	font-weight:  bold;
+	background:   #E0E0E0;
+	border-width: thin;
+	border-style: solid;
+	border-color: #000000;
+    -moz-border-radius: 10px;
+}
+
+tr.DateSchoolLocation {
+	font-weight:  bold;
+	background:   #E0E0E0;
+	border-width: thin;
+	border-style: solid;
+	border-color: #000000;
+    -moz-border-radius: 10px;
+}
+
+tr.Title {
+	font-weight: bold;
+}
+
+tr.Level {
+	font-weight: bold;
+}
+

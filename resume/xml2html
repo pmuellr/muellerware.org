@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo would have run - xalan -IN Patrick-Mueller-Resume.xml -OUT Patrick-Mueller-Resume.html -DIAG

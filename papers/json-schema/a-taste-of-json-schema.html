@@ -1,0 +1,242 @@
+<html>
+
+<head>
+<style>
+
+@media print  { body { font-size: x-small; } }
+@media screen { body { font-size: large; } }
+    
+body {
+    padding:            0.0em;
+    margin:             0.5em;
+    border:             0.0em;
+    font-family:        "Verdana";
+}
+
+code {
+    font-weight:        bold;
+}
+
+pre, xmp {
+    overflow:           auto;
+    border-width:       1px;
+    border-style:       solid;
+    padding-top:        0.4em;
+    padding-bottom:     0.4em;
+    padding-left:       1.4em;
+    padding-right:      1.4em;
+    margin-left:        1.4em;
+    margin-right:       1.4em;
+}
+
+dt {
+    font-weight:        bold;
+}
+
+dd, li {
+    padding-top:        0.25em;
+    padding-bottom:     0.25em;
+}
+
+h1,h2,h3,h4,h5 {
+    padding-left:       0.3em;
+    padding-right:      0.3em;
+    padding-top:        0.3em;
+    padding-bottom:     0.3em;
+    border-width:       0;
+    border-style:       solid;
+}
+
+/*-----------------------------------------------------------------*/
+
+body {
+    background:         #FFFFFF;
+    color:              #000000;
+}
+
+pre, xmp {
+    border-color:       #CBCBCB;
+    background:         #FFFFC0;
+    color:              #007000;
+}
+
+h1,h2,h3,h4,h5 {
+    border-color:       #000000;
+    background:         #C0C0EF;
+}
+
+</style>
+<title>A Taste of JSON Schema</title>
+</head>
+
+<body>
+
+<!-- =================================================================== -->
+<h1>A Taste of JSON Schema</h1>
+
+<p><a href="http://muellerware.org">Patrick Mueller</a>
+<br/><a href="mailto:pmuellr@muellerware.org">pmuellr@muellerware.org</a>
+<br/>2007/06/04: originally written.
+</p>
+
+<!-- =================================================================== -->
+<h2>Introduction to JSON</h2>
+
+<p>JSON (JavaScript Object Notation) is a term coined by 
+<a href="http://www.crockford.com/">Douglas Crockford</a>
+to describe literal JavaScript objects.  The seminal site
+describing JSON is 
+<a href="http://www.json.org">http://www.json.org</a>.  It is not
+a new language, but a subset of JavaScript.</p>
+
+<p>JSON has gained popularity as the output of web services
+returning structured data, as these services are typically used
+by AJAXy web pages.  The JavaScript on those pages can (but probably
+shouldn't) <code>eval()</code> the resulting JSON output, directly
+yielding a rich JavaScript object.  
+JSON is more officially described by the IETF Informational 
+<a href="http://www.ietf.org/rfc/rfc4627.txt?number=4627">Request For Comments 4627</a>.</p>
+
+<p>Although JSON is interesting for JavaScript programs because it can be directly
+evaluated by a JavaScript interpreter, for the purposes of this paper, the interest
+is in the fact that JSON can describe fairly rich data structures that can be
+translated easily into most programming languages.</p>
+
+<p>JSON supports data of the following types:</p>
+
+<ul>
+<li>numbers (integers and real)</li>
+<li>booleans</li>
+<li>strings</li>
+<li>null</li>
+<li>arrays</li>
+<li>maps</li>
+</ul>
+
+<p>Arrays and maps are the compositing data structures.  Arrays are what
+you would expect, a list of indexable values, which may be of any type.
+Maps are commonly referred to as hash tables, hashes, dictionaries, 
+and associative arrays.  They are a collection of key/value pairs, where
+the key is a string, and the value may be of any type.<p>
+    
+<p>Note that in JavaScript, maps are also used to represent 'objects', 
+where the keys are considered 'properties' of the object.</p>
+
+<p>Let's provide a simple example: a shopping list for a store.  I won't
+bother breaking the syntax down, it should be fairly obvious.</p>
+
+<pre>
+{
+    "store" : "BuyMore",
+    "items" : [
+        { 
+            "quantity" : 1, 
+            "item" : "avocado"
+        },
+        { 
+            "quantity" : 4, 
+            "item" : "potatoes"
+        },
+    ]
+}
+</pre>
+
+<p>This object describes a shopping list for the store "BuyMore", with the 
+list items of 1 avocado and 4 potatoes.</p>
+
+<!-- =================================================================== -->
+<h2>Schema?  We don't need no stinkin' schema!</h2>
+
+<p>It is this author's premise that, yes, we do need schema.  We just
+don't want it to stink, like schema is wont to do.  Just as XML 
+schema can be used by (some) humans and programs to understand the
+structure of XML data, so JSON schema can be used by humans and
+programs to understand the structure of JSON data.
+</p>
+    
+<p>Let's consider a possible schema for the previous shopping list,
+described in JSON itself.  Just as XML schema is described in
+XML (in some cases anyway), so JSON can be used to describe
+it's own schema</p>
+
+<pre>
+[
+    {
+        "name" : "ShoppingList",
+        "type" : "Object",
+        "elements" : [
+            {
+                "name" : "store",
+                "type" : "String"
+            },
+            {
+                "name" : "items",
+                "type" : "Array",
+                "elementType" : "ShoppingListItem"
+            }
+        ]
+    },
+
+    {
+        "name" : "ShoppingListItem",
+        "type" : "Object",
+        "elements" : [
+            {
+                "name" : "quantity",
+                "type" : "Integer"
+            },
+            {
+                "name" : "item",
+                "type" : "String"
+            },
+        ]
+    }
+]
+</pre>
+
+<p>This schema describes two types, <code>ShoppingList</code> and
+<code>ShoppingListItem</code>, each represented as a JSON map,
+and the two composited into a JSON array.</p>  
+
+<p>The JSON types
+<code>Object</code>, <code>String</code>, <code>Array</code> and
+<code>Integer</code> are used internally to describe the
+value types.  These names map into the JavaScript type names used
+by the respective types.</p>  
+
+<p>Each data element is described with at least a <code>name</code>
+and <code>type</code> element.  Objects (maps) also contain an
+<code>elements</code> element which describes the constituent
+elements.  Arrays contain an <code>elementType</code> element
+describing the type of the items in the array.</p>
+
+<!-- =================================================================== -->
+<h2>Where to go from here?</h2>
+
+<p>We are not trying to fully describe any possible JSON structure that can
+be built.  Rather, we are trying to describe a useful subset of JSON structures
+that are likely to be used by program-to-program communication, and that can
+easily be mapped into existing programming language structures.  For instance,
+handling of heterogeneous arrays is not specified.</p>
+
+<p>Even given that constraint, there are plenty of issues to be solved:</li>
+	
+<ul>
+	
+<li>Namespacing; ideally we'd like to be able to reference JSON
+schema types arbitrarily, without having to worry about type names
+overwriting each other.</li>
+
+<li>Additional native types like Dates.</li>
+
+<li>Adding human readable descriptions of the schema elements.</li>
+
+<li>Adding additional contraints on items; maximum/minimum lengths
+of strings, lengths of arrays, other validations of elements.</li>
+
+</ul>	
+
+
+</body>
+
+</html>

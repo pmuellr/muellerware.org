@@ -1,0 +1,129 @@
+<html>
+<head>
+<style>
+body {
+    font-size: 200%;
+}
+</style>
+</head>
+
+<body>
+<p>Speaker Notes For
+
+<p>OSCON 2011
+<br>Debugging Mobile Web Applications with weinre
+<br>Patrick Mueller
+<br>Portland 252
+<br>4:10pm Wednesday, 07/27/2011
+
+<!-- ============================================================== -->
+<h1>Introduction</h1>
+
+<p>My name is Patrick Mueller.
+
+<p>I work at IBM in Research Triangle Park, North Carolina on mobile web stuff.
+
+<p>This presentation is for you, so if you have a question, please interrupt me.
+
+<p>Questions for you - raise your hand:
+
+<ul>
+    
+<li><p>I assume you are familiar with HTML, CSS and JavaScript;
+
+<li><p>How many people are familiar with the FireBug web debugger?
+<li><p>How many people are familiar with 
+  <b>Safari's Web Inspector</b>
+  or
+  <b>Chrome Developer Tools</b>; same as Safari's Web Inspector, different name
+  
+</ul>
+
+<p>For folks familiar with Web Inspector / Chrome Developer tools, 
+weinre reuses their user interface, so it should look familiar
+
+<p>For folks familiar with FireBug, weinre has similar capabilities, but
+a different user interface.
+
+<!-- ============================================================== -->
+<h1>Demo</h1>
+
+<ul>
+
+<li><p>start server
+<li><p>start browser on weinre
+<li><p>start emulator
+
+<li><p><b>land at "Remote" panel</b>
+<ul>
+<li><p>show we have a connected target and client
+<li><p>show server properties that we'll explain later
+</ul>
+
+<li><p><b>switch to "Elements" panel</b>
+<ul>
+<li><p>expand body, if required
+<li><p>move mouse over elements, show highlighting in target
+<li><p>double click some text, edit it
+<li><p>double click "class='blue'", edit "blue" to "bluex"
+<li><p>edit again to "blue"
+<li><p>click red h1, edit element.style to "black"
+<li><p>toggle element.style color:red
+<li><p>click on blue h1, edit, disable .blue style
+<li><p>select green element, delete it
+<li><p>show computed style, show inherited
+<li><p>show properties
+</ul>
+
+<li><p><b>expand "Console" subpanel</b>
+<ul>
+<li><p>type document.body.style.backgroundColor
+<li><p>up arrow, add = 'green'
+<li><p>up arrow, edit to = ''
+<li><p>type "new Date()"
+<li><p>type alert("hi there!")
+<li><p>collapse "Console" subpanel</b>
+</ul>
+
+<li><p><b>switch to "Resources" panel</b>
+<ul>
+<li><p>expand children
+<li><p>click "start stuff button"
+<li><p>let run
+<li><p>click "stop stuff button"
+<li><p>show stuff
+<li><p>select "clicks_db" database
+<li><p>run "select * from clicks"
+<li><p>run "select date from clicks"
+<li><p>select Local Storage
+<li><p>edit a value
+</ul>
+
+<li><p><b>switch to "Timeline" panel</b>
+<ul>
+<li><p>click "record" button
+<li><p>click "start stuff button"
+<li><p>let run
+<li><p>click "stop stuff button"
+<li><p>click "record" button
+<li><p>show stuff
+</ul>
+
+<li><p><b>switch to "Console" panel</b>
+<ul>
+<li><p>not much to show
+</ul>
+
+</ul>
+
+<!-- ============================================================== -->
+<h1>Ballroom Info</h1>
+
+<br>Portland BallRoom - Ballroom Level (Level 1)
+<br>4500 sq ft
+<br>88' x 54' x 28' high
+<br>http://bit.ly/o6nrY5
+<br>capacity: 249
+
+</body>
+</html>

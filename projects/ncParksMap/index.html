@@ -1,0 +1,82 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/ncParksMap");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>ncParksMap</h1>
+
+<p>The program linked to below creates a .kml file
+suitable for use with Google Earth or Google Maps, 
+which contains markers for the North Carolina Parks,
+mainly the North Carolina <b>State</b> Parks,
+along with some associated weather information.  The
+.kml file itself is updated every few hours, to keep the
+weather data current.</p>
+
+<p>For more information on the NC State Parks, please
+check out their extensive web site
+<a href="http://www.ncparks.gov/Visit/main.php">NC Division of Environment and Natural Resources - Division of Parks and Recreation</a>.</p>
+
+<p><a href="ncParksMap.kml">ncParksMap.kml</a> - 
+the .kml file to use with Google Earth, or 
+<a href="http://maps.google.com/maps?q=http://www.muellerware.org/projects/ncParksMap/ncParksMap.kml">view
+the .kml file in Google Maps</a>.
+</p>
+
+<p><a href="ncParksMap.csv">ncParksMap.csv</a> - 
+source file of easily parseable (CSV) map data</p>
+
+<p><a href="build-ncParksMap.rb">build-ncParksMap.rb</a> -
+Ruby program to build the .kml file from the source file
+</p>
+
+<h2>Updates</h2>
+
+<p>2008/09/29 - version 0.6<br/>
+<ul>
+<li>Converted to use a .csv file instead of other oddly formatted file.
+Actually, I want to have it read a Google Spreadsheet document live,
+but haven't figured it out yet.</li>
+<li>Added a few new parks.</li>
+</ul>
+
+<p>2007/01/07 - version 0.5<br/>
+<ul>
+<li>Converted to use heredoc wherever I could, for cleanliness</li>
+<li>Display scraped time in local instead of UTC</li>
+</ul>
+
+<p>2007/01/06 - version 0.4<br/>
+<ul>
+<li>Added a link for each park to the geotagged photos at Flickr</li>
+</ul>
+
+<p>2007/01/05 - version 0.3<br/>
+<ul>
+<li>Added an empty Snippet to each park, which means that
+first bit of the description doesn't show up in Google Earth's
+navigator.</li>
+<li>Added an icon for the parks; a tree in a yellow circle framed in black.
+Only showing up for Google Earth right now, not Google Maps.</li>
+</ul>
+</p>
+
+
+<p>2007/01/04 - version 0.2<br/> 
+<ul>
+<li>added a date/time stamp to the park description data,
+to get a sense for how 'current' the weather information is.</li>
+</ul>
+</p>
+
+<p>2007/01/02 - version 0.1<br/> 
+<ul>
+<li>initial release.</li>
+</ul>
+</p>
+
+<?php $page->writeFooter(); ?>

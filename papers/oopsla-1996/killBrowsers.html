@@ -1,0 +1,95 @@
+<!------------------------------------------------------------------------- killbrowsers.html :-----------------------------------------------------------------------96/08/05 originally by Patrick J. Mueller------------------------------------------------------------------------->
+<html>
+<head>
+<title></title>
+</head>
+<!-- ------------------------------------------------------------ -->
+<body>
+<!-- ******************************************************************** -->
+
+
+<p>There doesn't seem to need to be a justification for marrying together
+the Web and Object Oriented Technology.  Witness OOPSLA 95's Workshop
+on Objects, Scripting, and the Web, the follow-on Birds-of-a-Feather,
+the formation of a group in OMG focusing on the Web, all the long-time
+OO vendors such as ParcPlace-Digitalk entering the Web market.  As
+the Reese's Peanut Butter Cup commercial goes: <em>'Two great tastes that
+taste great together'</em>.  However, there seems to be no clear concensus
+on <b>how</b> to put the two together.
+
+<p>Current approaches usually revolve around using object oriented
+languages or systems as Common Gateway Programs.  But this usually
+means that the the objects doing the work are doing nothing more
+than parsing HTML form input, and spitting back HTML.  Objects are
+only involved in the computation.
+
+<p>Digging a bit deeper, the next attempt at getting OO and the Web
+to work together would be to server up Objects over the Web instead
+of just HTML and images.  Luckily, we can reuse much of what has
+been invented over the last few years for HTTP including
+scalability, security, and programmability when serving objects over
+the web.  Unfortunately, we have to throw away our existing Web
+browsers.  Web browsers are fantastic tools for viewing hypertext
+documents, but are NOT the promised skinny-client-for-all-servers
+that they have been touted as over the last few years.
+
+<!-- ******************************************************************** -->
+<hr>
+<h2>Why Can't I use Web Browsers as a Universal Network Client?</h2>
+
+<p>Would you consider using your favorite word processor as a GUI
+programming environment for writing application programs?  Probably not.
+Yet many people consider existing Web browsers, which have in many ways
+less function than word processors, to be perfectly acceptable client
+desktop to serve up networked applications.  The Web and Web browsers
+we all use today are perfectly acceptable for use certain types of
+applications - stock quotes, address lookups, online catalog lookup.
+There are other types of applications which would be nearly impossible
+to implement easily on the Web today.
+
+<p>Factors that make some applications impossible or impractical to build
+today:
+
+<dl>
+<dt>time travel
+<dd>The ubiqituous backward and forward buttons in browsers are usually
+completely inappropriate for use in stateful applications.
+
+<dt>lack of state
+<dd>Web browsers maintain very little state about the current page
+being viewed; usually just enough to be able to redisplay the page.
+Web servers by definition are stateless - to add state usually requires
+writing complicated server programs.
+
+<dt>lack of rich user entry controls
+<dd>HTML has only crude user input controls, and is missing things users
+are starting to expect in applications like hierarchical lists,
+multi-window applications, spread-sheet like tables, etc.
+
+</dl>
+
+<p>Many of these problems appear to be nearly solvable with the addition
+of a little JavaScript, cookies, Java applets, etc.  While each of these
+adds some functionality to Web browsers, they are also not much more
+than bolting a new set of things to be programmed onto a tool which
+isn't really capable of handling the job (HTML).  For instance, if you want
+to create a new widget for use in HTML pages in Java, you not only have
+to write the widget itself, but for every page that wants to use it you
+will have to add some JavaScript so that it can interact with the other
+HTML elements around it.  Otherwise it'll have to act as a little
+mini-application within a Web page, unable to affect or be affected
+by the things around it.
+
+<p>What's wrong with this picture.  HTML.  So let's consider getting
+rid of HTML, and along with it the Web browsers.  If we're not going
+to use HTML, we won't need an HTML browser!
+
+
+
+</body>
+<!-- ------------------------------------------------------------ -->
+<address>
+<hr>
+<p>Last updated by Patrick J. Mueller on 5 Aug 1996 at 23:59:40.
+</address>
+</html>

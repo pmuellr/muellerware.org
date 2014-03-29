@@ -1,0 +1,21 @@
+<?php
+$baseDir = ".";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "mobile");
+$page->writeHeader();
+?>
+
+<ul>
+<li><a href="http://m.twitter.com">                                          twitter</a></li>
+<li><a href="http://www.google.com/reader/m/">                               google reader</a></li>
+<li><a href="http://news.bbc.co.uk/text_only.htm">                           bbc news</a></li>
+<li><a href="http://m.wund.com/cgi-bin/findweather/getForecast?query=27539"> apex weather</a></li>
+<li><a href="http://us.m.yahoo.com/p/mail">                                  yahoo mail</a></li>
+<li><a href="http://m.gmail.com">                                            gmail</a></li>
+<li><a href="http://no.vrvm.com/m/c/index.htm">                              n+o</a></li>
+<li><a href="http://www.google.com/xhtml">                                   google</a></li>
+</ul>
+
+<?php $page->writeFooter(); ?>
+

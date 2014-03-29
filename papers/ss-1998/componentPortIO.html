@@ -1,0 +1,23 @@
+<!-- generated from MwSS98SlideSet componentPortIO on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Port I/O Component</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="componentTTS.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Port I/O Component</h1></td>
+<td align="right" valign="top"><a href="componentSocketStringCommand.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Needed the ability to write data on the parallel port.
+<li>Although Windows documentation would have you believe 'normal' i/o can
+be used to do this, it can't.
+<li>Only way is to use the C outp() function.
+<li>Not found in any existing DLL
+<li>So I wrote a 5 line C file, created a DLL from it, used it via PlatformFunction.
+</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+Abstract:
+
+Experience report - Smalltalk in the Network Vehicle
+
+At the 1997 Fall Comdex show, IBM, Delco Electronics, Netscape
+Communications and Sun Microsystems presented "the network vehicle", a
+concept car with wireless Internet connections, voice control, head up
+display, and other hardware and software innovations for automobiles.
+Smalltalk was used to integrate many systems, implement much of the
+logic on the car including voice recognition, and interface with
+existing networks on the car.  The experience report will talk about how
+and why Smalltalk was used on the car.
+
+
+Length of Presentation:
+   2 hours
+
+Intended Audience and Prerequisite Knowledge Required:
+   Experienced Smalltalk programmers, otherwise no
+   special knowledge required
+
+Level:
+   Intermediate-Advanced
+
+Personal Information:
+   Patrick Mueller
+   IBM, on assignment to OTI
+   Phone: 919-821-3220, ext. 17
+   Fax:   919-821-3231
+   Email: pmuellr@acm.org
+
+Bio:
+
+Patrick Mueller is an IBMer working on assignment to Object Technology
+International in Raleigh, NC.  He is currently developing Smalltalk code
+for the embedded environment, primarily PowerPC chips.  Previously Patrick
+was the technical lead for the Web Connection feature for VisualAge for
+Smalltalk and co-developed the Smalltalk bindings for CORBA.

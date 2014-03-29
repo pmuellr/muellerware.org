@@ -1,0 +1,272 @@
+:------------------------------------------------------------------
+:extension .html
+:printable  0
+:fontSize 6
+
+:------------------------------------------------------------------
+:trailer
+
+<p>
+<hr>
+<p>
+<img src="vawww.gif" align=left>
+Patrick J. Mueller
+<a href="mailto:pmuellr@acm.org"> (pmuellr@acm.org)</a>
+<br>OOPSLA '96 Workshop on "Toward the integration of WWW and Distributed
+Object Technology"
+
+:------------------------------------------------------------------
+:slide OOPSLA '96 Workshop on Objects and the Web
+<pre>
+
+
+
+
+
+</pre>
+<font size=7>
+<center>
+Use of HTTP as a Transport for Distributed Object Systems
+</center>
+<pre>
+
+
+
+
+
+
+
+
+</pre>
+
+</font>
+
+:------------------------------------------------------------------
+:slide My background
+
+<ul>
+<p><li>Developer for VisualAge for Smalltalk Web Connection, a product that
+allows programmers to build CGI-based applications that serve up HTML,
+use databases, etc. using visual programming techniques.
+
+<p><li>Just barely using Objects and the Web:  the objects exist only on the
+server, never touching the client.  Obviously there is a desire to
+bring objects down to the client.
+
+</ul>
+
+:------------------------------------------------------------------
+:slide What do my customers want?
+
+<p>My customers are used to building GUI client apps.  We've provided
+the capability to allow customers to build GUI, except they are
+limited by HTML and/or browsers:
+
+<ul>
+<p><li>Limited number of types input widgets (no significant new
+form elements since forms were invented).
+
+<p><li>Limited control over placement of items on the page.
+
+<p><li>Users can time-travel back to previous screens which may not
+be relevant.
+
+<p><li>Limited ability to do simple input validation on the client.
+
+<p><li>Limited ability to have Web browser interact with other applications
+on the client.
+
+</ul>
+
+<p>Continue to use Object technology for programming.
+
+:------------------------------------------------------------------
+:slide Example of what customers want
+
+<ul>
+<p><li>Pointcast
+
+<p><li>Ability to display data from the Web with existing GUI
+applications.
+
+</ul>
+
+:------------------------------------------------------------------
+:slide Are Web browsers really universal clients?
+
+<p>Hardly.  Every few months Web browser vendors add a few more
+capabilities to their browsers that get them closer and closer
+to a GUI programming environment:
+
+<ul>
+<li>images
+<li>forms
+<li>tables
+<li>Java applets
+<li>frames
+<li>cookies
+<li>JavaScript
+</ul>
+
+<p>Browsers still have a long way to go.  One of the most common
+(ab)uses of JavaScript today is scrolling status bars.  Wow!
+
+:------------------------------------------------------------------
+:slide Are Web browsers really universal clients? (cont)
+
+<p>Programming Web browsers now entails at least two languages:
+
+<ul>
+<li>HTML
+<li>CGI back-end
+</ul>
+
+<p>To handle more logic on the client, you also need to use at
+least one of:
+
+<ul>
+<li>JavaScript/VBScript
+<li>Java
+<li>C/C++ for applets/ActiveX controls
+</ul>
+
+<p>Who in their right mind wants to have to implement one program
+as pieces implemented in 3 or 4 languages?
+
+:------------------------------------------------------------------
+:slide Browser state of the art
+
+<ul>
+<p><li>Browsers are currently optimized for content display and
+hypertext navigation.
+
+<ul>
+<p><li>Witness current inovation: cascading style sheets, plugins,
+ActiveX controls.
+
+<p><li>Witness current bugs: Netscape now caches POST requests; not
+nice for Web application developers:
+
+<ul>
+<p><li>tell users to turn off caching
+<p><li>or - application developers send back Expire: headers
+</ul>
+
+</ul>
+
+<p><li>Conclusion: Web browsers are not the ideal application
+development platform.  We need to consider Web application
+development <i>outside</i> of the browser.
+
+</ul>
+
+:------------------------------------------------------------------
+:slide Where are the objects?
+
+<dl>
+<p><dt>For objects only on the server, problem is solved:
+<dd>CORBA gateways, OO language gateways:
+<ul>
+<li>Python Object Publisher
+<li>VisualWave
+<li>VisualAge Web Connection
+<li>Java servlets
+<li>ILU Requestor
+</ul>
+
+<p><dt>For static objects on the client, problem is solved:
+<dd>Web browsers (HTML objects), plugins, applets, ActiveX
+
+<p><dt>For objects on the client, active communicating
+with the server ...
+
+</dl>
+
+:------------------------------------------------------------------
+:slide Do active objects in a Web browser even make sense?
+
+<ul>
+<p><li>Probably not.  Why would programmers want to constrain themselves
+to applet/plugin/ActiveX development environments?
+
+<p><li>Instead, just use your programming language of choice to build
+stand-alone applications communicating directly with the server.
+
+<p><li>If programming language of choice is object oriented, can we
+objects between client and server?  Sure!
+
+<p><li>And what how do we tie this back to the web?  Make use HTTP
+on the client talking to existing servers.
+
+<ul>
+<p><li>HTTP - easily implemented for client languages.  Servers are
+widely, freely available.  A significant amount of invention already
+done on servers, and continuing.
+</ul>
+
+</ul>
+
+:------------------------------------------------------------------
+:slide Interesting features of HTTP
+
+<ul>
+<p><li>content negotiation (tell the server how you want the result)
+<p><li>data typing (Content-type)
+<p><li>freeform data content
+<p><li>extensibility via headers
+<p><li>encryption/authentication (SSL)
+<p><li>infrastructure (proxy gateways)
+<p><li>connectionless/connectionfull hybrids (in HTTP/1.1)
+<p><li>humongous installed base of servers
+
+</ul>
+
+:------------------------------------------------------------------
+:slide Possible uses of HTTP and objects
+
+<ul>
+<p><li>As a transport for object-oriented remote procedure call.
+<p><li>As a transport for existing distributed OO systems (ILU)
+</ul>
+
+<p>An example of a mapping of a object-oriented remote procedure call
+on HTTP:
+
+<table border>
+<tr><th>Remote Method invocation <th>HTTP
+<tr><td>receiver object          <td>URLs
+<tr><td>method                   <td>HTTP method (GET/PUT/POST/etc)
+<tr><td>parameters               <td>request content
+<tr><td>result(s)                <td>response content
+</table>
+
+<p>Even easier: package the entire request (receiver object,
+method, parameters) as the request content.  Use POST method,
+and URL is an engine to unpack the request, invoke the request,
+and send the result back as the response content.  This has
+been modeled in Smalltalk using VisualAge public interfaces
+as an interface definition.
+
+:------------------------------------------------------------------
+:slide Problems implementing distributed OO over HTTP
+
+<p>Real problems:
+
+<ul>
+<li>poor performance for easily programmed server interfaces (CGI)
+<li>programming complexity using efficient programming server interfaces (NSAPI)
+<li>dearth of toolkits for HTTP access, SSL, etc.
+<li>lack of transaction control of server
+<li>lack of 'web site' management tools
+<li>lack of tools to scale applications over multiple machines
+</ul>
+
+<p>Supposed problems:
+
+<ul>
+<li>HTTP is just used to server up HTML - true today, because there's not else
+to see in browsers; the spec (and generally servers) are completely open-ended.
+<li>HTTP requires a new connections for every request.  No so in HTTP/1.1
+and some 1.0 servers.
+</ul>
+

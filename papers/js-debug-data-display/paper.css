@@ -1,0 +1,74 @@
+
+/*-----------------------------------------------------------------*/
+body {
+    font-family:        sans-serif;
+    color:              #333;
+    background:         #EEE;
+    margin:             1em;
+}
+
+/*-----------------------------------------------------------------*/
+code, .code {
+    font-weight:        bold;
+    color:              #055;
+}
+
+/*-----------------------------------------------------------------*/
+pre, xmp {
+    border-width:       1;
+    border-style:       solid;
+    overflow:           auto;
+    padding-top:        0.4em;
+    padding-bottom:     0.4em;
+    padding-left:       1.4em;
+    padding-right:      1.4em;
+    margin-left:        1.4em;
+    margin-right:       1.4em;
+    background:         #FFFFDF;
+}
+
+/*-----------------------------------------------------------------*/
+h1, h2 {
+    background:            #FFF;
+    border-width:          2;
+    border-style:          solid;
+    -moz-border-radius:    15px;
+    -webkit-border-radius: 15px;    
+    padding-top:           0.3em;
+    padding-bottom:        0.3em;
+    padding-left:          1em;
+    padding-right:         1em;
+    -webkit-box-shadow:    0.3em 0.3em 0.2em #CCC;
+    -moz-box-shadow:       0.3em 0.3em 0.2em #CCC;
+}
+
+h2 {
+    margin-top:            3em;
+}
+/*-----------------------------------------------------------------*/
+.figure {
+    font-style:            italic; 
+    font-weight:           bold;
+    margin:                5;
+    border-width:          1;
+    border-style:          solid;
+    -moz-border-radius:    15px;
+    -webkit-border-radius: 15px;    
+    padding:               1em;
+    display:               inline-block;
+    vertical-align:        top;
+}
+
+/*-----------------------------------------------------------------*/
+@media print {
+    body {
+        color:              #000;
+        background:         #FFF;
+        font-size:          70%;
+    }
+    
+    pre, xmp {
+        overflow:           hidden;
+        background:         #FFFFEF;
+    }
+}

@@ -1,0 +1,27 @@
+<!-- generated from MwSS98SlideSet componentSerialIO on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Serial I/O Component</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="componentPilot.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Serial I/O Component</h1></td>
+<td align="right" valign="top"><a href="componentIPCM.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Used pre-wrapped Win32 classes under PlatformInterface.
+<li>Needed to use really ugly Win32 Overlapped I/O to enable simultaneous reading/writing.
+<li>Used ACO (EsAsynchronousCallOut) for one function to wait on i/o completion.
+<li>Also implemented Virtual Serial I/O ports
+<ul>
+<li>Modelled one end of a serial connection
+<li>Two ends connected by a set of queues
+<li>Allowed for testing multiple serial port interaction on machines with small number of ports 
+(my Thinkpad has just one serial port!)
+</ul>
+</ul>
+</body>
+</html>

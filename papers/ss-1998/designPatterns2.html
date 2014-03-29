@@ -1,0 +1,51 @@
+<!-- generated from MwSS98SlideSet designPatterns2 on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Design Pattern: Application Variables</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="designPatterns1.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Design Pattern: Application Variables</h1></td>
+<td align="right" valign="top"><a href="designPatterns3.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Smalltalk application designed called for ~10 independent subsystems
+<li>Needed to be started/stopped/sent messages
+<li>Used Application variables (see IBM Smalltalk: User's Guide: Namespace support)
+<li>Declaring application variables
+<pre>
+{application} class &gt;&gt; _Pragma_{application}Globals
+	&quot;%%PRAGMA DECLARE
+		(name: AppVariable1 
+			isPool: false 
+			isConstant: false 
+			valueExpression: 'nil')
+		(name: AppVariable2 
+			isPool: false 
+			isConstant: false 
+			valueExpression: 'nil')
+	&quot;
+</pre>
+<li>Defining application variables
+<pre>
+{application} class &gt;&gt; loaded
+	AppVariable1 := AppVariable1Class new.
+	AppVariable2 := AppVariable1Class new.
+</pre>
+<li>Using application variables
+<ul>
+<li>Make sure application variable is used in prereq's application variable is declared/defined in.
+<li>Use the variable like any other global variable
+</ul>
+<li>Removing application variables
+<pre>
+{application} class &gt;&gt; removing
+	AppVariable1 shuttingDown.
+	AppVariable1 := nil.
+</pre>	
+</ul>
+</body>
+</html>

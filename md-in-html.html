@@ -1,0 +1,56 @@
+<!doctype html>
+<title>sample markdown file</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script src="https://raw.github.com/coreyti/showdown/master/src/showdown.js"></script>
+<script>
+$(document).ready(function(){
+    $("style[type='markdown']").each(function() {
+        var htmlText = new Showdown.converter().makeHtml($(this).text())
+        
+        $("body").append(htmlText)
+    })
+})
+</script>
+
+<style type="markdown">
+
+# using Markdown in html files
+
+(tl;dr - "view source")
+
+Here's a little cheat that let's you use Markdown as the source language
+in your .html files.
+
+Basic ideas:
+
+* At the top, include whatever sort of HTML you'd put in your `<head>` element.
+
+* Include jquery from a CDN
+
+* Include showdown (whichever one, attacklab-API-compatible)
+
+* Include the bit that will convert your markdown to HTML (see below)
+
+* As the last thing at the top, but before your Markdown text, include an
+open-ended `<style type="markdown">` element - it does not need to be 
+closed at the end of the file.
+
+Using `<style>` to contain the markup means the browser won't try to 
+interpret anything that looks like html, which it will for other
+elements.  `<script>` works the same way (does not interpret the 
+text), but doesn't work as well for me in text editors, in terms of 
+syntax highlighting.
+
+Extra code to add to your document:
+
+    $(document).ready(function(){
+        $("style[type='markdown']").each(function() {
+            var htmlText = new Showdown.converter().makeHtml($(this).text())
+         
+        $("body").append(htmlText)
+        })
+    })
+
+
+by [pmuellr](http://muellerware.org/)
+

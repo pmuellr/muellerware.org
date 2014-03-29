@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>
+Use of HTTP as a Transport for Distributed Object Systems
+</title>
+</head>
+
+<body>
+
+<!-- ******************************************************************** -->
+<h1>
+Use of HTTP as a Transport for Distributed Object Systems
+</h1>
+
+<!-- ******************************************************************** -->
+<table>
+<tr><td valign="top">For:
+<td>OOPSLA '96 Workshop on &quot;Toward the integration of WWW and Distributed
+Object Technology&quot;
+<tr><td valign="top">By:
+<td>Patrick Mueller (<a href="mailto:pmuellr@raleigh.ibm.com">pmuellr@raleigh.ibm.com</a>)
+<tr><td valign="top">Date:
+<td>August 5, 1996
+</table>
+
+<!-- ******************************************************************** -->
+<hr>
+<h2>Introduction</h2>
+
+<p>Over the last few years, the World Wide Web has grown enormously.
+Starting from a simple text and image hypertext-based system, the Web
+has started to take on the appearance of becoming a network-based
+application development platform.
+
+<p>Over the same period, a number of products offering distributed
+object technology have become available on the commercial marketplace.
+These include everything from proprietary systems to open systems often
+implemented as CORBA-based Object Request Brokers.  None of these
+products has yet to gain wide acceptance in the marketplace, at least
+nearly as wide acceptance as World Wide Web browsers and servers enjoy.
+
+<p>This presentation will explore the possibilities of why and how to
+leverage the popularity of the Web, in particular HTTP, within
+distributed object systems by using HTTP as a transport for
+remote object method invocation.
+
+<!-- ******************************************************************** -->
+<hr>
+<h2>Why leverage HTTP within Distributed Object Systems?</h2>
+
+<p>The HTTP protocol is a simple client-server protocol for sending
+messages to objects and having the objects send the result of the
+message back to the sender.  In the Web as we know it today, this
+usually means asking an object to send back an HTML or GIF
+representation of itself.  Most of the time this is easy for the server
+to answer, since the object is itself an HTML or GIF file, so the result
+is nothing more than the contents of the file.  However, HTTP allows
+much richer interaction:
+
+<dl>
+<dt>named objects
+<dd>a hierarchical naming structure
+
+<dt>methods
+<dd>currently Web browsers issue nothing more than GET and POST, but the
+original HTTP specs envisioned the verbs PUT, LINK, UNLINK, DELETE, etc.
+
+<dt>typed parameters
+<dd>Via the Content-type headers and request content
+
+<dt>typed and negotiated results
+<dd>Via the Content-type and Accept headers
+
+</dl>
+
+<p>Given this core set of functionality, it is possible to implement
+distributed object systems on top of existing HTTP servers using the
+Common Gateway Interface or other programming interfaces provided by
+servers to extend their functionality.  This can be done by mapping
+remote method invocation into HTTP requests and responses.
+
+<p>Even basic HTTP capability, other tools and services have
+been designed specifically for use with HTTP or because of HTTP:
+
+<ul>
+<li>Security (SSL and S-HTTP)
+<li>network gateways (HTTP proxies and tunnels)
+<li>application gateways (CGI-BIN, NSAPI, ISAPI)
+<li>scaleable routers (ip sprayers, domain name rotation)
+<li>logging tools
+<li>connection-less/connection-based hybrids
+</ul>
+
+<p>Once the basic method invocation is defined, it
+can usually immediately take advantage of all these tools and services.
+
+<p>For the client programs however, we will need the ability to issue
+HTTP requests.  Programming libraries to do this are becoming more and
+more widespread.  Java ships one in it's java.net classes, Microsoft has
+a WinInet DLL, etc.  Note that the use HTML browsers such as Netscape
+Navigator are not considered in such a scenario, since they do not
+generally provide rich, general purpose, object oriented programming
+interfaces.
+
+<!-- ******************************************************************** -->
+<hr>
+<h2>How to leverage HTTP within Distributed Object Systems</h2>
+
+<p>A high level mapping of remote method invocation onto HTTP consists of:
+
+<p>
+<table border>
+<tr><th>Remote Method invocation <th>HTTP
+<tr><td>objects    <td>URLs
+<tr><td>methods    <td>HTTP methods
+<tr><td>parameters <td>request content
+<tr><td>results    <td>response content
+</table>
+
+<p>The presentation will focus on answering a number of specific
+questions:
+
+<ul>
+<li>How are objects named and located across the Web?
+<li>What wire format is used for parameters and results?
+<li>How can application gateways such as CGI-BIN programs be used
+to implement remove method invocation servers?
+<li>Can remote method invocation can be done in a language independent fashion?
+<li>Can remote method invocation can be done in a language dependent fashion,
+to take advantage of specific language features when it's known that the
+client and server use the samem language?
+<li>How can object oriented interfaces easily and programmatically be
+mapped into HTTP-formatted requests?
+</ul>
+
+</body>
+
+<!-- ******************************************************************** -->
+<address>
+<hr>
+<h2>Author information</h2>
+<p>Patrick Mueller is a member of the VisualAge for Smalltalk development team
+at IBM in Research Triangle Park.  He is currently the lead tech for the Web
+Connection feature.  Patrick was co-author of the CORBA mappings for Smalltalk
+standard.
+<p>Patrick can be reached via email to
+<a href="mailto:pmuellr@raleigh.ibm.com">pmuellr@raleigh.ibm.com</a>
+</address>
+</html>

@@ -1,0 +1,133 @@
+h1.boxy {
+    border:                thin solid #AAA;
+	background:            #EEE;
+	box-shadow:            0.3em 0.3em 0.3em 0em #DDD; 
+	-moz-box-shadow:       0.3em 0.3em 0.3em 0em #DDD; 
+	-webkit-box-shadow:    0.3em 0.3em 0.3em 0em #DDD; 
+	border-radius:         0.5em; 
+    -moz-border-radius:    0.5em; 
+    -webkit-border-radius: 0.5em;	
+}
+
+h1  {                      
+    font-size:             175%;
+    padding:               0.3em 0.3em 0.0em 0.0em;
+}                          
+
+.underlined, h1 {
+    border-bottom:         solid thin #000;
+}   
+                        
+header h1 {
+    font-size:             200%;
+}                          
+                           
+h2 {                       
+    padding:               0.3em 0.3em 0.3em 1em;
+    font-size:             125%;
+}
+
+h1, h2 {
+    margin:                1em 0em 0em -2em;
+    clear:                 both;
+}
+
+body {
+    color:                 #333;
+	margin:                0 10% 0 20%;
+}                          
+                           
+footer {                   
+    font-style:            italic;
+    font-size:             80%;
+}                          
+                          
+header, footer {
+    margin-left:           -2em;
+}
+
+code {                     
+    color:                 #630;
+	font-family:           monospace;
+	white-space:           nowrap;
+}
+
+.note, pre, xmp {
+    border:                thin solid #DDC;
+    overflow:              auto;
+    padding:               0.4em 1.4em;
+    margin:                0 1.4em 0 -2em;
+	background:            #FFE;
+	border-radius:         0.5em; 
+    -moz-border-radius:    0.5em; 
+    -webkit-border-radius: 0.5em;	
+	box-shadow:            0.5em 0.5em 0.5em #AAA; 
+	-moz-box-shadow:       0.5em 0.5em 0.5em #AAA; 
+	-webkit-box-shadow:    0.5em 0.5em 0.5em #AAA; 
+    
+}
+
+.note {
+	background:            #FEE;
+}
+
+li {
+    padding-top:           0.25em;
+    padding-bottom:        0.25em;
+}
+
+.compact li {
+    padding-top:           0em;
+    padding-bottom:        0em;
+}
+
+.left {
+    float:                 left;
+    margin:                0.5em 0em;
+}
+
+.weinre {
+    font-weight:           bold;
+	font-family:           monospace;
+	font-style:            italic;
+}                          
+           
+.sore-thumb {
+    font-weight:           bold;
+	font-family:           monospace;
+	font-style:            italic;
+	font-size:             150%;
+	color:                 #FF0;
+	background-color:      #F88;
+	padding:               0.0em 0.5em;
+}   
+             
+pre.console {
+    font-size:             80%;
+}
+
+.indent {
+    margin-left:           3em;
+}
+
+.graphic {
+    border:                thin solid #AAA;
+    margin:                0 0 0.5em -2em;
+	box-shadow:            0.5em 0.5em 0.5em #AAA; 
+	-moz-box-shadow:       0.5em 0.5em 0.5em #AAA; 
+	-webkit-box-shadow:    0.5em 0.5em 0.5em #AAA; 
+}
+
+.num-marker {
+    border:                0;
+    margin:                0;
+    padding:               0 0.5em;
+    color:                 #FFF;
+    background-color:      #00F;
+}
+
+ @media print {
+a {
+    text-decoration:       none;
+}
+}

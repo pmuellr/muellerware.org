@@ -1,0 +1,15 @@
+<!-- title: Smalltalk Objects over the Web -->
+
+<font size=30>
+<ul>
+<li>Most Smalltalk implementations provide a way to store objects
+to bytes, and then later restore the objects from bytes.<p>
+<li>Given this, Smalltalk objects can just be a new MIME type that
+can be distributed via HTTP<p>
+<li>What would you do with them<p>
+<ul>
+<li>Given a Web browser with links to Smalltalk, Smalltalk could
+then do something useful with that object.
+</ul>
+</ul>
+</font>

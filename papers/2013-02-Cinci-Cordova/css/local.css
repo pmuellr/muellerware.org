@@ -1,0 +1,36 @@
+a {
+    text-decoration:  none;
+}
+
+code {
+    background-color: #DDD;
+
+}
+
+h3 {
+    border-bottom:    solid thin black;
+}
+
+indent {
+    display:          block;
+    margin-left:      2em;
+}
+
+div.page-no {
+    display:                    block;
+    position:                   absolute;
+    top:                        0.0em;
+    right:                      0.0em;
+    font-size:                  60%;
+    padding-left:               1.0em;
+    padding-right:              1.0em;
+    border-bottom-left-radius:  10px;
+    border-top-right-radius:    10px;
+    border-left:                solid black thin;
+    border-bottom:              solid black thin;
+    background-color:           #EEE;
+}
+
+.highlight-bold-pre b {
+    background-color:           #EAA;
+}

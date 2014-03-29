@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd "`dirname "$0"`"
+
+./dataize-imgs.py < js-debug-data-display.html > ../js-debug-data-display.html

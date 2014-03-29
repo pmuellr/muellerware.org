@@ -1,0 +1,48 @@
+<?php
+$baseDir = "..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects");
+$page->writeHeader();
+?>
+
+<!-- 
+<p>Projects I'm playing with that aren't big enough to host somewhere real.</p>
+
+<h2><a href="gRESTetfwa/index.html">getfwa</a></h2>
+<p>A Greasemonkey script to create the HTML I use to reference Flickr pix in my blog.
+</p>
+
+<h2><a href="getfwa/index.html">getfwa</a></h2>
+<p>A Greasemonkey script to create the HTML I use to reference Flickr pix in my blog.
+</p>
+
+<h2><a href="ncParksMap/index.html">ncParksMap</a></h2>
+<p>A .kml file for Google Earth and Google Maps that shows
+the North Carolina State Parks, and current weather conditions. 
+</p>
+
+<h2><a href="em-sl/index.html">em-sl</a></h2>
+<p>An Eclipse Monkey Domain Object Model (DOM) 
+that can be used to run <i>other</i> scripts from an Eclipse Monkey script. 
+</p>
+
+<h2><a href="getf4b/index.html">getf4b</a></h2>
+<p>A command-line utility for creating the HTML I use to reference Flickr pix in my blog.
+</p>
+
+<h2><a href="mwAmps/index.html">mwAmps</a></h2>
+<p>Some Ableton 6.x Racks that serve as cheap-ass guitar amps.
+</p>
+
+<h2><a href="FeedTagged/index.html">FeedTagged</a></h2>
+<p>A roller template to generated a feed of specifically tagged blog entries.
+</p>
+
+<h2><a href="s3u/index.html">s3u</a></h2>
+<p>A command-line utility for mucking with the Amazon S3 service.
+</p>
+
+ -->
+ 
+<?php $page->writeFooter(); ?>

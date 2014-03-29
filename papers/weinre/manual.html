@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+ Copyright (C) IBM Corp. 2010  All rights reserved.
+
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+
+     * Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+     * Redistributions in binary form must reproduce the above
+ copyright notice, this list of conditions and the following disclaimer
+ in the documentation and/or other materials provided with the
+ distribution.
+     * Neither the name of IBM Corp. nor the names of its
+ contributors may be used to endorse or promote products derived from
+ this software without specific prior written permission.
+
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ -->
+
+<!-- ====================================================== -->
+<head>
+<meta charset="utf-8" />
+<title>weinre - WEb INspector REmote</title>
+<link rel="stylesheet" href="bits/manual.css">
+<script src="bits/manual.js"></script>
+</head>
+
+<!-- ====================================================== -->
+<body onload="body_onload()">
+<article>
+
+<p>
+<div class="note">
+<b>Note</b>:
+
+<p><span class="weinre">weinre</span> has 'graduated' from
+the prototype described in this paper to an open source
+project currently available at
+<a href="http://people.apache.org/~pmuellr/weinre/">Apache</a>.
+</div>
+
+<!-- ====================================================== -->
+<header>
+<h1>weinre - WEb INspector REmote</h1>
+
+<!-- ====================================================== -->
+<table cellpadding=5 cellspacing=0>
+
+<tr valign="top">
+<td><b>Author:</b>
+<td>
+Patrick Mueller -
+<a href="mailto:Patrick_Mueller@us.ibm.com">[mail]</a>
+<a href="http://pmuellr.blogspot.com">[blog]</a>
+<a href="http://muellerware.org">[web]</a>
+
+<tr valign="top">
+<td><b>History:</b>
+<td>2012-08-09 - added note above about current code at Apache
+<td>2011-01-31 - added note above about code at Github (no longer there)
+<br>2010-04-27 - initial write-up
+
+</table>
+
+</header>
+
+<!-- ====================================================== -->
+<nav>
+<h1 id="toc">table of contents</h1>
+<ul id="toc_ul">
+</ul>
+</nav>
+
+<!-- ====================================================== -->
+<section>
+<h1>what is <span class="weinre">weinre</span>?</h1>
+
+<p><span class="weinre">weinre</span>
+(<b>WE</b>b <b>IN</b>spector <b>RE</b>mote)
+is an experiment I undertook in early
+2010 to run the existing
+<a href="http://trac.webkit.org/wiki/WebInspector">Web Inspector debug client</a>
+as a plain old web page (the debug client written in HTML/CSS/JS)
+have it debug a web page running
+in a browser window running on
+a different machine.
+The complete running story would
+allow for some amount of debugging of a web page running
+on an iPhone device (or simulator) in Mobile Safari,
+and debug it on a desktop using Web Inspector running in a Safari or Chrome.
+
+<p>If you aren't already familiar with Web Inspector, there's
+a tutorial available for the Chrome-flavor of Web Inspector
+called
+<a href="http://www.chromium.org/devtools/google-chrome-developer-tools-tutorial">Google Chrome Developer Tools</a>.
+
+<p>A movie showing <span class="weinre">weinre</span> in action
+is available
+<a href="http://www.youtube.com/watch?v=MxmFrFEGInU">on YouTube</a>.
+
+<p>You can download the source and built runtimes for
+<span class="weinre">weinre</span>,
+<a href="https://trac.webkit.org/wiki/WebInspector">on the Web Inspector page</a>
+of the WebKit wiki.
+
+<p>This report provides introductory information on the
+implementation of <span class="weinre">weinre</span>.
+Spelunk through the code for more detail.
+If you have additional questions about weinre, look for me
+on <code>#webkit-inspector</code> on <code>irc.freenode.net</code>.
+
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h1 id="section-terms">terms and basic structure</h1>
+
+<p>When using <span class="weinre">weinre</span>, there are
+three different programs / web pages running simultaneously:
+
+<ul>
+<li>the <b>target</b> - the web page being debugged
+<li>the <b>client</b> - the Web Inspector code running as a web page
+<li>the <b>agent</b> - an HTTP server which allows the target and client to communicate
+</ul>
+
+<p>The client and target are both running in a web browser, and as such
+act as HTTP clients, and have no way of acting as HTTP servers.
+The only HTTP server is the agent, which serves as a
+gateway between the target and client.  The message flow
+between these three will be described later, but here's
+a sneak peek.
+
+<!-->
+<div class=wsd wsd_style="modern-blue"><pre>
+client -> agent:  HTTP POST command from client to target
+activate agent
+agent  -> target: HTTP GET  command from client to target
+deactivate agent
+target -> agent:  HTTP POST command from target to client
+activate agent
+agent  -> client: HTTP GET  command from target to client
+deactivate agent
+</pre></div><script type="text/javascript" src="http://www.websequencediagrams.com/service.js"></script>
+-->
+<p><img class="graphic" src="images/http-flow.png">
+
+<!-- ====================================================== -->
+<section>
+<h1 id="section-running">running</h1>
+
+<!-- ====================================================== -->
+<h2>files</h2>
+
+<p><b>Note:</b> before running, please read the
+<a href="#section-notsupported-security">section on security</a>,
+or rather, the lack of it.
+
+<p>After expanding the <code>weinre.zip</code> archive,
+you should see the following files/directory structure:
+
+<div class="indent">
+
+<p><code class="underlined"><b>weinred.py</b></code>
+<p>This file implements the agent/server.  Directions to launch it are below.
+
+<p><code class="underlined"><b>client/*</b></code>
+<p>This directory contains the bulk of the Web Inspector client
+web page.  Accessed via the <code>/client/</code> resource,
+which redirects to the <code>client/weinre-client.html</code>
+file.
+
+<p><code class="underlined"><b>weinre-target.js</b></code>
+<p>This file is the JavaScript file that debug target
+pages need to include to enabled debugging.
+
+<p><code class="underlined"><b>test-app/*</b></code>
+<p>A test application to run as a target.
+
+</div>
+
+<p>The <code>weinred.py</code> file implements
+an HTTP server in Python, which is used for the
+following:
+
+<ul>
+<li>serves all of the HTML, CSS, and JS files used by
+the debug client
+<li>serves the <code>weinre-target.js</code> file used by
+the debug target
+<li>acts as the intermediary between the client and
+target for exchanging messages.
+</ul>
+
+<!-- ====================================================== -->
+<h2>starting the server</h2>
+
+<p>To get started, pick a tcp/ip port to use to run the
+server.  I picked 8081 while I was working.  Launch
+the server with the command:
+
+<pre>
+python weinred.py 8081
+</pre>
+
+<p>Replace 8081 with whatever port you want to use.
+
+<p>You should see something similar to the following when it starts:
+
+<pre class="console">
+weinred.py: agent/server running at: http://<i>[hostname]</i>:8081/
+weinred.py: for targets include:     http://<i>[hostname]</i>:8081/weinre-target.js
+weinred.py: run client at:           http://<i>[hostname]</i>:8081/client/
+</pre>
+
+<p><code>weinred.py</code> attempts to determine your host name, which
+in this example is shown as "<code><i>[hostname]</i></code>".
+
+<p>Previously, I had mentioned running the Web Inspector client
+through the agent server, as well as accessing the <code>weinre-target.js</code>
+file through the agent server.  The console messages are telling you
+exactly how to do that.  Specifically, use the following URL
+in your web browser to launch the Web Inspector debug client:
+
+<pre>
+http://<i>[hostname]</i>:8081/client/
+</pre>
+
+<p>Note that the Web Inspector client code currently only runs
+in Webkit-based browsers; eg, Safari, Chrome, and WebKit nightlies.
+
+<p>The following should appear in your browser:
+
+<p><img class="graphic" src="images/weinre-client-remote-panel.png">
+
+<p>Included with the archive is a small HTML file as
+<code>test-app/test.html</code>, which is ready for
+being debugged using <span class="weinre">weinre</span>. You will need to change
+the <code>src</code> attribute of the <code>script</code> element
+pointing to <code>weinre-target.js</code> per the message in
+<code>weinred.py</code>'s console.
+
+<p>After making this change, load the <code>test-app/test.html</code>
+in your browser.  Note, you will probably need to do this with an
+<code>http://</code> URL as opposed to <code>file:</code> URL;
+in other words, load this file through a web server you have
+installed on your local machine (since I know you have one).
+
+<p>The test application, when loaded will look like this:
+
+<p><img class="graphic" src="images/weinre-target-test-app.png">
+
+<p>Once both the debug
+client and target are both running, they should connect to each
+other and you can begin debugging.  You can tell by looking at
+the "status indicator" available in the test application and
+in the debug client. In the test application, the green box
+floating to the right is the indicator, as as this screen shot
+indicates, the debug target is connected.  If you switch to the
+debug client, you should see the indicator in the <b>Remote</b>
+panel has changed from a yellow "waiting" to a green "connected".
+
+<!-- ====================================================== -->
+<h2>test drive</h2>
+
+<p>Now that everything's running, you can actually try some things.
+
+<p>In the debug client, switch to the <b>Elements</b> panel;
+you should see the DOM elements for the sample page displayed.
+You can currently interact in a read-only fashion with the
+elements, styles, etc.  In addition, the element which the
+cursor is currently over will be highlighted in the page
+being debugged (via hacking it's CSS background - not great).
+
+<p>For further things you can do, see the
+<a href="#section-supported">supported and not supported function</a>
+section below.
+
+<p>In general, either of the test application and debug
+client can be started first - it will wait till it's peer
+has been started (as indicated by the status indicator).
+You can also reload either page at any time.  In particular,
+reloading the debug client will allow you to see
+an DOM changes that may have occurred since the page
+was first loaded by the debugger.
+
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h1 id="section-supported">supported and not supported function</h1>
+
+<h2 id="section-notsupported-security">security</h2>
+
+<p>not supported: any security
+
+<p>This is a bit of a problem, at least to proceed from experiment
+stage to something useful.  Currently there is no security used
+anywhere.  In addition, the agent server allows cross-origin
+XHR access to itself from other origins, so it's even more vulnerable than
+a typical web setup.
+
+<p>Until some security is implemented, only run the <code>weinred.py</code>
+server while you are playing with or testing the system.  <code>weinred.py</code>
+should obviously not be used in a production environment.
+
+<h2>panels: scripts, resources, timeline, profile, etc</h2>
+
+<p>not supported: any
+
+<p>Most of the Web Inspector panels have been disabled since there
+is no information to display on them.  The scripts panel is
+shown only because other code in Web Inspector requires it to
+be shown.
+
+<h2>panel: console</h2>
+
+<p>supported: basic console actions
+
+<p>You can interact with the console as a <a href="http://en.wikipedia.org/wiki/Read-eval-print_loop">REPL</a>
+as well see output from the target when it invokes <code>console.log()</code>.
+
+<h2>panel: elements</h2>
+
+<p>supported: read-only introspection
+
+<p>The DOM is populated in a lazy fashion, but is not updated as it
+changes.  You can refresh the entire debug client to see the current
+DOM.
+
+<h2>panel: storage</h2>
+
+<p>supported: read-only introspection
+
+<p>The <code>localStorage</code> storage area is updated when it's
+changed via the <code>localStorage.setItem()</code> or if
+manually refreshed.
+
+<!-- ====================================================== -->
+<section>
+<h1 id="section-building">building</h1>
+
+<p>A <code>Makefile</code> is provided to build and run
+<span class="weinre">weinre</span>.  Use the following
+command to get brief help on how to invoke the <code>Makefile</code>:
+
+<pre>
+make help
+</pre>
+
+<p>To update the version of the Web Inspector client that
+<span class="weinre">weinre</span> uses, run the script
+<code>third-party/WebKit/copy-inspector-source.py</code>.
+After updating the Web Inspector client code, you should
+note the version of that code in the file
+<code>third-party/WebKit/WebKit-version.txt</code>.
+
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h1 id="section-innards">how the innards work</h1>
+
+<p>The innards of <span class="weinre">weinre</span>
+can be broken down into the following pieces, described below:
+
+<ul class="compact">
+<li>bridging to existing Web Inspector code
+<li>implement debugging function in JavaScript instead of C++
+<li>message format for messages between client and target
+<li>using HTTP to flow messages between client and target
+</ul>
+
+<!-- ====================================================== -->
+<h2>bridging to existing Web Inspector code</h2>
+<p>One of the primary goals of this experiment was to reuse existing
+Web Inspector code.  Web Inspector consists of the following bits:
+
+<ul>
+<li>HTML, CSS, and JS files used in the Web Inspector user interface
+<li>C++ code running in the user interface coordinating with the
+page being debugged
+<li>C++ code running in the page being debugged coordinating with
+the Web Inspector user interface.
+</ul>
+
+<p>Since the primary goal was to reuse Web Inspector goal, and
+another goal is to run the code using user-land facilities,
+the implicit goal was to reuse as much of the HTML, CSS, and JS
+code, and replace the C++ code.
+
+<p>You might think that handling the separation of the client
+and target running in different web pages would be a big problem.
+But it wasn't, since the Web Inspector code is largely already
+split along these lines to handle Google Chrome's multi-process
+architecture - in Chrome's Developer Tools (their version of
+Web Inspector), the page being debugged and the debug window
+are running in separate processes.
+
+<p>As such, it turns out that "all you need to do" is plug in
+some code to handle the multi-process message handling.  The
+bits and bytes of how this is done is described in the sections
+below.
+
+<p>But the "plug in some code" bits can be described here.
+
+<p>Web Inspector (the version of code used for this experiment)
+uses two "classes" to provide the multi-process message handling.
+One runs in the debug client, and is called
+<code>InspectorBackend</code>.  The other runs in the debug
+target and is called <code>InspectorFrontendHost</code>.
+In traditional Web Inspector, these classes are implemented
+in C++ code and made available to the respective JavaScript
+environments as plain old JavaScript objects.  In the case
+of <span class="weinre">weinre</span>, these classes
+are implemented in JavaScript and injected into the
+JavaScript environment before the rest of Web Inspector
+is loaded.  Kind of a hacky "plug-in" model, but good
+enough for rock-n-roll.
+
+<p>The files where these classes are implemented in the source distribution are:
+
+<ul class="compact">
+<li><code>weinre-src/src/client/InspectorBackend-weinre.js</code>
+<li><code>weinre-src/src/client/InspectorFrontendHost-weinre.js</code>
+</ul>
+
+<!-- ====================================================== -->
+<h2>implement debugging function in JavaScript instead of C++</h2>
+
+<p>Some of the function in Web Inspector to introspect over your
+web page being debugged is implemented in JavaScript.  Most of
+this code lives in the file
+<code>weinre-src/third-party/WebKit/WebCore/inspector/front-end/InjectedScript.js</code>.
+Other function can't be implemented in user-land JavaScript,
+or is unwieldy to implement in JavaScript, so it's implemented
+in C++ instead.
+
+<p>So the trick is to find that function which is implemented in C++,
+and re-implement it in JavaScript.
+
+<p>Sometimes this is impossible - for instance, being able to
+set or query JavaScript breakpoints, or be notified that a breakpoint
+is hit.  Other times, cheap imitations can be made to work -
+for instance, highlighting nodes can be done by temporarily whacking
+the background-color of a node.
+
+<p>Most of the code to do this is in the file
+<code>weinre-src/src/weinre/target.js</code>.  Shield your eyes - some of this
+code is painful.
+
+<!-- ====================================================== -->
+<h2>message format for messages between client and target</h2>
+
+<p>So we know there are messages being sent between the client and target,
+which means somehow a message needs to be serialized and sent over
+an interprocess communication channel from one to another.  This
+serialized format needs to be formalized.
+
+<p>For this version of <span class="weinre">weinre</span>,
+a JSON version of the
+<a href="http://code.google.com/p/chromedevtools/wiki/ChromeDevToolsProtocol">
+Google Chrome Developer Tools Protocol</a> (CDTP)
+was used as the message format.  One of the reasons for using this
+was that perhaps other Google Chrome Developer Tools, that use
+the same protocol, could also make use of this work, or
+<span class="weinre">weinre</span> could maybe make use of other
+Google Chrome Developer Tools.  The format was somewhat
+arbitrary, so using such a flimsy excuse seemed fine.
+
+<p>An example message sent from the client to the target, to get a list
+of child nodes from an already identified node is:
+
+<pre>
+{
+
+"Headers": [
+    ["Tool",        "WebInspectorRemote"],
+    ["Destination", "target"],
+    ["Origin",      "client"],
+    ["OriginURL",   "/channel/client/1272379028.611741-0"]
+],
+
+"Content": {
+    "command":  "getChildNodes",
+    "args":     [5, 3]
+}
+
+}
+</pre>
+
+<p>Note that more headers are sent than are sent with CDTP.
+
+<p>The message above is actually wrapped in a another delicious layer of cake,
+which looks like:
+
+<pre>
+{
+"msgTo":            "target",
+"text":             "message delivered to: target",
+"channelId":        "1272379028.611741-1",
+"channelMessage":   <b>&lt;&lt;CDTP message above&gt;&gt;</b>,
+"date":             "2010-04-27 10:46:38.464747",
+"id":               26
+}
+</pre>
+
+<p>There's obviously some verbosity here.
+
+<!-- ====================================================== -->
+<h2>using HTTP to flow messages between client and target</h2>
+
+<p>As already mentioned, HTTP was used as the transport for
+sending messages between the client and server.  Since both
+the debug client and debug target are running in standard
+browser environments, neither can act as a server.  Instead,
+the debug agent acts as the HTTP server to transfer messages
+between the client and target.
+
+<p>In order for this to work, both the client and target always
+have an outstanding HTTP GET request to poll for new messages from
+the other side.  These GET requests are potentially long-lived,
+though in practice we kept the maximum wait time in the "couple of seconds"
+range.  This made it easier to determine when one side of the
+connection "went away".
+
+<p>So the actual message flow would be:
+
+<ul class="compact">
+<li>client sends a message to the target by POSTing a message to the agent
+<li>the agent holds onto the message until the target asks for it; in practice,
+there is always an outstanding request for a command.  The agent passes
+the message to the outstanding request to be returned, and so the
+target receives the message via it's GET request for the next command.
+<li>message sends are one-way; so the client ignores any response it
+got back from the POST request (nothing is returned anyway).
+</ul>
+
+<p>There are a number of subtleties to the "message passing via HTTP"
+scheme.  The python code in <code>weinre-src/weinred.py</code> handles
+most of this complexity.
+
+<p>Before communicating with each other, a client and target must be
+connected.  Connection is handled by the agent, which waits for both
+a client and target to send messages indicating they wish to connect,
+at which point the two will be connected and messages can be passed
+between them.  The agent informs the client and target that peers have
+connected, and disconnected, by messages where the <code>Origin</code> property
+of the <code>Header</code> property has value of <code>"agent"</code>,
+and the <code>Content</code> property contains the literal object
+<code>{"event": "peerConnected"}</code> or
+<code>{"event": "peerDisconnected"}</code>.
+
+<p>Connecting involves <code>POST</code>ing a message to <code>/channel/target</code>
+or (<code>/channel/client</code>), which will result in a URL being sent in the response
+that should be
+used to <code>POST</code> further messages and to receive messages via <code>GET</code>
+
+<p>While the client page always interacts with the agent, the target is designed
+so that it can be used with a different page origin than the agent.  This means
+that you can load your page to be debugged from any URL, and have the
+<span class="weinre">weinre</span> interaction take place with the agent.
+But this requires cross-origin <code>XMLHttpRequest</code> support!
+Luckily, such a thing exists, called CORS.
+For more information on CORS, see
+<a href="http://www.w3.org/TR/access-control/">W3 Cross-Origin Resource Sharing spec draft</a>.
+This implies you can only debug targets that support CORS.  Otherwise, you will
+have to arrange to run your application's server code and the agent code from
+the same server (perhaps proxying).
+
+</section>
+
+<!-- ====================================================== -->
+<footer>
+<hr>
+<p>Copyright &copy; IBM Corp. 2010
+</footer>
+
+</article>
+</body>
+</html>

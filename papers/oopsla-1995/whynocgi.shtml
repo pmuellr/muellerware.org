@@ -1,0 +1,22 @@
+<!-- title: Why No Smalltalk CGI Interface? -->
+
+<font size=40>
+<ul>
+<li>CGI is specified to<p>
+<ul>
+<li>start an executable, passing parameters
+<li>wait for the executable to terminate
+<li>send output back to HTTP client
+</ul>
+
+<li>Problems with this for Smalltalk<p>
+<ul>
+<li>Smalltalk executables (images) usually large - anywhere
+from 1/2 Meg to 15 Meg.<p>
+<li>Multi-second initialization time.<p>
+<li>Unable to share image resources across programs running
+in parallel (for some implementations)
+</ul>
+
+</ul>
+</font>

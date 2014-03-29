@@ -1,0 +1,21 @@
+<!-- title: Current State of the Art -->
+
+<font size=40>
+<ul>
+
+<li>Some Web browsers and servers written completely in Smalltalk.
+<ul>
+<li>No SSL, SHTTP support<p>
+<li>Non standard configuration / administration<p>
+<li>Would rather utilize existing browsers and servers and extend
+with Smalltalk.<p>
+</ul><p>
+
+<li>No CGI interface for Smalltalk
+<ul>
+<li>Technically not needed, since Smalltalk programs can be packaged
+as executables, but see the next page ...
+</ul>
+
+</ul>
+</font>

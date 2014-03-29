@@ -1,0 +1,10 @@
+AddType text/cache-manifest manifest
+
+Redirect 301 /blog http://pmuellr.blogspot.com
+
+RewriteEngine On
+RewriteCond %{ENV:REDIRECT_SUBDOMAIN} =""
+RewriteCond %{HTTP_HOST} ([a-z0-9][-a-z0-9]+)\.muellerware\.org\.?(:80)?$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/%1 -d
+RewriteRule ^(.*) %1/$1 [E=SUBDOMAIN:%1,L]
+RewriteRule ^ - [E=SUBDOMAIN:%{ENV:REDIRECT_SUBDOMAIN},L]

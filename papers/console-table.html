@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- ===================================================================== -->
+<head>
+<meta charset="utf-8" />
+<title>console.table() proposal</title>
+</head>
+
+<!-- ===================================================================== -->
+<body onload="body_onload()">
+<article>
+    
+<!-- ====================================================== -->
+<header>   
+<h1>console.table() proposal</h1>
+
+<table cellpadding=5 cellspacing=0>
+
+<tr valign="top">
+<td><b>Authors:</b>
+<td>
+Patrick Mueller - 
+<a href="mailto:pmuellr@yahoo.com">[mail]</a> 
+<a href="http://pmuellr.blogspot.com">[blog]</a>
+<a href="http://muellerware.org">[web]</a> 
+
+<tr valign="top">
+<td><b>History:</b>
+<td>2010-06-01 - initial write-up<br>
+    2010-06-02 - got the nodes sample working in FireFox
+
+</table>
+</header>
+
+<!-- ====================================================== -->
+<section>
+<h1>introduction</h1>
+
+<p>A feature request for WebKit has recently been added which suggests
+adding a new method to the <code>console</code> object named
+<code>table</code>.  This method is intended to be used to dump tabular
+data to the debugger console.  The feature request is:
+<a href="https://bugs.webkit.org/show_bug.cgi?id=38664">Bug 38664: Web Inspector: add a "table" method to console, to allow output of tabular data</a>.
+
+<p>The new <code>console.table()</code> method takes one required parameter,
+the data to be dumped, and an optional parameter specifying which
+"columns" to be dumped and optionally the column label.
+
+<pre>
+console.table(<i>data</i>[, <i>columns</i>])
+</pre>
+
+<p>The <code>data</code> argument should be one of:
+<ul>
+<li>an array of arrays of values
+<li>an array of objects
+<li>an object
+</ul>
+
+<p>When the <code>data</code> is an array of arrays of values, it would be a 
+structure such as:
+
+<pre>
+[
+    [1, 2, 3],
+    [4, 5, 6]
+]
+</pre>
+
+<p>In this case, the way the data is laid out is the same way it's
+printed above.
+
+<p>When the <code>data</code> is an array of objects, the properties of the objects are used
+as the columns.
+
+<p>For an object, the resulting table will have one row per property of the
+object.
+
+<p>For the case where data is an array, the columns used will the union of
+all the properties available in all of the row objects (arrays or objects).
+Non-existent values will have blank cells (<code>undefined</code> or <code>null</code> or both?).
+
+<p>The <code>columns</code> argument is an array of columns to be generated
+(instead of generating a row for every property/element), and is
+either an array of strings or integers, or an array of objects of the form:
+
+<pre>
+{ property: propertyKey, label: labelString }
+</pre>
+
+<p>The <code>propertyKey</code> value is an index value to use against a row to obtain
+the value for a cell.  For instance, if a row of data is stored in the
+variable <code>rowValue</code>, then the value for the cell will be
+obtained via the expression <code>rowValue[propertyKey]</code>.  The
+value for <code>propertyKey</code> should be an integer or string.
+
+<p>The <code>labelString</code> value will be the column header label for
+that column.
+
+<p>If the <code>columns</code> argument is just an array of strings
+or integers, these are converted to the object form as follows:
+
+<pre>
+for (var i=0; i&lt;columns.length; i++) {
+    columns[i] = { 
+        property: columns[i], 
+        label:    columns[i].toString()
+    }
+}
+</pre>
+
+<!-- ====================================================== -->
+<section>
+<h1>examples without column data</h1>
+
+<!-- =========================== -->
+<h2>dump a two dimensional array of data</h2>
+<pre class="example">
+var data = [[1,2,3], [4,5,6]]
+console.table(data)
+</pre>
+
+<!-- =========================== -->
+<h2>dump an array of objects</h2>
+
+<pre class="example">
+var data = [{a:1, b:2, c:3}, {c:6, b:5, a:4}]
+console.table(data)
+</pre>
+
+<!-- =========================== -->
+<h2>dump an object</h2>
+
+<pre class="example">
+var data = {a:1, b:2, c:3}
+console.table(data)
+</pre>
+
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h1>examples with column data</h1>
+
+<!-- =========================== -->
+<h2>skip the first column of a two dimensional array of data</h2>
+<pre class="example">
+var data = [[1,2,3], [4,5,6]]
+var columns = [1,2]
+console.table(data, columns)
+</pre>
+
+<!-- =========================== -->
+<h2>same as above but with named columns</h2>
+<pre class="example">
+var data = [[1,2,3], [4,5,6]]
+var columns = [
+    {property:1, label: "2nd"},
+    {property:2, label: "3rd"}
+]
+console.table(data, columns)
+</pre>
+
+<!-- =========================== -->
+<h2>select fields by name</h2>
+
+<pre class="example">
+var data = [{a:1, b:2, c:3}, {a:4, b:5, c:6}]
+var columns = ["b", "c" ]
+console.table(data, columns)
+</pre>
+
+<!-- =========================== -->
+<h2>same as above but with named columns</h2>
+
+<pre class="example">
+var data = [{a:1, b:2, c:3}, {a:4, b:5, c:6}]
+var columns = [
+    {property:"b", label:"the b field"}, 
+    {property:"c", label:"the c field"}
+]
+console.table(data, columns)
+</pre>
+
+</section>
+
+<!-- ====================================================== -->
+<section>
+<h1>other examples</h1>
+
+<!-- =========================== -->
+<h2>heterogenous fields</h2>
+
+<pre class="example">
+var data = [{a:1, b:2, c:3}, {b:4, c:5, d:6}]
+console.table(data)
+</pre>
+
+<!-- =========================== -->
+<h2>alignment</h2>
+
+<pre class="example">
+var data = [
+    {a:1001, b:"value 2002", c:3003}, 
+    {a:4,    b:"value 5",    c:6}
+]
+console.table(data)
+</pre>
+
+<!-- =========================== -->
+<h2>nodes!</h2>
+
+<pre class="example">
+var data = document.getElementsByTagName("h1")
+console.table(data, ["textContent", "offsetTop"])
+</pre>
+
+<!-- =========================== -->
+<h2>nodes! with nice labels</h2>
+
+<pre class="example">
+var data = document.getElementsByTagName("h1")
+var columns = [
+    {property: "textContent", label: "heading"},
+    {property: "offsetTop",   label: "y offset"}
+]
+console.table(data, columns)
+</pre>
+
+<!-- =========================== -->
+<h2>nodes! all properties</h2>
+
+<pre class="example">
+var data = document.getElementsByTagName("h1")
+console.table(data)
+</pre>
+
+</section>
+
+<!-- ===================================================================== -->
+</article>
+</body>
+
+<!-- ===================================================================== -->
+<script>
+
+//============================================================================
+function body_onload() {
+    var pres = document.getElementsByTagName("pre")
+    for (var i=0; i<pres.length; i++) {
+        run_example(pres[i])
+    }
+}
+
+//============================================================================
+function run_example(pre) {
+    if (pre.className != "example") return
+    
+    var code = pre.textContent
+    var div = document.createElement("div")
+    
+    pre.parentNode.insertBefore(div, pre.nextSibling)
+    
+    if (typeof console != "object") console = {}
+    
+    var oldConsoleTable = console.table
+    console.table = console_table
+    eval(code)
+    console.table = oldConsoleTable
+    
+    div.innerHTML = console_table_result
+}
+
+//============================================================================
+var console_table_result
+
+//============================================================================
+function console_table(data, columns) {
+    var result = []
+    
+    data = normalize_data(data)
+    
+    result.push('<table class="console" frame=border rules=all cellpadding=5 cellspacing=0>')
+    
+    if (!isArray(data)) {
+        console_table_simple_object(data, result)
+    }
+    
+    else {
+        if (!columns) columns = calculate_columns(data)
+        
+        if (!isArray(columns)) throw new Error("the columns parameter is not an array")
+        
+        normalize_columns(columns)
+        
+        result.push('<tr> <td class="header">&nbsp;')
+        for (var colIndex=0; colIndex<columns.length; colIndex++) {
+            var column = columns[colIndex]
+            result.push('<td class="header"' + align(column.label) + '>' + toHTML(column.label))
+        }
+
+        for (var rowIndex=0; rowIndex<data.length; rowIndex++) {
+            var row = data[rowIndex]
+            
+            result.push('<tr> <td class="header" align=right>' + rowIndex)
+            
+            for (var colIndex=0; colIndex<columns.length; colIndex++) {
+                var value = row[columns[colIndex].property]
+                
+                result.push('<td' +  align(value) + '>' + toHTML(value))
+            }
+        }
+    }
+    
+    result.push('</table>')
+    console_table_result = result.join("\n")
+}
+
+//============================================================================
+function calculate_columns(data) {
+    var result = []
+    var columnKeys = {}
+    
+    for (var rowIndex=0; rowIndex<data.length; rowIndex++) {
+        var row = data[rowIndex]
+        
+        if (isArray(row)) {
+           for (var i=0; i<row.length; i++) {
+               ensure_column(i, result, columnKeys)
+           }
+        }
+        
+        else {
+            for (var propertyKey in row) {
+                ensure_column(propertyKey, result, columnKeys)
+            }
+        }
+    }
+    
+    return result
+}
+
+//============================================================================
+function toHTML(value) {
+    if (null == value) return ""
+    return value.toString().replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+}
+
+//============================================================================
+function align(value) {
+    if (typeof value == "number") return " align=right"
+    return ""
+}
+
+//============================================================================
+function ensure_column(propertyKey, columns, columnKeys) {
+    if (columnKeys.hasOwnProperty(propertyKey)) return
+    
+    columnKeys[propertyKey] = true
+    columns.push({ property: propertyKey, label: propertyKey.toString()})
+}
+
+//============================================================================
+function normalize_data(data) {
+    if (data instanceof Array) return data
+    if (data.length) return Array.prototype.slice.call(data)
+    return data
+}
+
+//============================================================================
+function normalize_columns(columns) {
+    for (var i=0; i<columns.length; i++) {
+        var column = columns[i]
+        if (typeof column != "object") {
+            columns[i] = { property: column, label: column.toString()}
+        }
+    }
+}
+
+//============================================================================
+function console_table_simple_object(data, result) {
+    for (var key in data) {
+        result.push('<tr> <td class="header"' + align(key) + '>' + toHTML(key) + '<td' + align(key) + '>' + toHTML(data[key]))
+    }
+}
+
+//============================================================================
+function isArray(object) {
+    return object instanceof Array
+}
+
+</script>
+
+<!-- ===================================================================== -->
+<style>
+
+.console td.header { 
+    background-color:      #ccf; 
+    font-weight:           bold;
+}
+
+body {
+    color:                 #333;
+	margin:                1em 10% 2em 20%;
+}                          
+
+header h1 {
+    font-size:             200%;
+}
+
+h1  {                      
+    font-size:             175%;
+    padding:               0.3em 0.3em 0.3em 0.0em;
+}                          
+
+.underlined, h1 {
+    border-bottom:         solid thin #000;
+}   
+                        
+h2 {                       
+    font-size:             125%;
+    padding:               0.3em 0.3em 0.3em 1em;
+}
+
+h1, h2 {
+    margin:                1em 0em 1em -2em;
+    clear:                 both;
+}
+
+footer {                   
+   font-style:             italic;
+   font-size:              80%;
+}                          
+
+header, footer {
+   margin-left:            -2em;
+}
+                           
+code {                     
+    color:                 #630;
+	font-family:           monospace;
+	white-space:           nowrap;
+}
+
+pre, xmp {
+    border:                thin solid #DDC;
+    overflow:              auto;
+    padding:               0.4em 1.4em;
+    margin:                0.5em 1.4em 1.4em 0em;
+	background:            #FFE;
+	border-radius:         0.5em; 
+    -moz-border-radius:    0.5em; 
+    -webkit-border-radius: 0.5em;	
+	box-shadow:            0.5em 0.5em 0.5em #AAA; 
+	-moz-box-shadow:       0.5em 0.5em 0.5em #AAA; 
+	-webkit-box-shadow:    0.5em 0.5em 0.5em #AAA; 
+}
+
+li {
+    padding-top:           0.25em;
+    padding-bottom:        0.25em;
+}
+
+.compact li {
+    padding-top:           0em;
+    padding-bottom:        0em;
+}
+
+.left {
+    float:                 left;
+    margin:                0.5em 0em;
+}
+
+.sore-thumb {
+    font-weight:           bold;
+	font-family:           monospace;
+	font-style:            italic;
+	font-size:             150%;
+	color:                 #FF0;
+	background-color:      #F88;
+	padding:               0.0em 0.5em;
+}   
+             
+.indent {
+    margin-left:           3em;
+}
+
+@media print {
+    a {
+        text-decoration:   none;
+    }
+}
+</style>
+
+<!-- ===================================================================== -->
+</html>

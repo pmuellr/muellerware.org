@@ -1,0 +1,38 @@
+<?php
+$baseDir = "../..";
+include("$baseDir/Page.php");
+
+$page = new Page(__FILE__, $baseDir, "projects/getfwa");
+$page->writeHeader();
+?>
+
+<!-- ============================================================= -->
+<h1>getfwa</h1>
+<p>GET Flickr With Attribution - a 
+<a href="http://greasemonkey.mozdev.org/">Greasemonkey</a> 
+script for FireFox
+to generate HTML for a small flickr picture with accompanying attribution.
+</p>
+
+<p>After installing it, you will get a link added to flickr pages showing
+a picture that will generate the HTML for you.</p>
+
+<p>Note you will need your own Flickr API key, which you can get here:
+<a href="http://www.flickr.com/services/api/keys/apply/">http://www.flickr.com/services/api/keys/apply/</a>.
+The keys are free, as in beer anyway.
+</p>
+
+<p>I use this script to put flickr pictures in my blog entries.  
+Got tired of copying the stuff by hand.  This is basically a
+GreaseMonkey version of my <a href="../getf4b">getf4b</a> program
+with a better attribution, which I nicked from 
+<a href="http://diveintomark.org/archives/2007/02/15/cc-vs-gpl">Mark Pilgrim</a>.
+</p>
+
+<p>Right click over this link to install the script: <b><a href="getfwa.user.js">getfwa.user.js</a></b></p>
+
+<p><b>Updates:</b></p>
+
+<p>2007/02/20 - version 1.0; initial version.
+
+<?php $page->writeFooter(); ?>

@@ -1,0 +1,9 @@
+<!-- title: Why no Smalltalk CGI programs? -->
+<font size=20>
+<ul>
+<li>Smalltalk programs, usually packaged as images, take > 1 sec
+to load :-)<p>
+<li>Smalltalk programs often consume more memory and CPU cycles than
+other scripting languages.
+</ul>
+</font>

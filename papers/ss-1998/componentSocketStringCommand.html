@@ -1,0 +1,26 @@
+<!-- generated from MwSS98SlideSet componentSocketStringCommand on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Java Communication Component</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="componentPortIO.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Java Communication Component</h1></td>
+<td align="right" valign="top"><a href="componentPilot.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+<li>Needed a way to communicate with Java app running in the car and on the Web site.
+<li>TCP/IP sockets seemed to be the easiest transport.
+<li>Designed a simple string based protocol.
+<li>Socket open to send commands to peer.
+<li>Socket open to receive commands to peer.
+<li>Client sends command (string) to server, server sends response (string) back to client.
+<li>Commands designed to be asynchronous, so Actor pattern used to serial message sends
+to server.
+<li>Also had to handle retries.
+</ul>
+</body>
+</html>

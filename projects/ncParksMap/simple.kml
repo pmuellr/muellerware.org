@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+	<name>North Carolina State Parks</name>
+	<Folder>
+		<name>North Carolina State Parks</name>
+		<open>1</open>
+		<description>State parks of North Carolina.</description>
+		<Placemark>
+			<name>William B. Umstead State Park</name>
+			<description>William B. Umstead State Park</description>
+			<Point>
+				<coordinates>-78.7475967,35.849265,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

@@ -1,0 +1,54 @@
+<!-- generated from MwSS98SlideSet packaging on 6/29/98 at 9:53:34 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Packaging Tips</title>
+</head>
+<body>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><a href="simulators.html"><img src="fob_l.gif" border="0" alt="Previous" WIDTH="96" HEIGHT="74"></a></td>
+<td align="center" class="SlideTitle"><h1>Packaging Tips</h1></td>
+<td align="right" valign="top"><a href="references.html"><img src="fob_r.gif" border="0" alt="Next" WIDTH="96" HEIGHT="74"></a></td></tr>
+</table>
+<ul>
+
+<li>For Application Variable pattern, make sure variables are 'nilled' during packaging
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+   aCollector
+      initializeToNilGlobalVariable: #MyApplicationVariable
+</pre>
+
+<li>Initialize class variables during packaging, if needed
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+   aCollector
+      initializeToNilClassVariable: #MyClassVariable
+      inClassNamed: #MyClass
+</pre>
+
+<li>Automatic version naming during packaging
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+	
+   aCollector
+      initializeClassVariable: 'VersionString'
+      to: '''', self promptForVersionString, ''''
+      inClassNamed: MyClass.
+</pre>
+Version string then accessed via the class variable in the packaged image.
+
+<li>Your own startup class
+<ul>
+<li>Subclassed the default <bold>EpRuntimeStartUp</bold> class, 
+overrode <bold>#reportError:resumable:startBP:</bold>
+<ul>
+<li>to cause prompter on walkbacks to not appear
+<li>dump additional status information
+</ul>
+
+<li>Tracking garbage collection - see <bold>Process class&gt;&gt;addGCEventHandler:</bold>
+</ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.SlideTitle {
+   filter: DropShadow(Color=#D0D0D0,OffX=4,OffY=4,Positive=1);
+   }
+
+.Highlight {
+   color: #FF0000;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 20pt;
+   }
+
+BODY {
+   background-color: #F0F0F0;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16pt;
+   }
+
+PRE {
+   font-size: 12pt;
+   }
+
+H1 {
+   color: #0000FF;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 24pt;
+   }
+
+H2 {
+   color: #0000FF;
+   font-family: Arial;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 18pt;
+   }
+
+DT {
+   margin-top:12pt;
+   font-weight: bold;
+   }
+
+LI {
+   margin-top:10pt;
+   list-style-type:disk;
+   }
+
+LI LI {
+   margin-top:3pt;
+   list-style-type:disk;
+   }
+   
+OLD {
+   list-style-image:url(bullet1.gif);
+   list-style-image:url(bullet2.gif);
+	}

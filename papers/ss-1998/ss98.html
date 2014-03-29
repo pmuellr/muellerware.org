@@ -1,0 +1,825 @@
+<!-- generated from MwSS98SlideSet  on 6/29/98 at 9:53:33 AM by MwHtmlSlidesApp -->
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="ss98.css">
+<title>Smalltalk in the Network Vehicle</title>
+</head>
+<body>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Smalltalk in the Network Vehicle</h1></td>
+</tr>
+</table>
+<hr>
+<table width="100%">
+<tr>
+<td align="left"><a href="http://www.alphaworks.ibm.com/NetworkVehicle"><img src="netcar.gif" border="0" WIDTH="190" HEIGHT="150"></a></td>
+<td align="right">
+<a href="http://www.ibm.com"><img src="ibmlogo.gif" align="right" border="0" WIDTH="100" HEIGHT="40"></a>
+<br clear="all">
+<a href="http://www.oti.com"><img src="otilogo.gif" align="right" border="0" WIDTH="218" HEIGHT="45"></a>
+</td>
+</tr>
+</table>
+
+<hr>
+
+Patrick J. Mueller<br>
+<a target="blank" href="mailto:pmuellr@acm.org">mailto:pmuellr@acm.org</a>
+
+<hr>
+
+<p>Created for<span width="72pt"></span>
+<a href="http://www.smalltalkconference.com/entry.html">
+<img align="center" src="smalltalk98_small.gif" border="0" alt="Smalltalk Solutions 98" WIDTH="71" HEIGHT="77">
+</a>
+
+<hr>
+<p>Most recent version of this presentation available at: <a target="blank" href="http://members.tripod.com/~pmuellr/ss98/">http://members.tripod.com/~pmuellr/ss98/</a>.
+
+<!--<br><hr><a href="http://www.thecorporation.com/icon/icon.html "><img src="VistaViewNavGoggles.gif " border=0></a>-->
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Table Of Contents</h1></td>
+</tr>
+</table>
+<ul>
+<li><a href="index.html">Smalltalk in the Network Vehicle</a>
+<li><a href="tableOfContents.html">Table Of Contents</a>
+<li><a href="bio.html">Author Biography</a>
+<li><a href="courseDescription.html">Session Description</a>
+<li><a href="meetTheExpert1.html">Meet the Expert?</a>
+<li><a href="meetTheExpert2.html">Meet the Expert?</a>
+<li><a href="meetTheExpert3.html">Meet the Expert?</a>
+<li><a href="meetTheExpert4.html">Meet the Expert?</a>
+<li><a href="meetTheExpert5.html">Meet the Expert?</a>
+<li><a href="meetTheExpert6.html">Meet the Expert?</a>
+<li><a href="meetTheExpert7.html">Meet the Expert?</a>
+<li><a href="overview.html">Overview</a>
+<li><a href="whatCarCanDo.html">What the Car can do</a>
+<li><a href="hardware.html">Hardware in the Car</a>
+<li><a href="software.html">Software in the Car</a>
+<li><a href="designPatterns1.html">Design Patterns: Actors</a>
+<li><a href="designPatterns2.html">Design Pattern: Application Variables</a>
+<li><a href="designPatterns3.html">Design Pattern: Reading Serial Ports</a>
+<li><a href="whySmalltalk.html">Why Use Smalltalk?</a>
+<li><a href="componentViaVoice.html">Voice Recognition Component</a>
+<li><a href="componentTTS.html">Text-To-Speech Component</a>
+<li><a href="componentPortIO.html">Port I/O Component</a>
+<li><a href="componentSocketStringCommand.html">Java Communication Component</a>
+<li><a href="componentPilot.html">PalmPilot Component</a>
+<li><a href="componentSerialIO.html">Serial I/O Component</a>
+<li><a href="componentIPCM.html">Instrument Panel Control Module Component</a>
+<li><a href="componentMML.html">Mobile Media Link Component</a>
+<li><a href="componentClass2.html">Class 2 Network Component</a>
+<li><a href="componentHUD.html">Head Up Display Component</a>
+<li><a href="componentConfigurations.html">Configuration Component</a>
+<li><a href="componentInfrastructure.html">Various Infrastructure Components</a>
+<li><a href="simulators.html">Using Simulators</a>
+<li><a href="packaging.html">Packaging Tips</a>
+<li><a href="references.html">References</a>
+<li><a href="theEnd.html">This Page Intentionally Left Blank</a>
+</ul>
+
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Author Biography</h1></td>
+</tr>
+</table>
+<p>Patrick Mueller is an IBMer working on assignment to Object Technology 
+International in Raleigh, NC.  He is currently developing Smalltalk code
+for the embedded environment.  
+
+<p>Previously Patrick
+was the technical lead for the Web Connection feature for VisualAge for
+Smalltalk and co-developed the Smalltalk bindings for CORBA.
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Session Description</h1></td>
+</tr>
+</table>
+<h2>T1 - Smalltalk in the Network Vehicle</h2>
+<br>Patrick Mueller
+
+<p>&quot;The network vehicle&quot; is a concept car with wireless Internet connections, 
+voice control, heads up display, and other hardware and software innovations 
+for automobiles. Smalltalk is used to integrate many systems, implement much 
+of the logic on the car including voice recognition, and interface with existing 
+networks on the car. The session will talk about how and why Smalltalk was 
+used to develop this vehicle.
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>Find the Error!</h2>
+
+<h2>Bio from SIGS in Meet The Experts:</h2>
+<p>Patrick Mueller is a member of the VisualAge for Smalltalk development 
+crew at IBM in Research Triangle Park, NC. He is the technical lead 
+for the Web Connection feature for VisualAge for Smalltalk.  He has been 
+involved with programming for the Internet for over <span class="Highlight">30</span> years and 
+with Web programming since 1994.
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>How old is Mueller anyway?</h2>
+
+<img src="license.jpg" WIDTH="536" HEIGHT="348"><br>
+<p>1998 - 1963 = 35
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>Was the Internet even around 30 years ago?</h2>
+
+<p>Check out the <a href="HobbesInternetTimeline.html">Internet Timeline</a>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>Could he have been programming when he was 5?</h2>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>Sure, even earlier.</h2>
+
+<img src="sam.gif" WIDTH="606" HEIGHT="372">
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>The error is ...</h2>
+
+<p>He has been involved with programming for the Internet for over <span class="Highlight">34</span> years ..
+
+<p>Instead of:
+
+<p>He has been involved with programming for the Internet for over <span class="Highlight">30</span> years ....
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Meet the Expert?</h1></td>
+</tr>
+</table>
+<h2>Actually ...</h2>
+
+<p>The original bio was phrased:
+<p>He has been dabbling in programming for the internet for over 30 years 
+<span class="Highlight">(internet years, that is)</span>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Overview</h1></td>
+</tr>
+</table>
+<dl>
+<dt>What can the car do?
+<dd>Description of the functionality of the car
+<dt>Why did we do it in Smalltalk?
+<dd>Description of why we chose Smalltalk to implement the code.
+<dt>How did we do it in Smalltalk?
+<dd>Description of the Smalltalk code developed for the car
+<dt>Various tricks and tips
+<dd>Hacks, nifty tricks, etc.
+</dl>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>What the Car can do</h1></td>
+</tr>
+</table>
+<!--<a href="nv/index.htm">Link to local Network Vehicle site</a>-->
+<ul>
+<li>DirectTV for passengers, DirectPC for internet, via antenna embedded in roof
+<li>Display for each passenger
+<ul>
+<li>Browse the web
+<li>Watch DirectTV
+</ul>
+<li>Console display for driver (no TV or Web Browser!)
+<li>Head up display on windshield
+<li>Configurable dashboard
+<li>CD/AM/FM/Internet Radio (Real Audio)
+<li>Mail, Stocks, Sports information
+<li>Voice command for driver
+<li>Text-To-Speech (TTS)
+<li>Accessing data from WorkPad (PalmPilot)
+<li>Access to vehicle status, doors open, seats occupied
+<li>Web access; car can be monitored and controlled via a Java applet running in a browser
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Hardware in the Car</h1></td>
+</tr>
+</table>
+<ul>
+<li>PC with Intel Pentium Processor
+<li>Lots of sensors with serial and parallel i/o
+<li>Audio amplifier and CD changer with serial interface
+<li>General Motors Class 2 network protocol converter to serial interface
+<li>Embedded WorkPad docking station
+<li>DirectDuo capable antenna embedded in roof
+<li>Head up display in windshield
+<li>Dashboard display
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Software in the Car</h1></td>
+</tr>
+</table>
+<ul>
+<li>Windows 95
+<li>IBM ViaVoice voice recognition and text-to-speech
+<li>RealAudio player
+<li>Java application controlling the GUI and RealAudio player
+<li>Smalltalk application controlling everything else
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Design Patterns: Actors</h1></td>
+</tr>
+</table>
+<ul>
+<li>Smalltalk application designed called for ~20 independent Smalltalk processes
+<li>Needed an interprocess communication mechanism
+<li>Used Actors
+<li>An Actor is
+<ul>
+<li>A process which receives messages from a queue
+<li>Queue is Process-safe, so many objects can write to it at once
+<li>Actor process is the only process to read the queue
+</ul>
+<li>Easy to implement - a BlockingQueue class which:
+<ul>
+<li>uses a mutex Semaphore to read and write 'atomically'
+<li>uses an event Semaphore to allow blocking read
+<li>OrderedCollection to hold 'messages'
+</ul>
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Design Pattern: Application Variables</h1></td>
+</tr>
+</table>
+<ul>
+<li>Smalltalk application designed called for ~10 independent subsystems
+<li>Needed to be started/stopped/sent messages
+<li>Used Application variables (see IBM Smalltalk: User's Guide: Namespace support)
+<li>Declaring application variables
+<pre>
+{application} class &gt;&gt; _Pragma_{application}Globals
+	&quot;%%PRAGMA DECLARE
+		(name: AppVariable1 
+			isPool: false 
+			isConstant: false 
+			valueExpression: 'nil')
+		(name: AppVariable2 
+			isPool: false 
+			isConstant: false 
+			valueExpression: 'nil')
+	&quot;
+</pre>
+<li>Defining application variables
+<pre>
+{application} class &gt;&gt; loaded
+	AppVariable1 := AppVariable1Class new.
+	AppVariable2 := AppVariable1Class new.
+</pre>
+<li>Using application variables
+<ul>
+<li>Make sure application variable is used in prereq's application variable is declared/defined in.
+<li>Use the variable like any other global variable
+</ul>
+<li>Removing application variables
+<pre>
+{application} class &gt;&gt; removing
+	AppVariable1 shuttingDown.
+	AppVariable1 := nil.
+</pre>	
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Design Pattern: Reading Serial Ports</h1></td>
+</tr>
+</table>
+<ul>
+<li>Serial ports must be read constantly to keep from losing data.
+<li>Packets sent over serial port must be assembled, checked for errors.
+<li>Implement as two separate processes:
+<dl>
+<dt>Serial port reader
+<dd>High priority process that reads data from the serial port,
+sends it to the Packet assember actor.
+<dt>Packet assembler actor
+<dd>Lower priority process that reads the raw data from the
+Serial port reader, assembles into packets for higher level protocol.
+</dl>
+<li>Separation keeps things lively, but need to watch actor queue size ...
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Why Use Smalltalk?</h1></td>
+</tr>
+</table>
+<ul>
+<li>Target platform - Windows 95
+<li>Primary choice of Java or Smalltalk
+<li>Comfort Level
+</ul>
+
+<br style="padding-bottom:36pt;">
+<table border="1" cellpadding="10">
+
+<tr>
+<th>Functionality</td>
+<th>Smalltalk</td>
+<th>Java</td>
+</tr>
+
+<tr>
+<td>Voice Recognition<br>C API in a DLL</td>
+<td>PlatformFunctions</td>
+<td>native methods</td>
+</tr>
+
+<tr>
+<td>Text-To-Speech<br>ActiveX Control</td>
+<td>OLE Support</td>
+<td>native methods???</td>
+</tr>
+
+<tr>
+<td>Serial Port I/O</td>
+<td>PlatformFunctions to Win32 DLLs</td>
+<td>native methods</td>
+</tr>
+
+<tr>
+<td>Parallel Port I/O</td>
+<td>PlatformFunctions</td>
+<td>native methods</td>
+</tr>
+
+<tr>
+<td>Other Proprietary C code</td>
+<td>PlatformFunctions</td>
+<td>native methods</td>
+</tr>
+
+</table>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Voice Recognition Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Wrapped in Smalltalk automagically from header files
+<ul>
+<li>579 C #defined constants -- placed in a pool dictionary
+<li>176 C functions -- wrapped in PlatformFunctions
+<li>78 unique response 'objects' wrapped into Smalltalk classes
+</ul>
+<li>ViaVoices uses Windows events for asynchronous message (HWND/WM_COMMAND/etc)
+<li>Stole code from SocketCommunicationsInterface (SciPolledWinApp) to figure out how
+to create an object HWND in Smalltalk and handle messages to it.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Text-To-Speech Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>IBM ViaVoice includes Text-To-Speech (TTS) component called VirtualVoices.
+<li>VirtualVoices packaged as an ActiveX control.
+<li>Wrapped into Smalltalk with OleApplicationFramework.
+<li>Application variable created as single access point.
+<li>Existing Smalltalk classes such as Time, Date, Integer, Fraction extended with method
+<bold>speakString</bold>.  speakString answers a string which can be 'spoken' by VirtualVoices.
+Examples:
+<ul>
+<li>Date today speakString -- 'Tuesday, April 14th 1998'
+<li>Time now speakString -- '11:05 p m'
+<li>(1/7) speakString -- '1 seventh'
+</ul>
+<li>TTS usage had to be coordinated with Voice Recognition and RealAudio since only one can use
+the sound card at a time.
+<li>Audio volume level temporarily reset to a 'standard' volume.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Port I/O Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Needed the ability to write data on the parallel port.
+<li>Although Windows documentation would have you believe 'normal' i/o can
+be used to do this, it can't.
+<li>Only way is to use the C outp() function.
+<li>Not found in any existing DLL
+<li>So I wrote a 5 line C file, created a DLL from it, used it via PlatformFunction.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Java Communication Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Needed a way to communicate with Java app running in the car and on the Web site.
+<li>TCP/IP sockets seemed to be the easiest transport.
+<li>Designed a simple string based protocol.
+<li>Socket open to send commands to peer.
+<li>Socket open to receive commands to peer.
+<li>Client sends command (string) to server, server sends response (string) back to client.
+<li>Commands designed to be asynchronous, so Actor pattern used to serial message sends
+to server.
+<li>Also had to handle retries.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>PalmPilot Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>We cheated - we used existing PalmPilot HotSync application.
+<li>When requested, we read data from the PalmPilot databases.
+<li>PalmPilot database formats are not documented, so lots of guess work.
+<li>PalmPilot data was only spoken back to user, so classes like PalmPilotDate extended
+to generate appropriate string (1/1/98 becomes &quot;December first 19 98&quot;.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Serial I/O Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Used pre-wrapped Win32 classes under PlatformInterface.
+<li>Needed to use really ugly Win32 Overlapped I/O to enable simultaneous reading/writing.
+<li>Used ACO (EsAsynchronousCallOut) for one function to wait on i/o completion.
+<li>Also implemented Virtual Serial I/O ports
+<ul>
+<li>Modelled one end of a serial connection
+<li>Two ends connected by a set of queues
+<li>Allowed for testing multiple serial port interaction on machines with small number of ports 
+(my Thinkpad has just one serial port!)
+</ul>
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Instrument Panel Control Module Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Read-only interface
+<li>Packets sent every 100ms.
+<li>Provided interface to:
+<ul>
+<li>Steering wheel buttons
+<li>Seat occupancy
+<li>Door ajar
+</ul>
+<li>Used the Reading Serial Ports Design Pattern
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Mobile Media Link Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Read-write interface
+<li>Packets sent as needed.
+<li>Provided interface to:
+<ul>
+<li>Amplifier
+<ul>
+<li>Volume / Balance / Fade
+<li>Audio source - Computer / CD Player / Phone
+</ul>
+<li>CD Player
+<ul>
+<li>Commands - Play / Stop / Next Track / etc
+<li>Track status - Current Disc / Current Track / Time Playing
+</ul>
+<li>Seat occupancy
+<li>Door ajar
+</ul>
+<li>Used Reading Serial Ports Design Pattern
+<li>Used Application Variable patterns for single access point to the MML
+<li>Used Actor pattern to asynchronously send commands
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Class 2 Network Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Class 2 network is GM's implementation of an SAE standardized in-car network.
+<li>Used to:
+<ul>
+<li>Lock/unlock/open doors
+<li>Dial the phone
+<li>Access car sensors
+</ul>
+<li>Used off-the-shelf protocol converter with serial interface.
+<li>Used Serial Port Reading pattern.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Head Up Display Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Write-only interface
+<li>Actually controlled both the Head Up and Head Down displays (HUD and HDD)
+<li>Provided interface to all display updates on the Head Up and Head Down displays
+<ul>
+<li>road speed 
+<li>engine speed
+<li>engine status
+<li>door lock/ajar
+<li>functions for the steering wheel buttons
+<li>indication of waiting e-mail
+<li>navigation information
+<li>microphone on/off
+<li>text message area for giving feedback to the driver
+</ul>
+<li>Used Application Variable patterns for single access point to the HUD
+<li>Used Actor pattern to asynchronously send commands
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Configuration Component</h1></td>
+</tr>
+</table>
+<ul>
+<li>Needed a way to configure system easily, from a packaged image.
+<li>Created a configuration component
+<li>Configuration read from a file (like a Windows .ini file).
+<li>Viewable, modifyable from packaged image.
+<li>Editor used EwTableList, existing edit policies to edit basic types (String, Boolean, Integer).
+<li>Configuration accessible via <bold>DelcoConfig</bold> application variable.
+<li>Ended up with 88 configurable settings.
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Various Infrastructure Components</h1></td>
+</tr>
+</table>
+<ul>
+<li>Message Logger
+<ul>
+<li>Log to window
+<li>Verbosity setting
+<li>Ceiling on number of message displayed on Window
+<li>Optional Log to disk
+<li>Used Application Variable pattern to provide single interface
+<li>Used Actor pattern to allow clients to issue requests to log messages, but have
+messages logged on lower priority process.
+</ul>
+
+<li>Process manager
+<ul>
+<li>Framework to build processes that blocked or delayed
+<li>Provided common API to start / stop / modify / enumerate processes
+</ul>
+
+<li>Control Panel
+<ul>
+<li>Shell to hold the Log
+<li>Menu items to start / stop / configure subsystems, testers, simulators, diagnostics
+</ul>
+
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Using Simulators</h1></td>
+</tr>
+</table>
+<ul>
+<li>Built simulators so the entire system could be tested on a Thinkpad at home
+<li>Less travel required to visit actual hardware
+<li>Simulators built for:
+<ul>
+<li>IPCM - provided a dialog to simulate seat occupancy, etc
+<li>MML - provided a text area to display incoming CD track status, 
+'remote control' to change amplifier settings and command the CD player
+<li>Class 2 - provided incoming 'garbage' data, as well as a way to trigger engine sensor failure
+<li>HUD/HDD - Textual simulation of information displayed on HUD and HDD
+</ul>
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>Packaging Tips</h1></td>
+</tr>
+</table>
+<ul>
+
+<li>For Application Variable pattern, make sure variables are 'nilled' during packaging
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+   aCollector
+      initializeToNilGlobalVariable: #MyApplicationVariable
+</pre>
+
+<li>Initialize class variables during packaging, if needed
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+   aCollector
+      initializeToNilClassVariable: #MyClassVariable
+      inClassNamed: #MyClass
+</pre>
+
+<li>Automatic version naming during packaging
+<pre>
+MyApplication class &gt;&gt; packagingRulesFor: aCollector
+	
+   aCollector
+      initializeClassVariable: 'VersionString'
+      to: '''', self promptForVersionString, ''''
+      inClassNamed: MyClass.
+</pre>
+Version string then accessed via the class variable in the packaged image.
+
+<li>Your own startup class
+<ul>
+<li>Subclassed the default <bold>EpRuntimeStartUp</bold> class, 
+overrode <bold>#reportError:resumable:startBP:</bold>
+<ul>
+<li>to cause prompter on walkbacks to not appear
+<li>dump additional status information
+</ul>
+
+<li>Tracking garbage collection - see <bold>Process class&gt;&gt;addGCEventHandler:</bold>
+</ul>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>References</h1></td>
+</tr>
+</table>
+<dl>
+
+<dt>VisualAge for Smalltalk
+<dd><a target="blank" href="http://www.software.ibm.com/software/ad/visage/">http://www.software.ibm.com/software/ad/visage/</a>
+
+<dt>The Network Vehicle
+<dd><a target="blank" href="http://www.alphaworks.ibm.com/NetworkVehicle">http://www.alphaworks.ibm.com/NetworkVehicle</a>
+
+<dt>Internet History, from the Internet Society
+<dd><a target="blank" href="http://www.isoc.org/internet-history/">http://www.isoc.org/internet-history/</a>
+
+<dt>Papers on Actors, from the Open Systems Lab at UIUC
+<dd><a target="blank" href="http://www-osl.cs.uiuc.edu/">http://www-osl.cs.uiuc.edu/</a>
+
+</dl>
+
+<!-- ====================================================================== -->
+<div style="page-break-before:always;"><hr></div>
+
+<table width="100%">
+<tr>
+<td align="center" class="SlideTitle"><h1>This Page Intentionally Left Blank</h1></td>
+</tr>
+</table>
+<br>
+</body>
+</html>

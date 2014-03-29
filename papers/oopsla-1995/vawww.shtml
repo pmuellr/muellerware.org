@@ -1,0 +1,21 @@
+<!-- title: VisualAge Web Parts -->
+
+<font size=40>
+<ul>
+<li>Adds new visual parts to the VisualAge palette<p>
+<ul>
+<li>text (attributes for fonts and links)
+<li>images
+<li>forms
+<li>user interface widgets for forms<p>
+</ul>
+
+<li>Can reuse existing non-visual parts<p>
+<ul>
+<li>database
+<li>transaction managers
+<li>communications protocols
+</ul>
+</ul>
+
+</font>

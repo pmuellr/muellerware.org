@@ -1,0 +1,209 @@
+http://ils.unc.edu/parkproject/visit/cabe/home.html Carolina Beach State Park
+	zip: 28428
+	lat: 34.047788 
+	long: -77.908323
+	city: Carolina Beach
+
+http://ils.unc.edu/parkproject/visit/clne/home.html Cliffs of the Neuse State Park
+	zip: 28578
+	lat: 35.237303
+	long: -77.886704
+	city: Seven Springs
+
+http://ils.unc.edu/parkproject/visit/crmo/home.html Crowders Mountain State Park
+	zip: 28086
+	lat: 35.219793
+	long: -81.283325
+	city: Kings Mountain
+
+http://ils.unc.edu/parkproject/visit/enri/home.html Eno River State Park
+	zip: 27705
+	lat: 36.06422566493219
+	long: -78.9671516418457	
+	city: Durham
+
+http://ils.unc.edu/parkproject/visit/fala/home.html Falls Lake State Recreation Area
+	zip: 27587
+	lat: 36.023557373379276
+	long: -78.717041015625
+	city: Wake Forest
+
+http://ils.unc.edu/parkproject/visit/fofi/home.html Fort Fisher State Recreation Area
+	zip: 28449
+	lat: 33.98144570979165
+	long: -77.91727066040039
+	city: Kure Beach
+
+http://ils.unc.edu/parkproject/visit/foma/home.html Fort Macon State Park
+	zip: 28512
+	lat: 34.697237
+	long: -76.690514
+	city: Atlantic Beach
+	
+http://ils.unc.edu/parkproject/visit/gocr/home.html Goose Creek State Park
+	zip: 27889
+	lat: 35.46738105960409
+	long: -76.9097900390625
+	city: Washington
+
+http://ils.unc.edu/parkproject/visit/gorg/home.html Gorges State Park
+	zip: 28774
+	lat: 35.097439809364175
+	long: -82.87433624267578
+	city: Sapphire
+
+http://ils.unc.edu/parkproject/visit/habe/home.html Hammocks Beach State Park
+	zip: 28584
+	lat: 34.633207911379564
+	long: -77.14410781860352
+	city: Swansboro
+
+http://ils.unc.edu/parkproject/visit/haro/home.html Hanging Rock State Park
+	zip: 27016
+	lat: 36.39226944709639
+	long: -80.27641296386719
+	city: Danbury
+
+http://ils.unc.edu/parkproject/visit/jori/home.html Jockey's Ridge State Park
+	zip: 27959
+	lat: 35.96050086278097
+	long: -75.63434600830078
+	city: Nags Head
+
+http://ils.unc.edu/parkproject/visit/jone/home.html Jones Lake State Park
+	zip: 28337
+	lat: 34.67218214951836
+	long: -78.6130142211914	
+	city: Elizabethtown
+
+http://ils.unc.edu/parkproject/visit/jord/home.html Jordan Lake State Recreation Area
+	zip: 27523
+	lat: 35.737177137796635
+	long: -79.02671813964844
+	city: Apex
+
+http://ils.unc.edu/parkproject/visit/kela/home.html Kerr Lake State Recreation Area
+	zip: 27537
+	lat: 36.431227262479894
+	long: -78.36822509765625	
+	city: Henderson
+
+http://ils.unc.edu/parkproject/visit/laja/home.html Lake James State Park
+	zip: 28761
+	lat: 35.734041963215354
+	long: -81.89045906066895
+	city: Nebo
+
+http://ils.unc.edu/parkproject/visit/lano/home.html Lake Norman State Park
+	zip: 28166
+	lat: 35.65701729161382
+	long: -80.93928337097168
+	city: Nebo
+
+http://ils.unc.edu/parkproject/visit/lawa/home.html Lake Waccamaw State Park
+	zip: 28450
+	lat: 34.26516142452612
+	long: -78.46675872802734
+	city: Lake Waccamaw
+
+http://ils.unc.edu/parkproject/visit/luri/home.html Lumber River State Park
+	zip: 28369
+	lat: 34.41158326390199
+	long: -79.02397155761719	
+	city: Orrum
+
+http://ils.unc.edu/parkproject/visit/memo/home.html Medoc Mountain State Park
+	zip: 27844
+	lat: 36.25604016955519
+	long: -77.8817367553711
+	city: Hollister
+
+http://ils.unc.edu/parkproject/visit/memi/home.html Merchants Millpond State Park
+	zip: 27938
+	lat: 36.430812920461356
+	long: -76.68130874633789
+	city: Gatesville
+
+http://ils.unc.edu/parkproject/visit/momo/home.html Morrow Mountain State Park
+	zip: 28001
+	lat: 35.36133610532758
+	long: -80.08346557617188
+	city: Albemarle
+
+http://ils.unc.edu/parkproject/visit/moje/home.html Mount Jefferson State Natural Area
+	zip: 28640
+	lat: 36.39769293751893
+	long: -81.46495342254639
+	city: Jefferson
+
+http://ils.unc.edu/parkproject/visit/momi/home.html Mount Mitchell State Park
+	zip: 28714
+	lat: 35.76166208666489
+	long: -82.26862907409668
+	city: Burnsville
+
+http://ils.unc.edu/parkproject/visit/neri/home.html New River State Park
+	zip: 28640
+	lat: 36.41347763135365
+	long: -81.38834953308105
+	city: Jefferson
+
+http://ils.unc.edu/parkproject/visit/ocmo/home.html Occoneechee Mountain State Natural Area
+	zip: 27705
+	lat: 36.06122484095983
+	long: -79.11686182022095
+	city: Durham
+
+http://ils.unc.edu/parkproject/visit/pett/home.html Pettigrew State Park
+	zip: 27928
+	lat: 35.7901777253673
+	long: -76.40974044799805
+	city: Creswell
+
+http://ils.unc.edu/parkproject/visit/pimo/home.html Pilot Mountain State Park
+	zip: 27043
+	lat: 36.33905082171858
+	long: -80.47708511352539	
+	city: Pinnacle
+
+http://ils.unc.edu/parkproject/visit/raro/home.html Raven Rock State Park
+	zip: 27546
+	lat: 35.462627415869775
+	long: -78.91170501708984
+	city: Lillington
+
+http://ils.unc.edu/parkproject/visit/sila/home.html Singletary Lake State Park
+	zip: 28448
+	lat: 34.584323024647524
+	long: -78.47465515136719	
+	city: Kelly
+
+http://ils.unc.edu/parkproject/visit/somo/home.html South Mountains State Park
+	zip: 28612
+	lat: 35.59436690312231
+	long: -81.64798736572266
+	city: Connelly Springs
+
+http://ils.unc.edu/parkproject/visit/stmo/home.html Stone Mountain State Park
+	zip: 28668
+	lat: 36.38840022903361
+	long: -81.0684585571289
+	city: Roaring Gap
+
+http://ils.unc.edu/parkproject/TheSummit/ The Summit at Haw River State Park
+	zip: 27214
+	lat: 36.249187846939115
+	long: -79.75456237792969
+	city: Browns Summit
+
+http://ils.unc.edu/parkproject/visit/wewo/home.html Weymouth Woods - Sandhills Nature Preserve
+	zip: 28387
+    lat: 35.14795071992091
+    long: -79.35433387756348
+	city: Southern Pines
+
+http://ils.unc.edu/parkproject/visit/wium/home.html William B. Umstead State Park
+	zip: 27612
+	lat: 35.84926547127391
+	long: -78.74759674072266
+	city: Raleigh
