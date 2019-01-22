@@ -10,7 +10,7 @@
 	<personal-info>
 		<line>Apex, NC</line>
 		<email>pmuellr@muellerware.org</email>
-		<webpage>http://muellerware.org/</webpage>
+		<webpage>https://muellerware.org/</webpage>
 	</personal-info>
 
 	<sections>
@@ -331,7 +331,7 @@
 	<section title="Standards Work">
 		<standardswork>
 			<p>Object Management Group, 
-            <a href="http://muellerware.org/papers/omg-smalltalk-99-07-65.pdf">OMG IDL Mappings to Smalltalk</a>, 1995</p>
+            <a href="https://muellerware.org/papers/omg-smalltalk-99-07-65.pdf">OMG IDL Mappings to Smalltalk</a>, 1995</p>
 			<p>IBM J2ME JCP Review Board, 2001-2004</p>
 			<p>Expert Group Member, 
 			<a href="http://www.jcp.org/en/jsr/detail?id=241">JSR 241: The Groovy Programming Language</a>, 
@@ -349,21 +349,21 @@
 			<p>IBM Technical report, "REXX Source Level Debugging with System Exits", 1994</p>
 			<p>REXX Language Symposium, "The Design and Implementation of REXX Object Extension - ROX", 1994</p>
 			<p>OOPSLA 1995 Workshop on "Objects, Scripts and the Web": 
-            "<a href="http://muellerware.org/papers/oopsla-1995/">Smalltalk Scripts for the Web</a>"</p>
+            "<a href="https://muellerware.org/papers/oopsla-1995/">Smalltalk Scripts for the Web</a>"</p>
 			<p>Smalltalk Report, 
-            "<a href="http://muellerware.org/papers/GopherArticle.pdf">Building a Gopher from Sockets and Widgets</a>", 1995.  
+            "<a href="https://muellerware.org/papers/GopherArticle.pdf">Building a Gopher from Sockets and Widgets</a>", 1995.  
             Republished in "<a href="http://www.amazon.com/Wisdom-Gurus-Sigs-Developers-Guide/dp/0134998499">Wisdom of the Gurus: A Sigs Developer's Guide</a>", 
             ISBN: 0134998499</p>
 			<p>OOPSLA 1996 Workshop on "Toward the integration of WWW and Distributed Object Technology": 
-            "<a href="http://muellerware.org/papers/oopsla-1996/">Use of HTTP as a Transport for Distributed Object Systems</a>"</p>
+            "<a href="https://muellerware.org/papers/oopsla-1996/">Use of HTTP as a Transport for Distributed Object Systems</a>"</p>
 			<p>1996 Smalltalk Solutions Panel on Smalltalk and the Web: 
-            "<a href="http://muellerware.org/papers/ss-1996/">The Future of Application Development for the Web with Smalltalk</a>"</p>
+            "<a href="https://muellerware.org/papers/ss-1996/">The Future of Application Development for the Web with Smalltalk</a>"</p>
 			<p>1997 Smalltalk Solutions Presentation: 
-            "<a href="http://muellerware.org/papers/ss-1997/">Interfacing Smalltalk Systems to the Web</a>"</p>
+            "<a href="https://muellerware.org/papers/ss-1997/">Interfacing Smalltalk Systems to the Web</a>"</p>
 			<p>1998 Smalltalk Solutions Presentation: 
-            "<a href="http://muellerware.org/papers/ss-1998/">Smalltalk in the Network Vehicle</a>"</p>
+            "<a href="https://muellerware.org/papers/ss-1998/">Smalltalk in the Network Vehicle</a>"</p>
 			<p>OOPSLA 2003 Workshop on "Pervasive Computing": 
-            "<a href="http://muellerware.org/papers/oopsla-2003/OOPSLA-2003-Perv-Mueller.pdf">Java Community Process and Embedded Java User Interface</a>"</p>
+            "<a href="https://muellerware.org/papers/oopsla-2003/OOPSLA-2003-Perv-Mueller.pdf">Java Community Process and Embedded Java User Interface</a>"</p>
 		</papers>
 	</section>
 
@@ -399,9 +399,9 @@
  	<section title="Personal Interests">
 		Bicycling, hiking, car camping, family fun, guitar.
 		<p>Extracurricular hacking: see various projects at my site
-		<a href="http://muellerware.org/">http://muellerware.org</a>,
+		<a href="https://muellerware.org/">https://muellerware.org</a>,
 		at <a href="http://github.com/pmuellr">github</a>, and my
-		personal <a href="http://muellerware.org/hg/">mercurial repository</a>.</p>
+		personal <a href="https://muellerware.org/hg/">mercurial repository</a>.</p>
 	</section>
 	
 	<!-- ================================================================== -->
